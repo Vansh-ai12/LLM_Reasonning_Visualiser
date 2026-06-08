@@ -3,6 +3,8 @@ from typing import Optional, List
 import uuid
 from datetime import datetime
 
+from sqlalchemy import Column, String, CheckConstraint
+
 
 class User(SQLModel, table=True):
     id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
@@ -26,27 +28,50 @@ class Cluster(SQLModel, table=True):
     runs: List["ReasoningRun"] = Relationship(back_populates="cluster")
 
 
+class ReasoningStep(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    run_id: uuid.UUID = Field(foreign_key="reasoningrun.id")
+    
+    type: str = Field(
+        sa_column=Column(
+            String,
+            CheckConstraint("type IN ('hypothesis','lookup','calculation','correction','conclusion')", name="ck_step_type"),
+            nullable=False
+        )
+    )
+    confidence: str = Field(
+        sa_column=Column(
+            String,
+            CheckConstraint("confidence IN ('high','medium','low')", name="ck_step_confidence"),
+            nullable=False
+        )
+    )
+    
+    label: str
+    content: str
+    entropy: Optional[float] = None  
+    depends_on: str
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+
+    run: Optional["ReasoningRun"] = Relationship(back_populates="steps")
+
+
 class ReasoningRun(SQLModel, table=True):
     id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
     cluster_id: uuid.UUID = Field(foreign_key="cluster.id")
+    
+    reasoning_type: str = Field(
+        sa_column=Column(
+            String,
+            CheckConstraint("reasoning_type IN ('research','testing')", name="ck_run_type"),
+            nullable=False
+        )
+    )
+    
     input_data: str
     output_data: str
-    reasoning_type: str        # 'research' or 'testing'
     summary: Optional[str] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
     cluster: Optional["Cluster"] = Relationship(back_populates="runs")
     steps: List["ReasoningStep"] = Relationship(back_populates="run")
-
-
-class ReasoningStep(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    run_id: uuid.UUID = Field(foreign_key="reasoningrun.id")
-    type: str
-    label: str
-    content: str
-    depends_on: str            # JSON string e.g. "[1, 2]"
-    confidence: str
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-
-    run: Optional["ReasoningRun"] = Relationship(back_populates="steps")
