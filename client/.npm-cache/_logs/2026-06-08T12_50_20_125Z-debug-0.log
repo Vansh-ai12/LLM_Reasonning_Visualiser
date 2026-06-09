@@ -1,0 +1,2288 @@
+0 verbose cli C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node.exe C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.5.2
+2 info using node@v20.13.1
+3 timing npm:load:whichnode Completed in 3ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 4ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:C:\Projects\LLM -Trace-visualiser\client\.npmrc Completed in 0ms
+10 timing config:load:project Completed in 2ms
+11 timing config:load:file:C:\Users\HP\.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\etc\npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:setEnvs Completed in 1ms
+16 timing config:load Completed in 12ms
+17 timing npm:load:configload Completed in 12ms
+18 timing config:load:flatten Completed in 2ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm install next@14 react@18 react-dom@18 eslint-config-next@14 eslint@8 @types/react@18 @types/react-dom@18 @auth/core
+22 verbose argv "install" "next@14" "react@18" "react-dom@18" "eslint-config-next@14" "eslint@8" "@types/react@18" "@types/react-dom@18" "@auth/core" "--save-exact" "--cache" ".npm-cache"
+23 timing npm:load:setTitle Completed in 1ms
+24 timing npm:load:display Completed in 0ms
+25 verbose logfile logs-max:10 dir:C:\Projects\LLM -Trace-visualiser\client\.npm-cache\_logs\2026-06-08T12_50_20_125Z-
+26 verbose logfile C:\Projects\LLM -Trace-visualiser\client\.npm-cache\_logs\2026-06-08T12_50_20_125Z-debug-0.log
+27 timing npm:load:logFile Completed in 5ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 59ms
+31 timing arborist:ctor Completed in 1ms
+32 silly logfile done cleaning log files
+33 timing idealTree:init Completed in 195ms
+34 timing idealTree:userRequests Completed in 2ms
+35 silly idealTree buildDeps
+36 silly fetch manifest next@14
+37 timing arborist:ctor Completed in 0ms
+38 http fetch GET 200 https://registry.npmjs.org/next 555ms (cache revalidated)
+39 silly fetch manifest @opentelemetry/api@^1.1.0
+40 http fetch GET 200 https://registry.npmjs.org/@opentelemetry%2fapi 316ms (cache revalidated)
+41 silly fetch manifest @playwright/test@^1.41.2
+42 http fetch GET 200 https://registry.npmjs.org/@playwright%2ftest 125ms (cache revalidated)
+43 silly fetch manifest react@18
+44 http fetch GET 200 https://registry.npmjs.org/react 100ms (cache revalidated)
+45 silly fetch manifest react-dom@18
+46 http fetch GET 200 https://registry.npmjs.org/react-dom 281ms (cache revalidated)
+47 silly fetch manifest sass@^1.3.0
+48 http fetch GET 200 https://registry.npmjs.org/sass 97ms (cache revalidated)
+49 silly fetch manifest @auth/core@*
+50 http fetch GET 200 https://registry.npmjs.org/@auth%2fcore 1172ms (cache revalidated)
+51 silly fetch manifest @simplewebauthn/browser@^9.0.1
+52 http fetch GET 200 https://registry.npmjs.org/@simplewebauthn%2fbrowser 769ms (cache revalidated)
+53 silly fetch manifest @simplewebauthn/server@^9.0.2
+54 http fetch GET 200 https://registry.npmjs.org/@simplewebauthn%2fserver 820ms (cache revalidated)
+55 silly fetch manifest nodemailer@^7
+56 http fetch GET 200 https://registry.npmjs.org/nodemailer 113ms (cache revalidated)
+57 silly fetch manifest @types/react@18
+58 http fetch GET 200 https://registry.npmjs.org/@types%2freact 351ms (cache miss)
+59 silly fetch manifest @types/react-dom@18
+60 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 134ms (cache miss)
+61 silly fetch manifest eslint@8
+62 http fetch GET 200 https://registry.npmjs.org/eslint 122ms (cache revalidated)
+63 silly fetch manifest eslint-config-next@14
+64 http fetch GET 200 https://registry.npmjs.org/eslint-config-next 135ms (cache revalidated)
+65 silly fetch manifest typescript@^5
+66 http fetch GET 200 https://registry.npmjs.org/typescript 722ms (cache miss)
+67 silly placeDep ROOT @auth/core@0.34.3 REPLACE for: client@0.1.0 want: *
+68 silly placeDep ROOT @types/react@18.3.31 REPLACE for: client@0.1.0 want: 18
+69 silly placeDep ROOT @types/react-dom@18.3.7 REPLACE for: client@0.1.0 want: 18
+70 silly placeDep ROOT eslint@8.57.1 REPLACE for: client@0.1.0 want: 8
+71 silly placeDep ROOT eslint-config-next@14.2.35 REPLACE for: client@0.1.0 want: 14
+72 silly placeDep ROOT next@14.2.35 REPLACE for: client@0.1.0 want: 14
+73 silly placeDep ROOT react@18.3.1 REPLACE for: next@14.2.35 want: ^18.2.0
+74 warn ERESOLVE overriding peer dependency {
+74 warn ERESOLVE   code: 'ERESOLVE',
+74 warn ERESOLVE   edge: {
+74 warn ERESOLVE     type: 'peer',
+74 warn ERESOLVE     name: 'react',
+74 warn ERESOLVE     spec: '^19.2.4',
+74 warn ERESOLVE     from: {
+74 warn ERESOLVE       name: 'react-dom',
+74 warn ERESOLVE       version: '19.2.4',
+74 warn ERESOLVE       location: 'node_modules/react-dom',
+74 warn ERESOLVE       isWorkspace: false,
+74 warn ERESOLVE       dependents: [Array]
+74 warn ERESOLVE     }
+74 warn ERESOLVE   },
+74 warn ERESOLVE   dep: {
+74 warn ERESOLVE     name: 'react',
+74 warn ERESOLVE     version: '18.3.1',
+74 warn ERESOLVE     whileInstalling: {
+74 warn ERESOLVE       name: 'client',
+74 warn ERESOLVE       version: '0.1.0',
+74 warn ERESOLVE       path: 'C:\\Projects\\LLM -Trace-visualiser\\client'
+74 warn ERESOLVE     },
+74 warn ERESOLVE     location: 'node_modules/react',
+74 warn ERESOLVE     isWorkspace: false,
+74 warn ERESOLVE     dependents: [ [Object] ]
+74 warn ERESOLVE   },
+74 warn ERESOLVE   force: false,
+74 warn ERESOLVE   isMine: true,
+74 warn ERESOLVE   strictPeerDeps: false,
+74 warn ERESOLVE   current: {
+74 warn ERESOLVE     name: 'react',
+74 warn ERESOLVE     version: '19.2.4',
+74 warn ERESOLVE     location: 'node_modules/react',
+74 warn ERESOLVE     isWorkspace: false,
+74 warn ERESOLVE     dependents: [ [Object] ]
+74 warn ERESOLVE   },
+74 warn ERESOLVE   peerConflict: {
+74 warn ERESOLVE     name: 'react',
+74 warn ERESOLVE     version: '19.2.4',
+74 warn ERESOLVE     location: 'node_modules/react',
+74 warn ERESOLVE     isWorkspace: false,
+74 warn ERESOLVE     dependents: [ [Object] ]
+74 warn ERESOLVE   }
+74 warn ERESOLVE }
+75 silly placeDep ROOT react-dom@18.3.1 REPLACE for: next@14.2.35 want: ^18.2.0
+76 silly placeDep ROOT react@18.3.1 REPLACE for: client@0.1.0 want: 18
+77 silly placeDep ROOT react-dom@18.3.1 REPLACE for: client@0.1.0 want: 18
+78 silly fetch manifest jose@^5.1.3
+79 silly fetch manifest cookie@0.6.0
+80 silly fetch manifest preact@10.11.3
+81 silly fetch manifest oauth4webapi@^2.10.4
+82 silly fetch manifest @types/cookie@0.6.0
+83 silly fetch manifest preact-render-to-string@5.2.3
+84 silly fetch manifest @types/prop-types@*
+85 silly fetch manifest ajv@^6.12.4
+86 silly fetch manifest espree@^9.6.1
+87 silly fetch manifest ignore@^5.2.0
+88 silly fetch manifest globals@^13.19.0
+89 http fetch GET 200 https://registry.npmjs.org/jose 444ms (cache miss)
+90 silly fetch manifest js-yaml@^4.1.0
+91 http fetch GET 200 https://registry.npmjs.org/@types%2fprop-types 691ms (cache miss)
+92 silly fetch manifest doctrine@^3.0.0
+93 http fetch GET 200 https://registry.npmjs.org/cookie 701ms (cache miss)
+94 silly fetch manifest graphemer@^1.4.0
+95 http fetch GET 200 https://registry.npmjs.org/oauth4webapi 741ms (cache miss)
+96 silly fetch manifest @eslint/js@8.57.1
+97 http fetch GET 200 https://registry.npmjs.org/@types%2fcookie 823ms (cache miss)
+98 silly fetch manifest strip-ansi@^6.0.1
+99 http fetch GET 200 https://registry.npmjs.org/js-yaml 342ms (cache miss)
+100 silly fetch manifest text-table@^0.2.0
+101 http fetch GET 200 https://registry.npmjs.org/ignore 949ms (cache miss)
+102 silly fetch manifest eslint-scope@^7.2.2
+103 http fetch GET 200 https://registry.npmjs.org/espree 983ms (cache miss)
+104 silly fetch manifest is-path-inside@^3.0.3
+105 http fetch GET 200 https://registry.npmjs.org/globals 992ms (cache miss)
+106 silly fetch manifest fast-deep-equal@^3.1.3
+107 http fetch GET 200 https://registry.npmjs.org/graphemer 380ms (cache miss)
+108 silly fetch manifest @eslint/eslintrc@^2.1.4
+109 http fetch GET 200 https://registry.npmjs.org/doctrine 404ms (cache miss)
+110 silly fetch manifest file-entry-cache@^6.0.1
+111 http fetch GET 200 https://registry.npmjs.org/strip-ansi 333ms (cache miss)
+112 silly fetch manifest eslint-visitor-keys@^3.4.3
+113 http fetch GET 200 https://registry.npmjs.org/text-table 338ms (cache miss)
+114 silly fetch manifest @ungap/structured-clone@^1.2.0
+115 http fetch GET 200 https://registry.npmjs.org/@eslint%2fjs 466ms (cache miss)
+116 silly fetch manifest @humanwhocodes/config-array@^0.13.0
+117 http fetch GET 200 https://registry.npmjs.org/preact-render-to-string 1249ms (cache miss)
+118 silly fetch manifest @rushstack/eslint-patch@^1.3.3
+119 http fetch GET 200 https://registry.npmjs.org/is-path-inside 312ms (cache miss)
+120 silly fetch manifest @next/eslint-plugin-next@14.2.35
+121 http fetch GET 200 https://registry.npmjs.org/eslint-scope 359ms (cache miss)
+122 silly fetch manifest @typescript-eslint/parser@^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0
+123 http fetch GET 200 https://registry.npmjs.org/fast-deep-equal 363ms (cache miss)
+124 silly fetch manifest eslint-plugin-react-hooks@^4.5.0 || 5.0.0-canary-7118f5dd7-20230705
+125 http fetch GET 200 https://registry.npmjs.org/@eslint%2feslintrc 422ms (cache miss)
+126 silly fetch manifest @typescript-eslint/eslint-plugin@^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0
+127 http fetch GET 200 https://registry.npmjs.org/eslint-visitor-keys 369ms (cache miss)
+128 silly fetch manifest busboy@1.6.0
+129 http fetch GET 200 https://registry.npmjs.org/@ungap%2fstructured-clone 383ms (cache miss)
+130 silly fetch manifest @next/env@14.2.35
+131 http fetch GET 200 https://registry.npmjs.org/file-entry-cache 489ms (cache miss)
+132 silly fetch manifest styled-jsx@5.1.1
+133 http fetch GET 200 https://registry.npmjs.org/ajv 1623ms (cache miss)
+134 silly fetch manifest @swc/helpers@0.5.5
+135 http fetch GET 200 https://registry.npmjs.org/@rushstack%2feslint-patch 496ms (cache miss)
+136 silly fetch manifest @next/swc-darwin-x64@14.2.33
+137 http fetch GET 200 https://registry.npmjs.org/@humanwhocodes%2fconfig-array 612ms (cache miss)
+138 silly fetch manifest @next/swc-darwin-arm64@14.2.33
+139 http fetch GET 200 https://registry.npmjs.org/preact 1885ms (cache miss)
+140 silly fetch manifest @next/swc-linux-x64-gnu@14.2.33
+141 http fetch GET 200 https://registry.npmjs.org/busboy 531ms (cache miss)
+142 silly fetch manifest @next/swc-linux-x64-musl@14.2.33
+143 http fetch GET 200 https://registry.npmjs.org/@swc%2fhelpers 537ms (cache miss)
+144 silly fetch manifest @next/swc-win32-x64-msvc@14.2.33
+145 http fetch GET 200 https://registry.npmjs.org/styled-jsx 971ms (cache miss)
+146 silly fetch manifest @next/swc-linux-arm64-gnu@14.2.33
+147 http fetch GET 200 https://registry.npmjs.org/@next%2feslint-plugin-next 1949ms (cache miss)
+148 silly fetch manifest @next/swc-win32-ia32-msvc@14.2.33
+149 http fetch GET 200 https://registry.npmjs.org/eslint-plugin-react-hooks 2060ms (cache miss)
+150 silly fetch manifest @next/swc-linux-arm64-musl@14.2.33
+151 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-linux-arm64-gnu 1810ms (cache miss)
+152 silly fetch manifest @next/swc-win32-arm64-msvc@14.2.33
+153 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-linux-x64-gnu 3455ms (cache miss)
+154 silly fetch manifest scheduler@^0.23.2
+155 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-darwin-arm64 3913ms (cache miss)
+156 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-darwin-x64 4286ms (cache miss)
+157 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-linux-x64-musl 4226ms (cache miss)
+158 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-win32-ia32-msvc 3080ms (cache miss)
+159 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-win32-x64-msvc 4332ms (cache miss)
+160 http fetch GET 200 https://registry.npmjs.org/@next%2fenv 5693ms (cache miss)
+161 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-linux-arm64-musl 3763ms (cache miss)
+162 http fetch GET 200 https://registry.npmjs.org/@next%2fswc-win32-arm64-msvc 3038ms (cache miss)
+163 http fetch GET 200 https://registry.npmjs.org/scheduler 2350ms (cache miss)
+164 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2fparser 7098ms (cache miss)
+165 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2feslint-plugin 7303ms (cache miss)
+166 timing idealTree:#root Completed in 18221ms
+167 silly placeDep ROOT @types/cookie@0.6.0 OK for: @auth/core@0.34.3 want: 0.6.0
+168 silly placeDep ROOT cookie@0.6.0 OK for: @auth/core@0.34.3 want: 0.6.0
+169 silly placeDep ROOT jose@5.10.0 OK for: @auth/core@0.34.3 want: ^5.1.3
+170 silly placeDep ROOT oauth4webapi@2.17.0 OK for: @auth/core@0.34.3 want: ^2.10.4
+171 silly placeDep ROOT preact@10.11.3 OK for: @auth/core@0.34.3 want: 10.11.3
+172 silly placeDep ROOT preact-render-to-string@5.2.3 OK for: @auth/core@0.34.3 want: 5.2.3
+173 silly fetch manifest pretty-format@^3.8.0
+174 http fetch GET 200 https://registry.npmjs.org/pretty-format 403ms (cache miss)
+175 timing idealTree:node_modules/@auth/core Completed in 490ms
+176 timing idealTree:node_modules/@types/cookie Completed in 0ms
+177 silly placeDep ROOT @types/prop-types@15.7.15 OK for: @types/react@18.3.31 want: *
+178 timing idealTree:node_modules/@types/react Completed in 5ms
+179 timing idealTree:node_modules/@types/prop-types Completed in 0ms
+180 timing idealTree:node_modules/@types/react-dom Completed in 0ms
+181 timing idealTree:node_modules/cookie Completed in 0ms
+182 silly placeDep ROOT @eslint/eslintrc@2.1.4 OK for: eslint@8.57.1 want: ^2.1.4
+183 silly placeDep ROOT @eslint/js@8.57.1 OK for: eslint@8.57.1 want: 8.57.1
+184 silly placeDep ROOT @humanwhocodes/config-array@0.13.0 OK for: eslint@8.57.1 want: ^0.13.0
+185 silly placeDep ROOT @ungap/structured-clone@1.3.1 OK for: eslint@8.57.1 want: ^1.2.0
+186 silly placeDep ROOT ajv@6.15.0 OK for: eslint@8.57.1 want: ^6.12.4
+187 silly placeDep node_modules/eslint doctrine@3.0.0 OK for: eslint@8.57.1 want: ^3.0.0
+188 silly placeDep ROOT eslint-scope@7.2.2 OK for: eslint@8.57.1 want: ^7.2.2
+189 silly placeDep ROOT eslint-visitor-keys@3.4.3 OK for: eslint@8.57.1 want: ^3.4.3
+190 silly placeDep ROOT espree@9.6.1 OK for: eslint@8.57.1 want: ^9.6.1
+191 silly placeDep ROOT fast-deep-equal@3.1.3 OK for: eslint@8.57.1 want: ^3.1.3
+192 silly placeDep ROOT file-entry-cache@6.0.1 OK for: eslint@8.57.1 want: ^6.0.1
+193 silly placeDep ROOT globals@13.24.0 OK for: eslint@8.57.1 want: ^13.19.0
+194 silly placeDep ROOT graphemer@1.4.0 OK for: eslint@8.57.1 want: ^1.4.0
+195 silly placeDep ROOT ignore@5.3.2 OK for: eslint@8.57.1 want: ^5.2.0
+196 silly placeDep ROOT is-path-inside@3.0.3 OK for: eslint@8.57.1 want: ^3.0.3
+197 silly placeDep ROOT js-yaml@4.2.0 OK for: eslint@8.57.1 want: ^4.1.0
+198 silly placeDep ROOT strip-ansi@6.0.1 OK for: eslint@8.57.1 want: ^6.0.1
+199 silly placeDep ROOT text-table@0.2.0 OK for: eslint@8.57.1 want: ^0.2.0
+200 silly fetch manifest espree@^9.6.0
+201 silly fetch manifest import-fresh@^3.2.1
+202 silly fetch manifest strip-json-comments@^3.1.1
+203 silly fetch manifest @humanwhocodes/object-schema@^2.0.3
+204 silly fetch manifest uri-js@^4.2.2
+205 silly fetch manifest fast-deep-equal@^3.1.1
+206 silly fetch manifest json-schema-traverse@^0.4.1
+207 silly fetch manifest fast-json-stable-stringify@^2.0.0
+208 silly fetch manifest esrecurse@^4.3.0
+209 silly fetch manifest acorn@^8.9.0
+210 silly fetch manifest acorn-jsx@^5.3.2
+211 silly fetch manifest flat-cache@^3.0.4
+212 silly fetch manifest type-fest@^0.20.2
+213 http fetch GET 200 https://registry.npmjs.org/fast-json-stable-stringify 253ms (cache miss)
+214 silly fetch manifest argparse@^2.0.1
+215 http fetch GET 200 https://registry.npmjs.org/esrecurse 259ms (cache miss)
+216 silly fetch manifest ansi-regex@^5.0.1
+217 http fetch GET 200 https://registry.npmjs.org/json-schema-traverse 295ms (cache miss)
+218 http fetch GET 200 https://registry.npmjs.org/@humanwhocodes%2fobject-schema 308ms (cache miss)
+219 http fetch GET 200 https://registry.npmjs.org/uri-js 309ms (cache miss)
+220 http fetch GET 200 https://registry.npmjs.org/import-fresh 326ms (cache miss)
+221 http fetch GET 200 https://registry.npmjs.org/strip-json-comments 328ms (cache miss)
+222 http fetch GET 200 https://registry.npmjs.org/acorn-jsx 309ms (cache miss)
+223 http fetch GET 200 https://registry.npmjs.org/flat-cache 314ms (cache miss)
+224 http fetch GET 200 https://registry.npmjs.org/ansi-regex 123ms (cache miss)
+225 http fetch GET 200 https://registry.npmjs.org/argparse 138ms (cache miss)
+226 http fetch GET 200 https://registry.npmjs.org/acorn 399ms (cache miss)
+227 http fetch GET 200 https://registry.npmjs.org/type-fest 417ms (cache miss)
+228 timing idealTree:node_modules/eslint Completed in 561ms
+229 silly placeDep ROOT import-fresh@3.3.1 OK for: @eslint/eslintrc@2.1.4 want: ^3.2.1
+230 silly placeDep ROOT strip-json-comments@3.1.1 OK for: @eslint/eslintrc@2.1.4 want: ^3.1.1
+231 silly fetch manifest resolve-from@^4.0.0
+232 silly fetch manifest parent-module@^1.0.0
+233 http fetch GET 200 https://registry.npmjs.org/resolve-from 109ms (cache miss)
+234 http fetch GET 200 https://registry.npmjs.org/parent-module 111ms (cache miss)
+235 timing idealTree:node_modules/@eslint/eslintrc Completed in 127ms
+236 timing idealTree:node_modules/@eslint/js Completed in 0ms
+237 silly placeDep ROOT @humanwhocodes/object-schema@2.0.3 OK for: @humanwhocodes/config-array@0.13.0 want: ^2.0.3
+238 timing idealTree:node_modules/@humanwhocodes/config-array Completed in 6ms
+239 timing idealTree:node_modules/@humanwhocodes/object-schema Completed in 0ms
+240 timing idealTree:node_modules/@ungap/structured-clone Completed in 0ms
+241 silly placeDep ROOT fast-json-stable-stringify@2.1.0 OK for: ajv@6.15.0 want: ^2.0.0
+242 silly placeDep ROOT json-schema-traverse@0.4.1 OK for: ajv@6.15.0 want: ^0.4.1
+243 silly placeDep ROOT uri-js@4.4.1 OK for: ajv@6.15.0 want: ^4.2.2
+244 silly fetch manifest punycode@^2.1.0
+245 http fetch GET 200 https://registry.npmjs.org/punycode 123ms (cache miss)
+246 timing idealTree:node_modules/ajv Completed in 145ms
+247 silly fetch manifest eslint@^7.23.0 || ^8.0.0
+248 silly fetch manifest typescript@>=3.3.1
+249 silly placeDep ROOT @next/eslint-plugin-next@14.2.35 OK for: eslint-config-next@14.2.35 want: 14.2.35
+250 silly placeDep ROOT @rushstack/eslint-patch@1.16.1 OK for: eslint-config-next@14.2.35 want: ^1.3.3
+251 silly placeDep ROOT @typescript-eslint/eslint-plugin@8.60.1 OK for: eslint-config-next@14.2.35 want: ^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0
+252 silly placeDep ROOT @typescript-eslint/parser@8.60.1 OK for: @typescript-eslint/eslint-plugin@8.60.1 want: ^8.60.1
+253 silly placeDep ROOT eslint-plugin-react-hooks@5.0.0-canary-7118f5dd7-20230705 OK for: eslint-config-next@14.2.35 want: ^4.5.0 || 5.0.0-canary-7118f5dd7-20230705
+254 silly fetch manifest glob@10.3.10
+255 silly fetch manifest ignore@^7.0.5
+256 silly fetch manifest ts-api-utils@^2.5.0
+257 silly fetch manifest @typescript-eslint/utils@8.60.1
+258 silly fetch manifest @typescript-eslint/type-utils@8.60.1
+259 silly fetch manifest @typescript-eslint/visitor-keys@8.60.1
+260 silly fetch manifest @typescript-eslint/scope-manager@8.60.1
+261 silly fetch manifest @typescript-eslint/types@8.60.1
+262 silly fetch manifest @typescript-eslint/typescript-estree@8.60.1
+263 http fetch GET 200 https://registry.npmjs.org/ts-api-utils 253ms (cache miss)
+264 http fetch GET 200 https://registry.npmjs.org/glob 790ms (cache miss)
+265 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2fscope-manager 1745ms (cache miss)
+266 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2fvisitor-keys 2320ms (cache miss)
+267 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2ftype-utils 3003ms (cache miss)
+268 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2ftypes 3927ms (cache miss)
+269 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2futils 4012ms (cache miss)
+270 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2ftypescript-estree 4044ms (cache miss)
+271 timing idealTree:node_modules/eslint-config-next Completed in 4372ms
+272 silly placeDep ROOT glob@10.3.10 OK for: @next/eslint-plugin-next@14.2.35 want: 10.3.10
+273 silly fetch manifest minipass@^5.0.0 || ^6.0.2 || ^7.0.0
+274 silly fetch manifest jackspeak@^2.3.5
+275 silly fetch manifest minimatch@^9.0.1
+276 silly fetch manifest path-scurry@^1.10.1
+277 silly fetch manifest foreground-child@^3.1.0
+278 http fetch GET 200 https://registry.npmjs.org/foreground-child 126ms (cache miss)
+279 http fetch GET 200 https://registry.npmjs.org/minipass 131ms (cache miss)
+280 http fetch GET 200 https://registry.npmjs.org/jackspeak 138ms (cache miss)
+281 http fetch GET 200 https://registry.npmjs.org/minimatch 232ms (cache miss)
+282 http fetch GET 200 https://registry.npmjs.org/path-scurry 356ms (cache miss)
+283 timing idealTree:node_modules/@next/eslint-plugin-next Completed in 364ms
+284 timing idealTree:node_modules/@rushstack/eslint-patch Completed in 0ms
+285 silly fetch manifest typescript@>=4.8.4 <6.1.0
+286 silly fetch manifest eslint@^8.57.0 || ^9.0.0 || ^10.0.0
+287 silly fetch manifest jiti@*
+288 http fetch GET 200 https://registry.npmjs.org/jiti 96ms (cache revalidated)
+289 silly placeDep ROOT @typescript-eslint/scope-manager@8.60.1 OK for: @typescript-eslint/eslint-plugin@8.60.1 want: 8.60.1
+290 silly placeDep ROOT @typescript-eslint/type-utils@8.60.1 OK for: @typescript-eslint/eslint-plugin@8.60.1 want: 8.60.1
+291 silly placeDep ROOT @typescript-eslint/utils@8.60.1 OK for: @typescript-eslint/eslint-plugin@8.60.1 want: 8.60.1
+292 silly placeDep ROOT @typescript-eslint/visitor-keys@8.60.1 OK for: @typescript-eslint/eslint-plugin@8.60.1 want: 8.60.1
+293 silly placeDep node_modules/@typescript-eslint/eslint-plugin ignore@7.0.5 OK for: @typescript-eslint/eslint-plugin@8.60.1 want: ^7.0.5
+294 silly placeDep ROOT ts-api-utils@2.5.0 OK for: @typescript-eslint/eslint-plugin@8.60.1 want: ^2.5.0
+295 silly fetch manifest eslint-visitor-keys@^5.0.0
+296 timing idealTree:node_modules/@typescript-eslint/eslint-plugin Completed in 126ms
+297 silly placeDep ROOT @typescript-eslint/types@8.60.1 OK for: @typescript-eslint/parser@8.60.1 want: 8.60.1
+298 silly placeDep ROOT @typescript-eslint/typescript-estree@8.60.1 OK for: @typescript-eslint/parser@8.60.1 want: 8.60.1
+299 silly fetch manifest semver@^7.7.3
+300 silly fetch manifest minimatch@^10.2.2
+301 silly fetch manifest @typescript-eslint/tsconfig-utils@8.60.1
+302 silly fetch manifest @typescript-eslint/project-service@8.60.1
+303 http fetch GET 200 https://registry.npmjs.org/semver 109ms (cache miss)
+304 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2ftsconfig-utils 197ms (cache miss)
+305 http fetch GET 200 https://registry.npmjs.org/@typescript-eslint%2fproject-service 420ms (cache miss)
+306 timing idealTree:node_modules/@typescript-eslint/parser Completed in 437ms
+307 timing idealTree:node_modules/@typescript-eslint/scope-manager Completed in 0ms
+308 timing idealTree:node_modules/@typescript-eslint/type-utils Completed in 0ms
+309 timing idealTree:node_modules/@typescript-eslint/types Completed in 0ms
+310 silly placeDep ROOT @typescript-eslint/project-service@8.60.1 OK for: @typescript-eslint/typescript-estree@8.60.1 want: 8.60.1
+311 silly placeDep ROOT @typescript-eslint/tsconfig-utils@8.60.1 OK for: @typescript-eslint/typescript-estree@8.60.1 want: 8.60.1
+312 silly placeDep node_modules/@typescript-eslint/typescript-estree minimatch@10.2.5 OK for: @typescript-eslint/typescript-estree@8.60.1 want: ^10.2.2
+313 silly placeDep node_modules/@typescript-eslint/typescript-estree semver@7.8.2 OK for: @typescript-eslint/typescript-estree@8.60.1 want: ^7.7.3
+314 silly fetch manifest @typescript-eslint/tsconfig-utils@^8.60.1
+315 silly fetch manifest brace-expansion@^5.0.5
+316 http fetch GET 200 https://registry.npmjs.org/brace-expansion 106ms (cache miss)
+317 timing idealTree:node_modules/@typescript-eslint/typescript-estree Completed in 116ms
+318 timing idealTree:node_modules/@typescript-eslint/project-service Completed in 0ms
+319 timing idealTree:node_modules/@typescript-eslint/tsconfig-utils Completed in 0ms
+320 timing idealTree:node_modules/@typescript-eslint/utils Completed in 0ms
+321 silly placeDep node_modules/@typescript-eslint/visitor-keys eslint-visitor-keys@5.0.1 OK for: @typescript-eslint/visitor-keys@8.60.1 want: ^5.0.0
+322 timing idealTree:node_modules/@typescript-eslint/visitor-keys Completed in 3ms
+323 timing idealTree:node_modules/eslint-plugin-react-hooks Completed in 0ms
+324 silly placeDep ROOT esrecurse@4.3.0 OK for: eslint-scope@7.2.2 want: ^4.3.0
+325 timing idealTree:node_modules/eslint-scope Completed in 2ms
+326 timing idealTree:node_modules/eslint-visitor-keys Completed in 0ms
+327 silly placeDep ROOT acorn@8.16.0 OK for: espree@9.6.1 want: ^8.9.0
+328 silly placeDep ROOT acorn-jsx@5.3.2 OK for: espree@9.6.1 want: ^5.3.2
+329 timing idealTree:node_modules/espree Completed in 2ms
+330 timing idealTree:node_modules/acorn Completed in 0ms
+331 timing idealTree:node_modules/acorn-jsx Completed in 0ms
+332 timing idealTree:node_modules/esrecurse Completed in 0ms
+333 timing idealTree:node_modules/fast-deep-equal Completed in 0ms
+334 timing idealTree:node_modules/fast-json-stable-stringify Completed in 0ms
+335 silly placeDep ROOT flat-cache@3.2.0 OK for: file-entry-cache@6.0.1 want: ^3.0.4
+336 silly fetch manifest keyv@^4.5.3
+337 silly fetch manifest rimraf@^3.0.2
+338 silly fetch manifest flatted@^3.2.9
+339 http fetch GET 200 https://registry.npmjs.org/flatted 101ms (cache miss)
+340 http fetch GET 200 https://registry.npmjs.org/keyv 107ms (cache miss)
+341 http fetch GET 200 https://registry.npmjs.org/rimraf 252ms (cache miss)
+342 timing idealTree:node_modules/file-entry-cache Completed in 260ms
+343 silly placeDep ROOT flatted@3.4.2 OK for: flat-cache@3.2.0 want: ^3.2.9
+344 silly placeDep ROOT keyv@4.5.4 OK for: flat-cache@3.2.0 want: ^4.5.3
+345 silly placeDep ROOT rimraf@3.0.2 OK for: flat-cache@3.2.0 want: ^3.0.2
+346 silly fetch manifest json-buffer@3.0.1
+347 silly fetch manifest glob@^7.1.3
+348 http fetch GET 200 https://registry.npmjs.org/json-buffer 93ms (cache miss)
+349 timing idealTree:node_modules/flat-cache Completed in 100ms
+350 timing idealTree:node_modules/flatted Completed in 0ms
+351 silly placeDep ROOT foreground-child@3.3.1 OK for: glob@10.3.10 want: ^3.1.0
+352 silly placeDep ROOT jackspeak@2.3.6 OK for: glob@10.3.10 want: ^2.3.5
+353 silly placeDep node_modules/glob minimatch@9.0.9 OK for: glob@10.3.10 want: ^9.0.1
+354 silly placeDep ROOT minipass@7.1.3 OK for: glob@10.3.10 want: ^5.0.0 || ^6.0.2 || ^7.0.0
+355 silly placeDep ROOT path-scurry@1.11.1 OK for: glob@10.3.10 want: ^1.10.1
+356 silly fetch manifest signal-exit@^4.0.1
+357 silly fetch manifest @isaacs/cliui@^8.0.2
+358 silly fetch manifest @pkgjs/parseargs@^0.11.0
+359 silly fetch manifest brace-expansion@^2.0.2
+360 silly fetch manifest lru-cache@^10.2.0
+361 http fetch GET 200 https://registry.npmjs.org/@isaacs%2fcliui 94ms (cache miss)
+362 http fetch GET 200 https://registry.npmjs.org/@pkgjs%2fparseargs 96ms (cache miss)
+363 http fetch GET 200 https://registry.npmjs.org/signal-exit 101ms (cache miss)
+364 http fetch GET 200 https://registry.npmjs.org/lru-cache 136ms (cache miss)
+365 timing idealTree:node_modules/glob Completed in 159ms
+366 silly placeDep ROOT signal-exit@4.1.0 OK for: foreground-child@3.3.1 want: ^4.0.1
+367 timing idealTree:node_modules/foreground-child Completed in 2ms
+368 silly placeDep ROOT type-fest@0.20.2 OK for: globals@13.24.0 want: ^0.20.2
+369 timing idealTree:node_modules/globals Completed in 2ms
+370 timing idealTree:node_modules/graphemer Completed in 0ms
+371 timing idealTree:node_modules/ignore Completed in 0ms
+372 silly placeDep ROOT parent-module@1.0.1 OK for: import-fresh@3.3.1 want: ^1.0.0
+373 silly placeDep ROOT resolve-from@4.0.0 OK for: import-fresh@3.3.1 want: ^4.0.0
+374 silly fetch manifest callsites@^3.0.0
+375 http fetch GET 200 https://registry.npmjs.org/callsites 74ms (cache miss)
+376 timing idealTree:node_modules/import-fresh Completed in 77ms
+377 timing idealTree:node_modules/is-path-inside Completed in 0ms
+378 silly placeDep ROOT @isaacs/cliui@8.0.2 OK for: jackspeak@2.3.6 want: ^8.0.2
+379 silly placeDep ROOT @pkgjs/parseargs@0.11.0 OK for: jackspeak@2.3.6 want: ^0.11.0
+380 silly fetch manifest wrap-ansi@^8.1.0
+381 silly fetch manifest strip-ansi@^7.0.1
+382 silly fetch manifest string-width@^5.1.2
+383 silly fetch manifest wrap-ansi-cjs@npm:wrap-ansi@^7.0.0
+384 silly fetch manifest strip-ansi-cjs@npm:strip-ansi@^6.0.1
+385 silly fetch manifest string-width-cjs@npm:string-width@^4.2.0
+386 http fetch GET 200 https://registry.npmjs.org/wrap-ansi 75ms (cache miss)
+387 http fetch GET 200 https://registry.npmjs.org/string-width 87ms (cache miss)
+388 http fetch GET 200 https://registry.npmjs.org/string-width 95ms (cache miss)
+389 http fetch GET 200 https://registry.npmjs.org/wrap-ansi 108ms (cache miss)
+390 timing idealTree:node_modules/jackspeak Completed in 112ms
+391 silly placeDep ROOT string-width@5.1.2 OK for: @isaacs/cliui@8.0.2 want: ^5.1.2
+392 silly placeDep ROOT string-width-cjs@4.2.3 OK for: @isaacs/cliui@8.0.2 want: npm:string-width@^4.2.0
+393 silly placeDep node_modules/@isaacs/cliui strip-ansi@7.2.0 OK for: @isaacs/cliui@8.0.2 want: ^7.0.1
+394 silly placeDep ROOT strip-ansi-cjs@6.0.1 OK for: @isaacs/cliui@8.0.2 want: npm:strip-ansi@^6.0.1
+395 silly placeDep ROOT wrap-ansi@8.1.0 OK for: @isaacs/cliui@8.0.2 want: ^8.1.0
+396 silly placeDep ROOT wrap-ansi-cjs@7.0.0 OK for: @isaacs/cliui@8.0.2 want: npm:wrap-ansi@^7.0.0
+397 silly fetch manifest eastasianwidth@^0.2.0
+398 silly fetch manifest emoji-regex@^8.0.0
+399 silly fetch manifest is-fullwidth-code-point@^3.0.0
+400 silly fetch manifest ansi-regex@^6.2.2
+401 silly fetch manifest ansi-styles@^6.1.0
+402 silly fetch manifest string-width@^4.1.0
+403 http fetch GET 200 https://registry.npmjs.org/eastasianwidth 74ms (cache miss)
+404 http fetch GET 200 https://registry.npmjs.org/is-fullwidth-code-point 82ms (cache miss)
+405 http fetch GET 200 https://registry.npmjs.org/ansi-styles 86ms (cache miss)
+406 http fetch GET 200 https://registry.npmjs.org/emoji-regex 100ms (cache miss)
+407 timing idealTree:node_modules/@isaacs/cliui Completed in 111ms
+408 timing idealTree:node_modules/@pkgjs/parseargs Completed in 0ms
+409 timing idealTree:node_modules/jose Completed in 0ms
+410 silly placeDep ROOT argparse@2.0.1 OK for: js-yaml@4.2.0 want: ^2.0.1
+411 timing idealTree:node_modules/js-yaml Completed in 2ms
+412 timing idealTree:node_modules/argparse Completed in 0ms
+413 timing idealTree:node_modules/json-schema-traverse Completed in 0ms
+414 silly placeDep ROOT json-buffer@3.0.1 OK for: keyv@4.5.4 want: 3.0.1
+415 timing idealTree:node_modules/keyv Completed in 2ms
+416 timing idealTree:node_modules/json-buffer Completed in 0ms
+417 timing idealTree:node_modules/minipass Completed in 0ms
+418 silly fetch manifest react@^18.2.0
+419 silly placeDep ROOT @next/env@14.2.35 OK for: next@14.2.35 want: 14.2.35
+420 silly placeDep ROOT @next/swc-darwin-arm64@14.2.33 OK for: next@14.2.35 want: 14.2.33
+421 silly placeDep ROOT @next/swc-darwin-x64@14.2.33 OK for: next@14.2.35 want: 14.2.33
+422 silly placeDep ROOT @next/swc-linux-arm64-gnu@14.2.33 OK for: next@14.2.35 want: 14.2.33
+423 silly placeDep ROOT @next/swc-linux-arm64-musl@14.2.33 OK for: next@14.2.35 want: 14.2.33
+424 silly placeDep ROOT @next/swc-linux-x64-gnu@14.2.33 OK for: next@14.2.35 want: 14.2.33
+425 silly placeDep ROOT @next/swc-linux-x64-musl@14.2.33 OK for: next@14.2.35 want: 14.2.33
+426 silly placeDep ROOT @next/swc-win32-arm64-msvc@14.2.33 OK for: next@14.2.35 want: 14.2.33
+427 silly placeDep ROOT @next/swc-win32-ia32-msvc@14.2.33 OK for: next@14.2.35 want: 14.2.33
+428 silly placeDep ROOT @next/swc-win32-x64-msvc@14.2.33 OK for: next@14.2.35 want: 14.2.33
+429 silly placeDep ROOT @swc/helpers@0.5.5 OK for: next@14.2.35 want: 0.5.5
+430 silly placeDep ROOT busboy@1.6.0 OK for: next@14.2.35 want: 1.6.0
+431 silly placeDep ROOT styled-jsx@5.1.1 OK for: next@14.2.35 want: 5.1.1
+432 silly fetch manifest @swc/counter@^0.1.3
+433 silly fetch manifest streamsearch@^1.1.0
+434 silly fetch manifest client-only@0.0.1
+435 http fetch GET 200 https://registry.npmjs.org/streamsearch 76ms (cache miss)
+436 http fetch GET 200 https://registry.npmjs.org/client-only 77ms (cache miss)
+437 http fetch GET 200 https://registry.npmjs.org/@swc%2fcounter 833ms (cache miss)
+438 timing idealTree:node_modules/next Completed in 859ms
+439 timing idealTree:node_modules/@next/env Completed in 1ms
+440 timing idealTree:node_modules/@next/swc-darwin-arm64 Completed in 0ms
+441 timing idealTree:node_modules/@next/swc-darwin-x64 Completed in 0ms
+442 timing idealTree:node_modules/@next/swc-linux-arm64-gnu Completed in 0ms
+443 timing idealTree:node_modules/@next/swc-linux-arm64-musl Completed in 0ms
+444 timing idealTree:node_modules/@next/swc-linux-x64-gnu Completed in 0ms
+445 timing idealTree:node_modules/@next/swc-linux-x64-musl Completed in 0ms
+446 timing idealTree:node_modules/@next/swc-win32-arm64-msvc Completed in 0ms
+447 timing idealTree:node_modules/@next/swc-win32-ia32-msvc Completed in 0ms
+448 timing idealTree:node_modules/@next/swc-win32-x64-msvc Completed in 0ms
+449 silly placeDep ROOT @swc/counter@0.1.3 OK for: @swc/helpers@0.5.5 want: ^0.1.3
+450 timing idealTree:node_modules/@swc/helpers Completed in 2ms
+451 timing idealTree:node_modules/@swc/counter Completed in 0ms
+452 silly placeDep ROOT streamsearch@1.1.0 OK for: busboy@1.6.0 want: ^1.1.0
+453 timing idealTree:node_modules/busboy Completed in 0ms
+454 silly fetch manifest @auth/core@0.41.2
+455 silly fetch manifest nodemailer@^7.0.7
+456 silly placeDep ROOT @auth/core@0.41.2 REPLACE for: next-auth@5.0.0-beta.31 want: 0.41.2
+457 silly fetch manifest jose@^6.0.6
+458 silly fetch manifest preact@10.24.3
+459 silly fetch manifest oauth4webapi@^3.3.0
+460 silly fetch manifest preact-render-to-string@6.5.11
+461 timing idealTree:node_modules/next-auth Completed in 5ms
+462 silly placeDep ROOT jose@6.2.3 OK for: @auth/core@0.41.2 want: ^6.0.6
+463 silly placeDep ROOT oauth4webapi@3.8.6 OK for: @auth/core@0.41.2 want: ^3.3.0
+464 silly placeDep ROOT preact@10.24.3 OK for: @auth/core@0.41.2 want: 10.24.3
+465 silly placeDep ROOT preact-render-to-string@6.5.11 OK for: @auth/core@0.41.2 want: 6.5.11
+466 timing idealTree:node_modules/@auth/core Completed in 4ms
+467 timing idealTree:node_modules/jose Completed in 0ms
+468 timing idealTree:node_modules/oauth4webapi Completed in 0ms
+469 silly placeDep ROOT callsites@3.1.0 OK for: parent-module@1.0.1 want: ^3.0.0
+470 timing idealTree:node_modules/parent-module Completed in 2ms
+471 timing idealTree:node_modules/callsites Completed in 0ms
+472 silly placeDep ROOT lru-cache@10.4.3 OK for: path-scurry@1.11.1 want: ^10.2.0
+473 timing idealTree:node_modules/path-scurry Completed in 3ms
+474 timing idealTree:node_modules/lru-cache Completed in 0ms
+475 timing idealTree:node_modules/preact Completed in 0ms
+476 timing idealTree:node_modules/preact-render-to-string Completed in 0ms
+477 timing idealTree:node_modules/react Completed in 0ms
+478 silly placeDep ROOT scheduler@0.23.2 OK for: react-dom@18.3.1 want: ^0.23.2
+479 timing idealTree:node_modules/react-dom Completed in 2ms
+480 timing idealTree:node_modules/resolve-from Completed in 0ms
+481 silly placeDep node_modules/rimraf glob@7.2.3 OK for: rimraf@3.0.2 want: ^7.1.3
+482 silly fetch manifest once@^1.3.0
+483 silly fetch manifest inflight@^1.0.4
+484 silly fetch manifest inherits@2
+485 silly fetch manifest fs.realpath@^1.0.0
+486 silly fetch manifest path-is-absolute@^1.0.0
+487 http fetch GET 200 https://registry.npmjs.org/once 73ms (cache miss)
+488 http fetch GET 200 https://registry.npmjs.org/inflight 78ms (cache miss)
+489 http fetch GET 200 https://registry.npmjs.org/path-is-absolute 81ms (cache miss)
+490 http fetch GET 200 https://registry.npmjs.org/fs.realpath 92ms (cache miss)
+491 http fetch GET 200 https://registry.npmjs.org/inherits 94ms (cache miss)
+492 timing idealTree:node_modules/rimraf Completed in 98ms
+493 timing idealTree:node_modules/scheduler Completed in 0ms
+494 timing idealTree:node_modules/signal-exit Completed in 0ms
+495 timing idealTree:node_modules/streamsearch Completed in 0ms
+496 silly placeDep ROOT eastasianwidth@0.2.0 OK for: string-width@5.1.2 want: ^0.2.0
+497 silly placeDep node_modules/string-width strip-ansi@7.2.0 OK for: string-width@5.1.2 want: ^7.0.1
+498 timing idealTree:node_modules/string-width Completed in 2ms
+499 timing idealTree:node_modules/eastasianwidth Completed in 0ms
+500 silly placeDep node_modules/string-width-cjs emoji-regex@8.0.0 OK for: string-width@4.2.3 want: ^8.0.0
+501 silly placeDep ROOT is-fullwidth-code-point@3.0.0 OK for: string-width@4.2.3 want: ^3.0.0
+502 timing idealTree:node_modules/string-width-cjs Completed in 1ms
+503 timing idealTree:node_modules/is-fullwidth-code-point Completed in 0ms
+504 silly placeDep ROOT ansi-regex@5.0.1 OK for: strip-ansi@6.0.1 want: ^5.0.1
+505 timing idealTree:node_modules/strip-ansi Completed in 2ms
+506 timing idealTree:node_modules/ansi-regex Completed in 0ms
+507 timing idealTree:node_modules/strip-ansi-cjs Completed in 0ms
+508 timing idealTree:node_modules/strip-json-comments Completed in 1ms
+509 silly placeDep ROOT client-only@0.0.1 OK for: styled-jsx@5.1.1 want: 0.0.1
+510 timing idealTree:node_modules/styled-jsx Completed in 1ms
+511 timing idealTree:node_modules/client-only Completed in 0ms
+512 timing idealTree:node_modules/text-table Completed in 0ms
+513 timing idealTree:node_modules/ts-api-utils Completed in 0ms
+514 timing idealTree:node_modules/type-fest Completed in 0ms
+515 silly placeDep ROOT punycode@2.3.1 OK for: uri-js@4.4.1 want: ^2.1.0
+516 timing idealTree:node_modules/uri-js Completed in 1ms
+517 timing idealTree:node_modules/punycode Completed in 0ms
+518 silly placeDep node_modules/wrap-ansi ansi-styles@6.2.3 OK for: wrap-ansi@8.1.0 want: ^6.1.0
+519 silly placeDep node_modules/wrap-ansi strip-ansi@7.2.0 OK for: wrap-ansi@8.1.0 want: ^7.0.1
+520 timing idealTree:node_modules/wrap-ansi Completed in 2ms
+521 silly placeDep node_modules/wrap-ansi-cjs string-width@4.2.3 OK for: wrap-ansi@7.0.0 want: ^4.1.0
+522 timing idealTree:node_modules/wrap-ansi-cjs Completed in 1ms
+523 silly placeDep node_modules/@isaacs/cliui ansi-regex@6.2.2 OK for: strip-ansi@7.2.0 want: ^6.2.2
+524 timing idealTree:node_modules/@isaacs/cliui/node_modules/strip-ansi Completed in 1ms
+525 timing idealTree:node_modules/@isaacs/cliui/node_modules/ansi-regex Completed in 0ms
+526 timing idealTree:node_modules/@typescript-eslint/eslint-plugin/node_modules/ignore Completed in 0ms
+527 silly placeDep node_modules/@typescript-eslint/typescript-estree brace-expansion@5.0.6 OK for: minimatch@10.2.5 want: ^5.0.5
+528 silly fetch manifest balanced-match@^4.0.2
+529 http fetch GET 200 https://registry.npmjs.org/balanced-match 71ms (cache miss)
+530 timing idealTree:node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch Completed in 73ms
+531 silly placeDep node_modules/@typescript-eslint/typescript-estree balanced-match@4.0.4 OK for: brace-expansion@5.0.6 want: ^4.0.2
+532 timing idealTree:node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion Completed in 1ms
+533 timing idealTree:node_modules/@typescript-eslint/typescript-estree/node_modules/balanced-match Completed in 0ms
+534 timing idealTree:node_modules/@typescript-eslint/typescript-estree/node_modules/semver Completed in 0ms
+535 timing idealTree:node_modules/@typescript-eslint/visitor-keys/node_modules/eslint-visitor-keys Completed in 0ms
+536 timing idealTree:node_modules/eslint/node_modules/doctrine Completed in 0ms
+537 silly placeDep node_modules/glob brace-expansion@2.1.1 OK for: minimatch@9.0.9 want: ^2.0.2
+538 timing idealTree:node_modules/glob/node_modules/minimatch Completed in 1ms
+539 timing idealTree:node_modules/glob/node_modules/brace-expansion Completed in 0ms
+540 silly placeDep ROOT fs.realpath@1.0.0 OK for: glob@7.2.3 want: ^1.0.0
+541 silly placeDep ROOT inflight@1.0.6 OK for: glob@7.2.3 want: ^1.0.4
+542 silly placeDep ROOT inherits@2.0.4 OK for: glob@7.2.3 want: 2
+543 silly placeDep ROOT once@1.4.0 OK for: glob@7.2.3 want: ^1.3.0
+544 silly placeDep ROOT path-is-absolute@1.0.1 OK for: glob@7.2.3 want: ^1.0.0
+545 silly fetch manifest wrappy@1
+546 http fetch GET 200 https://registry.npmjs.org/wrappy 75ms (cache miss)
+547 timing idealTree:node_modules/rimraf/node_modules/glob Completed in 81ms
+548 timing idealTree:node_modules/fs.realpath Completed in 0ms
+549 silly placeDep ROOT wrappy@1.0.2 OK for: inflight@1.0.6 want: 1
+550 timing idealTree:node_modules/inflight Completed in 1ms
+551 timing idealTree:node_modules/inherits Completed in 0ms
+552 timing idealTree:node_modules/once Completed in 0ms
+553 timing idealTree:node_modules/path-is-absolute Completed in 0ms
+554 timing idealTree:node_modules/wrappy Completed in 0ms
+555 timing idealTree:node_modules/string-width-cjs/node_modules/emoji-regex Completed in 0ms
+556 silly placeDep node_modules/string-width ansi-regex@6.2.2 OK for: strip-ansi@7.2.0 want: ^6.2.2
+557 timing idealTree:node_modules/string-width/node_modules/strip-ansi Completed in 1ms
+558 timing idealTree:node_modules/string-width/node_modules/ansi-regex Completed in 0ms
+559 silly placeDep node_modules/wrap-ansi-cjs emoji-regex@8.0.0 OK for: string-width@4.2.3 want: ^8.0.0
+560 timing idealTree:node_modules/wrap-ansi-cjs/node_modules/string-width Completed in 1ms
+561 timing idealTree:node_modules/wrap-ansi-cjs/node_modules/emoji-regex Completed in 0ms
+562 timing idealTree:node_modules/wrap-ansi/node_modules/ansi-styles Completed in 0ms
+563 silly placeDep node_modules/wrap-ansi ansi-regex@6.2.2 OK for: strip-ansi@7.2.0 want: ^6.2.2
+564 timing idealTree:node_modules/wrap-ansi/node_modules/strip-ansi Completed in 1ms
+565 timing idealTree:node_modules/wrap-ansi/node_modules/ansi-regex Completed in 0ms
+566 timing idealTree:buildDeps Completed in 26967ms
+567 timing idealTree:fixDepFlags Completed in 2ms
+568 warn EBADENGINE Unsupported engine {
+568 warn EBADENGINE   package: 'eslint-visitor-keys@5.0.1',
+568 warn EBADENGINE   required: { node: '^20.19.0 || ^22.13.0 || >=24' },
+568 warn EBADENGINE   current: { node: 'v20.13.1', npm: '10.5.2' }
+568 warn EBADENGINE }
+569 timing idealTree Completed in 27171ms
+570 timing reify:loadTrees Completed in 27172ms
+571 timing reify:diffTrees Completed in 18ms
+572 silly reify mark retired [
+572 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\code-frame'
+572 silly reify ]
+573 silly reify mark retired [
+573 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\compat-data'
+573 silly reify ]
+574 silly reify mark retired [
+574 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\core'
+574 silly reify ]
+575 silly reify mark retired [
+575 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\generator'
+575 silly reify ]
+576 silly reify mark retired [
+576 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-compilation-targets'
+576 silly reify ]
+577 silly reify mark retired [
+577 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-globals'
+577 silly reify ]
+578 silly reify mark retired [
+578 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-module-imports'
+578 silly reify ]
+579 silly reify mark retired [
+579 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-module-transforms'
+579 silly reify ]
+580 silly reify mark retired [
+580 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-string-parser'
+580 silly reify ]
+581 silly reify mark retired [
+581 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-validator-identifier'
+581 silly reify ]
+582 silly reify mark retired [
+582 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-validator-option'
+582 silly reify ]
+583 silly reify mark retired [
+583 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helpers'
+583 silly reify ]
+584 silly reify mark retired [
+584 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\parser',
+584 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\parser',
+584 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\parser.cmd',
+584 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\parser.ps1'
+584 silly reify ]
+585 silly reify mark retired [
+585 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\template'
+585 silly reify ]
+586 silly reify mark retired [
+586 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\traverse'
+586 silly reify ]
+587 silly reify mark retired [
+587 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\types'
+587 silly reify ]
+588 silly reify mark retired [
+588 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint-community\\eslint-utils\\node_modules\\eslint-visitor-keys'
+588 silly reify ]
+589 silly reify mark retired [
+589 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\config-array'
+589 silly reify ]
+590 silly reify mark retired [
+590 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\config-helpers'
+590 silly reify ]
+591 silly reify mark retired [
+591 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\core'
+591 silly reify ]
+592 silly reify mark retired [
+592 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\eslintrc'
+592 silly reify ]
+593 silly reify mark retired [
+593 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\js'
+593 silly reify ]
+594 silly reify mark retired [
+594 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\object-schema'
+594 silly reify ]
+595 silly reify mark retired [
+595 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\plugin-kit'
+595 silly reify ]
+596 silly reify mark retired [
+596 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\core'
+596 silly reify ]
+597 silly reify mark retired [
+597 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\node'
+597 silly reify ]
+598 silly reify mark retired [
+598 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\types'
+598 silly reify ]
+599 silly reify mark retired [
+599 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanwhocodes\\retry'
+599 silly reify ]
+600 silly reify mark retired [
+600 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@img\\colour'
+600 silly reify ]
+601 silly reify mark retired [
+601 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@img\\sharp-win32-x64'
+601 silly reify ]
+602 silly reify mark retired [
+602 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\env'
+602 silly reify ]
+603 silly reify mark retired [
+603 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\eslint-plugin-next'
+603 silly reify ]
+604 silly reify mark retired [
+604 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-win32-x64-msvc'
+604 silly reify ]
+605 silly reify mark retired [
+605 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@swc\\helpers'
+605 silly reify ]
+606 silly reify mark retired [
+606 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\estree'
+606 silly reify ]
+607 silly reify mark retired [
+607 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\json-schema'
+607 silly reify ]
+608 silly reify mark retired [
+608 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\react'
+608 silly reify ]
+609 silly reify mark retired [
+609 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\react-dom'
+609 silly reify ]
+610 silly reify mark retired [
+610 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\baseline-browser-mapping',
+610 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\baseline-browser-mapping',
+610 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\baseline-browser-mapping.cmd',
+610 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\baseline-browser-mapping.ps1'
+610 silly reify ]
+611 silly reify mark retired [ 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\braces' ]
+612 silly reify mark retired [
+612 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\browserslist',
+612 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\browserslist',
+612 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\browserslist.cmd',
+612 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\browserslist.ps1'
+612 silly reify ]
+613 silly reify mark retired [
+613 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\convert-source-map'
+613 silly reify ]
+614 silly reify mark retired [
+614 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\electron-to-chromium'
+614 silly reify ]
+615 silly reify mark retired [
+615 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\escalade'
+615 silly reify ]
+616 silly reify mark retired [
+616 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint',
+616 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\eslint',
+616 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\eslint.cmd',
+616 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\eslint.ps1'
+616 silly reify ]
+617 silly reify mark retired [
+617 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-config-next'
+617 silly reify ]
+618 silly reify mark retired [
+618 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-plugin-react-hooks'
+618 silly reify ]
+619 silly reify mark retired [
+619 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-scope'
+619 silly reify ]
+620 silly reify mark retired [
+620 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-visitor-keys'
+620 silly reify ]
+621 silly reify mark retired [ 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\espree' ]
+622 silly reify mark retired [
+622 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\fast-glob'
+622 silly reify ]
+623 silly reify mark retired [
+623 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\file-entry-cache'
+623 silly reify ]
+624 silly reify mark retired [
+624 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\fill-range'
+624 silly reify ]
+625 silly reify mark retired [
+625 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\flat-cache'
+625 silly reify ]
+626 silly reify mark retired [
+626 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\gensync'
+626 silly reify ]
+627 silly reify mark retired [
+627 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\globals'
+627 silly reify ]
+628 silly reify mark retired [
+628 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\hermes-estree'
+628 silly reify ]
+629 silly reify mark retired [
+629 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\hermes-parser'
+629 silly reify ]
+630 silly reify mark retired [
+630 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\is-number'
+630 silly reify ]
+631 silly reify mark retired [
+631 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\jsesc',
+631 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\jsesc',
+631 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\jsesc.cmd',
+631 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\jsesc.ps1'
+631 silly reify ]
+632 silly reify mark retired [
+632 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\json5',
+632 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\json5',
+632 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\json5.cmd',
+632 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\json5.ps1'
+632 silly reify ]
+633 silly reify mark retired [
+633 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lru-cache'
+633 silly reify ]
+634 silly reify mark retired [ 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\merge2' ]
+635 silly reify mark retired [
+635 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\micromatch'
+635 silly reify ]
+636 silly reify mark retired [
+636 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\next',
+636 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\next',
+636 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\next.cmd',
+636 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\next.ps1'
+636 silly reify ]
+637 silly reify mark retired [
+637 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\node-releases'
+637 silly reify ]
+638 silly reify mark retired [
+638 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\picomatch'
+638 silly reify ]
+639 silly reify mark retired [ 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\react' ]
+640 silly reify mark retired [
+640 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\react-dom'
+640 silly reify ]
+641 silly reify mark retired [
+641 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\scheduler'
+641 silly reify ]
+642 silly reify mark retired [ 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\sharp' ]
+643 silly reify mark retired [
+643 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\styled-jsx'
+643 silly reify ]
+644 silly reify mark retired [
+644 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\to-regex-range'
+644 silly reify ]
+645 silly reify mark retired [
+645 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\typescript-eslint'
+645 silly reify ]
+646 silly reify mark retired [
+646 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\update-browserslist-db',
+646 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\update-browserslist-db',
+646 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\update-browserslist-db.cmd',
+646 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\update-browserslist-db.ps1'
+646 silly reify ]
+647 silly reify mark retired [
+647 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\yallist'
+647 silly reify ]
+648 silly reify mark retired [ 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\zod' ]
+649 silly reify mark retired [
+649 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\zod-validation-error'
+649 silly reify ]
+650 silly reify moves {
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\code-frame': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.code-frame-yyvdQx3A',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\compat-data': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.compat-data-4O8KLnNd',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\core': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.core-9sFMoZko',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\generator': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.generator-an2jw6vs',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-compilation-targets': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helper-compilation-targets-VWA1swUv',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-globals': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helper-globals-o8lX2m8U',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-module-imports': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helper-module-imports-E5kbOsbo',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-module-transforms': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helper-module-transforms-SnRX9hRL',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-string-parser': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helper-string-parser-JSzcyxWJ',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-validator-identifier': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helper-validator-identifier-CJH8EL7J',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helper-validator-option': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helper-validator-option-SEaAlPOW',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\helpers': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.helpers-b61UKcqZ',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\parser': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.parser-18Z8hXKv',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\parser': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.parser-lhB4QRe1',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\parser.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.parser.cmd-d2S5uL2J',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\parser.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.parser.ps1-8fb337pH',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\template': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.template-h9aBuMeK',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\traverse': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.traverse-5Q9GLkzK',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\types': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@babel\\.types-bENaXWIe',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint-community\\eslint-utils\\node_modules\\eslint-visitor-keys': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint-community\\eslint-utils\\node_modules\\.eslint-visitor-keys-2EGrSdU5',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\config-array': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\.config-array-xuWtNZuD',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\config-helpers': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\.config-helpers-zBSTcsTR',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\core': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\.core-3b6xzY9r',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\eslintrc': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\.eslintrc-6yXWe14u',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\js': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\.js-sVXzpADM',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\object-schema': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\.object-schema-hA699x7H',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\plugin-kit': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@eslint\\.plugin-kit-PXv1CnAc',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\core': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\.core-HTMAiyrM',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\node': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\.node-Rr1BEGU0',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\types': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanfs\\.types-zC29NfHQ',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanwhocodes\\retry': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@humanwhocodes\\.retry-Zmun84oL',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@img\\colour': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@img\\.colour-JXmNjHxa',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@img\\sharp-win32-x64': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@img\\.sharp-win32-x64-0RRcvkOI',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\env': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\.env-7du1NbEI',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\eslint-plugin-next': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\.eslint-plugin-next-IzDIhadT',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-win32-x64-msvc': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\.swc-win32-x64-msvc-K1igfacc',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@swc\\helpers': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@swc\\.helpers-r2VmrXkB',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\estree': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\.estree-4q3PBSFE',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\json-schema': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\.json-schema-uNGnYddo',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\react': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\.react-R45jG156',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\react-dom': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@types\\.react-dom-JxgATicP',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\baseline-browser-mapping': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.baseline-browser-mapping-HquJQFwJ',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\baseline-browser-mapping': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.baseline-browser-mapping-WmgxdoaF',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\baseline-browser-mapping.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.baseline-browser-mapping.cmd-YuciXnxW',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\baseline-browser-mapping.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.baseline-browser-mapping.ps1-IzIvgyel',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\braces': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.braces-xOrAreaW',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\browserslist': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.browserslist-Sy2fK4f3',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\browserslist': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.browserslist-w6peag6w',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\browserslist.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.browserslist.cmd-jb4naftb',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\browserslist.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.browserslist.ps1-UPpDRclW',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\convert-source-map': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.convert-source-map-8dtub8Ix',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\electron-to-chromium': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.electron-to-chromium-uWEcrcQv',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\escalade': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.escalade-t6E1bsqW',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.eslint-guHJ26A2',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\eslint': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.eslint-FTxXoaj4',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\eslint.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.eslint.cmd-CPjpHU6C',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\eslint.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.eslint.ps1-QDgBCGWq',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-config-next': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.eslint-config-next-aNnG7XBi',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-plugin-react-hooks': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.eslint-plugin-react-hooks-8FQftgUt',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-scope': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.eslint-scope-XppUDp0g',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\eslint-visitor-keys': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.eslint-visitor-keys-cHckSE6a',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\espree': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.espree-aYeyzTMz',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\fast-glob': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.fast-glob-8vH2WHIo',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\file-entry-cache': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.file-entry-cache-nC0wVdla',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\fill-range': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.fill-range-WGQUVgW5',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\flat-cache': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.flat-cache-KSMG0Ese',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\gensync': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.gensync-TM9mXwEC',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\globals': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.globals-ZIj0QT0P',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\hermes-estree': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.hermes-estree-l2XNbdQE',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\hermes-parser': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.hermes-parser-QDDGgvVg',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\is-number': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.is-number-coEdyO7D',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\jsesc': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.jsesc-6LeUcB0Q',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\jsesc': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.jsesc-MIt4Nre0',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\jsesc.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.jsesc.cmd-7IVQ0cxg',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\jsesc.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.jsesc.ps1-ejyGrzVr',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\json5': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.json5-sQDOfAQW',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\json5': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.json5-XAl723E4',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\json5.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.json5.cmd-Tq6pLhnA',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\json5.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.json5.ps1-4EFWV4wn',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lru-cache': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.lru-cache-5lTRvSHm',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\merge2': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.merge2-uAVrkrJI',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\micromatch': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.micromatch-1AneveJn',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\next': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.next-o5HrNtdo',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\next': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.next-Q81LkYOk',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\next.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.next.cmd-EFlnfBhZ',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\next.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.next.ps1-iwNdZuh6',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\node-releases': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.node-releases-JDddUWPb',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\picomatch': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.picomatch-V169dui7',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\react': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.react-NTRrcu57',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\react-dom': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.react-dom-FgsFORU8',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\scheduler': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.scheduler-5U4K1ufV',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\sharp': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.sharp-G5B3CDul',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\styled-jsx': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.styled-jsx-bYPRwAZ6',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\to-regex-range': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.to-regex-range-JmB61Rat',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\typescript-eslint': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.typescript-eslint-4NW4YdKq',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\update-browserslist-db': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.update-browserslist-db-cvGCSiua',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\update-browserslist-db': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.update-browserslist-db-BRq1eGks',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\update-browserslist-db.cmd': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.update-browserslist-db.cmd-CP9CM2HS',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\update-browserslist-db.ps1': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.bin\\.update-browserslist-db.ps1-1DEkvqk0',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\yallist': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.yallist-szBdmMRZ',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\zod': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.zod-iQnKRMx9',
+650 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\zod-validation-error': 'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\.zod-validation-error-n5YbdNNE'
+650 silly reify }
+651 timing reify:retireShallow Completed in 127ms
+652 timing reify:createSparse Completed in 62ms
+653 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-wasm32-wasi
+654 silly reify mark deleted [
+654 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-wasm32-wasi'
+654 silly reify ]
+655 timing reifyNode:node_modules/@tailwindcss/oxide-wasm32-wasi Completed in 1ms
+656 timing arborist:ctor Completed in 1ms
+657 timing reify:diffTrees Completed in 11ms
+658 timing reify:loadBundles Completed in 21ms
+659 silly audit bulk request {
+659 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+659 silly audit   '@emnapi/core': [ '1.10.0' ],
+659 silly audit   '@emnapi/runtime': [ '1.11.0', '1.10.0' ],
+659 silly audit   '@emnapi/wasi-threads': [ '1.2.1' ],
+659 silly audit   '@eslint-community/eslint-utils': [ '4.9.1' ],
+659 silly audit   'eslint-visitor-keys': [ '3.4.3', '5.0.1' ],
+659 silly audit   '@eslint-community/regexpp': [ '4.12.2' ],
+659 silly audit   '@humanwhocodes/module-importer': [ '1.0.1' ],
+659 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+659 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+659 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+659 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+659 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+659 silly audit   '@napi-rs/wasm-runtime': [ '1.1.4' ],
+659 silly audit   '@nodelib/fs.scandir': [ '2.1.5' ],
+659 silly audit   '@nodelib/fs.stat': [ '2.0.5' ],
+659 silly audit   '@nodelib/fs.walk': [ '1.2.8' ],
+659 silly audit   '@nolyfill/is-core-module': [ '1.0.39' ],
+659 silly audit   '@panva/hkdf': [ '1.2.1' ],
+659 silly audit   '@rtsao/scc': [ '1.1.0' ],
+659 silly audit   '@tailwindcss/node': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-android-arm64': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-darwin-arm64': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-darwin-x64': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-freebsd-x64': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-linux-arm-gnueabihf': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-linux-arm64-gnu': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-linux-arm64-musl': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-linux-x64-gnu': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-linux-x64-musl': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-win32-arm64-msvc': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/oxide-win32-x64-msvc': [ '4.3.0' ],
+659 silly audit   '@tailwindcss/postcss': [ '4.3.0' ],
+659 silly audit   '@tybys/wasm-util': [ '0.10.2' ],
+659 silly audit   '@types/json5': [ '0.0.29' ],
+659 silly audit   '@types/node': [ '20.19.42' ],
+659 silly audit   'balanced-match': [ '1.0.2', '4.0.4' ],
+659 silly audit   'brace-expansion': [ '1.1.15', '5.0.6', '2.1.1' ],
+659 silly audit   minimatch: [ '3.1.5', '10.2.5', '9.0.9' ],
+659 silly audit   semver: [ '7.8.2', '6.3.1' ],
+659 silly audit   '@unrs/resolver-binding-android-arm-eabi': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-android-arm64': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-darwin-arm64': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-darwin-x64': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-freebsd-x64': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-arm-gnueabihf': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-arm-musleabihf': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-arm64-gnu': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-arm64-musl': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-loong64-gnu': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-loong64-musl': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-ppc64-gnu': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-riscv64-gnu': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-riscv64-musl': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-s390x-gnu': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-x64-gnu': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-linux-x64-musl': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-openharmony-arm64': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-wasm32-wasi': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-win32-arm64-msvc': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-win32-ia32-msvc': [ '1.12.2' ],
+659 silly audit   '@unrs/resolver-binding-win32-x64-msvc': [ '1.12.2' ],
+659 silly audit   'ansi-styles': [ '4.3.0', '6.2.3' ],
+659 silly audit   'aria-query': [ '5.3.2' ],
+659 silly audit   'array-buffer-byte-length': [ '1.0.2' ],
+659 silly audit   'array-includes': [ '3.1.9' ],
+659 silly audit   'array.prototype.findlast': [ '1.2.5' ],
+659 silly audit   'array.prototype.findlastindex': [ '1.2.6' ],
+659 silly audit   'array.prototype.flat': [ '1.3.3' ],
+659 silly audit   'array.prototype.flatmap': [ '1.3.3' ],
+659 silly audit   'array.prototype.tosorted': [ '1.1.4' ],
+659 silly audit   'arraybuffer.prototype.slice': [ '1.0.4' ],
+659 silly audit   'ast-types-flow': [ '0.0.8' ],
+659 silly audit   'async-function': [ '1.0.0' ],
+659 silly audit   'available-typed-arrays': [ '1.0.7' ],
+659 silly audit   'axe-core': [ '4.12.0' ],
+659 silly audit   'axobject-query': [ '4.1.0' ],
+659 silly audit   'call-bind': [ '1.0.9' ],
+659 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+659 silly audit   'call-bound': [ '1.0.4' ],
+659 silly audit   'caniuse-lite': [ '1.0.30001797' ],
+659 silly audit   chalk: [ '4.1.2' ],
+659 silly audit   clsx: [ '2.1.1' ],
+659 silly audit   'color-convert': [ '2.0.1' ],
+659 silly audit   'color-name': [ '1.1.4' ],
+659 silly audit   'concat-map': [ '0.0.1' ],
+659 silly audit   'cross-spawn': [ '7.0.6' ],
+659 silly audit   csstype: [ '3.2.3' ],
+659 silly audit   'damerau-levenshtein': [ '1.0.8' ],
+659 silly audit   'data-view-buffer': [ '1.0.2' ],
+659 silly audit   'data-view-byte-length': [ '1.0.2' ],
+659 silly audit   'data-view-byte-offset': [ '1.0.1' ],
+659 silly audit   debug: [ '4.4.3', '3.2.7' ],
+659 silly audit   'deep-is': [ '0.1.4' ],
+659 silly audit   'define-data-property': [ '1.1.4' ],
+659 silly audit   'define-properties': [ '1.2.1' ],
+659 silly audit   'detect-libc': [ '2.1.2' ],
+659 silly audit   doctrine: [ '2.1.0', '3.0.0' ],
+659 silly audit   'dunder-proto': [ '1.0.1' ],
+659 silly audit   'emoji-regex': [ '9.2.2', '8.0.0' ],
+659 silly audit   'enhanced-resolve': [ '5.23.0' ],
+659 silly audit   'es-abstract': [ '1.24.2' ],
+659 silly audit   'es-define-property': [ '1.0.1' ],
+659 silly audit   'es-errors': [ '1.3.0' ],
+659 silly audit   'es-iterator-helpers': [ '1.3.2' ],
+659 silly audit   'es-object-atoms': [ '1.1.2' ],
+659 silly audit   'es-set-tostringtag': [ '2.1.0' ],
+659 silly audit   'es-shim-unscopables': [ '1.1.0' ],
+659 silly audit   'es-to-primitive': [ '1.3.0' ],
+659 silly audit   'escape-string-regexp': [ '4.0.0' ],
+659 silly audit   'eslint-import-resolver-node': [ '0.3.10' ],
+659 silly audit   'eslint-import-resolver-typescript': [ '3.10.1' ],
+659 silly audit   'eslint-module-utils': [ '2.13.0' ],
+659 silly audit   'eslint-plugin-import': [ '2.32.0' ],
+659 silly audit   'eslint-plugin-jsx-a11y': [ '6.10.2' ],
+659 silly audit   'eslint-plugin-react': [ '7.37.5' ],
+659 silly audit   esquery: [ '1.7.0' ],
+659 silly audit   estraverse: [ '5.3.0' ],
+659 silly audit   esutils: [ '2.0.3' ],
+659 silly audit   'glob-parent': [ '6.0.2' ],
+659 silly audit   'fast-levenshtein': [ '2.0.6' ],
+659 silly audit   fastq: [ '1.20.1' ],
+659 silly audit   'find-up': [ '5.0.0' ],
+659 silly audit   'for-each': [ '0.3.5' ],
+659 silly audit   'framer-motion': [ '12.40.0' ],
+659 silly audit   'function-bind': [ '1.1.2' ],
+659 silly audit   'function.prototype.name': [ '1.1.8' ],
+659 silly audit   'functions-have-names': [ '1.2.3' ],
+659 silly audit   'generator-function': [ '2.0.1' ],
+659 silly audit   'get-intrinsic': [ '1.3.0' ],
+659 silly audit   'get-proto': [ '1.0.1' ],
+659 silly audit   'get-symbol-description': [ '1.1.0' ],
+659 silly audit   'get-tsconfig': [ '4.14.0' ],
+659 silly audit   globalthis: [ '1.0.4' ],
+659 silly audit   gopd: [ '1.2.0' ],
+659 silly audit   'graceful-fs': [ '4.2.11' ],
+659 silly audit   'has-bigints': [ '1.1.0' ],
+659 silly audit   'has-flag': [ '4.0.0' ],
+659 silly audit   'has-property-descriptors': [ '1.0.2' ],
+659 silly audit   'has-proto': [ '1.2.0' ],
+659 silly audit   'has-symbols': [ '1.1.0' ],
+659 silly audit   'has-tostringtag': [ '1.0.2' ],
+659 silly audit   hasown: [ '2.0.4' ],
+659 silly audit   imurmurhash: [ '0.1.4' ],
+659 silly audit   'internal-slot': [ '1.1.0' ],
+659 silly audit   'is-array-buffer': [ '3.0.5' ],
+659 silly audit   'is-async-function': [ '2.1.1' ],
+659 silly audit   'is-bigint': [ '1.1.0' ],
+659 silly audit   'is-boolean-object': [ '1.2.2' ],
+659 silly audit   'is-bun-module': [ '2.0.0' ],
+659 silly audit   'is-callable': [ '1.2.7' ],
+659 silly audit   'is-core-module': [ '2.16.2' ],
+659 silly audit   'is-data-view': [ '1.0.2' ],
+659 silly audit   'is-date-object': [ '1.1.0' ],
+659 silly audit   'is-extglob': [ '2.1.1' ],
+659 silly audit   'is-finalizationregistry': [ '1.1.1' ],
+659 silly audit   'is-generator-function': [ '1.1.2' ],
+659 silly audit   'is-glob': [ '4.0.3' ],
+659 silly audit   'is-map': [ '2.0.3' ],
+659 silly audit   'is-negative-zero': [ '2.0.3' ],
+659 silly audit   'is-number-object': [ '1.1.1' ],
+659 silly audit   'is-regex': [ '1.2.1' ],
+659 silly audit   'is-set': [ '2.0.3' ],
+659 silly audit   'is-shared-array-buffer': [ '1.0.4' ],
+659 silly audit   'is-string': [ '1.1.1' ],
+659 silly audit   'is-symbol': [ '1.1.1' ],
+659 silly audit   'is-typed-array': [ '1.1.15' ],
+659 silly audit   'is-weakmap': [ '2.0.2' ],
+659 silly audit   'is-weakref': [ '1.1.1' ],
+659 silly audit   'is-weakset': [ '2.0.4' ],
+659 silly audit   isarray: [ '2.0.5' ],
+659 silly audit   isexe: [ '2.0.0' ],
+659 silly audit   'iterator.prototype': [ '1.1.5' ],
+659 silly audit   jiti: [ '2.7.0' ],
+659 silly audit   'js-tokens': [ '4.0.0' ],
+659 silly audit   'json-stable-stringify-without-jsonify': [ '1.0.1' ],
+659 silly audit   json5: [ '1.0.2' ],
+659 silly audit   'jsx-ast-utils': [ '3.3.5' ],
+659 silly audit   'language-subtag-registry': [ '0.3.23' ],
+659 silly audit   'language-tags': [ '1.0.9' ],
+659 silly audit   levn: [ '0.4.1' ],
+659 silly audit   lightningcss: [ '1.32.0' ],
+659 silly audit   'lightningcss-android-arm64': [ '1.32.0' ],
+659 silly audit   'lightningcss-darwin-arm64': [ '1.32.0' ],
+659 silly audit   'lightningcss-darwin-x64': [ '1.32.0' ],
+659 silly audit   'lightningcss-freebsd-x64': [ '1.32.0' ],
+659 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.32.0' ],
+659 silly audit   'lightningcss-linux-arm64-gnu': [ '1.32.0' ],
+659 silly audit   'lightningcss-linux-arm64-musl': [ '1.32.0' ],
+659 silly audit   'lightningcss-linux-x64-gnu': [ '1.32.0' ],
+659 silly audit   'lightningcss-linux-x64-musl': [ '1.32.0' ],
+659 silly audit   'lightningcss-win32-arm64-msvc': [ '1.32.0' ],
+659 silly audit   'lightningcss-win32-x64-msvc': [ '1.32.0' ],
+659 silly audit   'locate-path': [ '6.0.0' ],
+659 silly audit   'lodash.merge': [ '4.6.2' ],
+659 silly audit   'loose-envify': [ '1.4.0' ],
+659 silly audit   'lucide-react': [ '1.17.0' ],
+659 silly audit   'magic-string': [ '0.30.21' ],
+659 silly audit   'math-intrinsics': [ '1.1.0' ],
+659 silly audit   minimist: [ '1.2.8' ],
+659 silly audit   'motion-dom': [ '12.40.0' ],
+659 silly audit   'motion-utils': [ '12.39.0' ],
+659 silly audit   ms: [ '2.1.3' ],
+659 silly audit   nanoid: [ '3.3.12' ],
+659 silly audit   'napi-postinstall': [ '0.3.4' ],
+659 silly audit   'natural-compare': [ '1.4.0' ],
+659 silly audit   'next-auth': [ '5.0.0-beta.31' ],
+659 silly audit   postcss: [ '8.5.15', '8.4.31' ],
+659 silly audit   'node-exports-info': [ '1.6.0' ],
+659 silly audit   'object-assign': [ '4.1.1' ],
+659 silly audit   'object-inspect': [ '1.13.4' ],
+659 silly audit   'object-keys': [ '1.1.1' ],
+659 silly audit   'object.assign': [ '4.1.7' ],
+659 silly audit   'object.entries': [ '1.1.9' ],
+659 silly audit   'object.fromentries': [ '2.0.8' ],
+659 silly audit   'object.groupby': [ '1.0.3' ],
+659 silly audit   'object.values': [ '1.2.1' ],
+659 silly audit   optionator: [ '0.9.4' ],
+659 silly audit   'own-keys': [ '1.0.1' ],
+659 silly audit   'p-limit': [ '3.1.0' ],
+659 silly audit   'p-locate': [ '5.0.0' ],
+659 silly audit   'path-exists': [ '4.0.0' ],
+659 silly audit   'path-key': [ '3.1.1' ],
+659 silly audit   'path-parse': [ '1.0.7' ],
+659 silly audit   picocolors: [ '1.1.1' ],
+659 silly audit   picomatch: [ '4.0.4' ],
+659 silly audit   'possible-typed-array-names': [ '1.1.0' ],
+659 silly audit   'prelude-ls': [ '1.2.1' ],
+659 silly audit   'prop-types': [ '15.8.1' ],
+659 silly audit   'queue-microtask': [ '1.2.3' ],
+659 silly audit   'react-is': [ '16.13.1' ],
+659 silly audit   'reflect.getprototypeof': [ '1.0.10' ],
+659 silly audit   'regexp.prototype.flags': [ '1.5.4' ],
+659 silly audit   resolve: [ '2.0.0-next.7' ],
+659 silly audit   'resolve-pkg-maps': [ '1.0.0' ],
+659 silly audit   reusify: [ '1.1.0' ],
+659 silly audit   'run-parallel': [ '1.2.0' ],
+659 silly audit   'safe-array-concat': [ '1.1.4' ],
+659 silly audit   'safe-push-apply': [ '1.0.0' ],
+659 silly audit   'safe-regex-test': [ '1.1.0' ],
+659 silly audit   'set-function-length': [ '1.2.2' ],
+659 silly audit   'set-function-name': [ '2.0.2' ],
+659 silly audit   'set-proto': [ '1.0.0' ],
+659 silly audit   'shebang-command': [ '2.0.0' ],
+659 silly audit   'shebang-regex': [ '3.0.0' ],
+659 silly audit   'side-channel': [ '1.1.0' ],
+659 silly audit   'side-channel-list': [ '1.0.1' ],
+659 silly audit   'side-channel-map': [ '1.0.1' ],
+659 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+659 silly audit   'source-map-js': [ '1.2.1' ],
+659 silly audit   'stable-hash': [ '0.0.5' ],
+659 silly audit   'stop-iteration-iterator': [ '1.1.0' ],
+659 silly audit   'string.prototype.includes': [ '2.0.1' ],
+659 silly audit   'string.prototype.matchall': [ '4.0.12' ],
+659 silly audit   'string.prototype.repeat': [ '1.0.0' ],
+659 silly audit   'string.prototype.trim': [ '1.2.11' ],
+659 silly audit   'string.prototype.trimend': [ '1.0.10' ],
+659 silly audit   'string.prototype.trimstart': [ '1.0.8' ],
+659 silly audit   'strip-bom': [ '3.0.0' ],
+659 silly audit   'supports-color': [ '7.2.0' ],
+659 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+659 silly audit   tailwindcss: [ '4.3.0' ],
+659 silly audit   tapable: [ '2.3.3' ],
+659 silly audit   tinyglobby: [ '0.2.17' ],
+659 silly audit   fdir: [ '6.5.0' ],
+659 silly audit   'tsconfig-paths': [ '3.15.0' ],
+659 silly audit   tslib: [ '2.8.1' ],
+659 silly audit   'type-check': [ '0.4.0' ],
+659 silly audit   'typed-array-buffer': [ '1.0.3' ],
+659 silly audit   'typed-array-byte-length': [ '1.0.3' ],
+659 silly audit   'typed-array-byte-offset': [ '1.0.4' ],
+659 silly audit   'typed-array-length': [ '1.0.8' ],
+659 silly audit   typescript: [ '5.9.3' ],
+659 silly audit   'unbox-primitive': [ '1.1.0' ],
+659 silly audit   'undici-types': [ '6.21.0' ],
+659 silly audit   'unrs-resolver': [ '1.12.2' ],
+659 silly audit   which: [ '2.0.2' ],
+659 silly audit   'which-boxed-primitive': [ '1.1.1' ],
+659 silly audit   'which-builtin-type': [ '1.2.1' ],
+659 silly audit   'which-collection': [ '1.0.2' ],
+659 silly audit   'which-typed-array': [ '1.1.22' ],
+659 silly audit   'word-wrap': [ '1.2.5' ],
+659 silly audit   'yocto-queue': [ '0.1.0' ],
+659 silly audit   '@types/react': [ '18.3.31' ],
+659 silly audit   '@types/react-dom': [ '18.3.7' ],
+659 silly audit   eslint: [ '8.57.1' ],
+659 silly audit   'eslint-config-next': [ '14.2.35' ],
+659 silly audit   next: [ '14.2.35' ],
+659 silly audit   react: [ '18.3.1' ],
+659 silly audit   'react-dom': [ '18.3.1' ],
+659 silly audit   '@types/prop-types': [ '15.7.15' ],
+659 silly audit   '@eslint/eslintrc': [ '2.1.4' ],
+659 silly audit   '@eslint/js': [ '8.57.1' ],
+659 silly audit   '@humanwhocodes/config-array': [ '0.13.0' ],
+659 silly audit   '@ungap/structured-clone': [ '1.3.1' ],
+659 silly audit   ajv: [ '6.15.0' ],
+659 silly audit   'eslint-scope': [ '7.2.2' ],
+659 silly audit   espree: [ '9.6.1' ],
+659 silly audit   'fast-deep-equal': [ '3.1.3' ],
+659 silly audit   'file-entry-cache': [ '6.0.1' ],
+659 silly audit   globals: [ '13.24.0' ],
+659 silly audit   graphemer: [ '1.4.0' ],
+659 silly audit   ignore: [ '5.3.2', '7.0.5' ],
+659 silly audit   'is-path-inside': [ '3.0.3' ],
+659 silly audit   'js-yaml': [ '4.2.0' ],
+659 silly audit   'strip-ansi': [ '6.0.1', '7.2.0' ],
+659 silly audit   'text-table': [ '0.2.0' ],
+659 silly audit   'import-fresh': [ '3.3.1' ],
+659 silly audit   'strip-json-comments': [ '3.1.1' ],
+659 silly audit   '@humanwhocodes/object-schema': [ '2.0.3' ],
+659 silly audit   'fast-json-stable-stringify': [ '2.1.0' ],
+659 silly audit   'json-schema-traverse': [ '0.4.1' ],
+659 silly audit   'uri-js': [ '4.4.1' ],
+659 silly audit   '@next/eslint-plugin-next': [ '14.2.35' ],
+659 silly audit   '@rushstack/eslint-patch': [ '1.16.1' ],
+659 silly audit   '@typescript-eslint/eslint-plugin': [ '8.60.1' ],
+659 silly audit   '@typescript-eslint/parser': [ '8.60.1' ],
+659 silly audit   'eslint-plugin-react-hooks': [ '5.0.0-canary-7118f5dd7-20230705' ],
+659 silly audit   glob: [ '10.3.10', '7.2.3' ],
+659 silly audit   '@typescript-eslint/scope-manager': [ '8.60.1' ],
+659 silly audit   '@typescript-eslint/type-utils': [ '8.60.1' ],
+659 silly audit   '@typescript-eslint/utils': [ '8.60.1' ],
+659 silly audit   '@typescript-eslint/visitor-keys': [ '8.60.1' ],
+659 silly audit   'ts-api-utils': [ '2.5.0' ],
+659 silly audit   '@typescript-eslint/types': [ '8.60.1' ],
+659 silly audit   '@typescript-eslint/typescript-estree': [ '8.60.1' ],
+659 silly audit   '@typescript-eslint/project-service': [ '8.60.1' ],
+659 silly audit   '@typescript-eslint/tsconfig-utils': [ '8.60.1' ],
+659 silly audit   esrecurse: [ '4.3.0' ],
+659 silly audit   acorn: [ '8.16.0' ],
+659 silly audit   'acorn-jsx': [ '5.3.2' ],
+659 silly audit   'flat-cache': [ '3.2.0' ],
+659 silly audit   flatted: [ '3.4.2' ],
+659 silly audit   keyv: [ '4.5.4' ],
+659 silly audit   rimraf: [ '3.0.2' ],
+659 silly audit   'foreground-child': [ '3.3.1' ],
+659 silly audit   jackspeak: [ '2.3.6' ],
+659 silly audit   minipass: [ '7.1.3' ],
+659 silly audit   'path-scurry': [ '1.11.1' ],
+659 silly audit   'signal-exit': [ '4.1.0' ],
+659 silly audit   'type-fest': [ '0.20.2' ],
+659 silly audit   'parent-module': [ '1.0.1' ],
+659 silly audit   'resolve-from': [ '4.0.0' ],
+659 silly audit   '@isaacs/cliui': [ '8.0.2' ],
+659 silly audit   '@pkgjs/parseargs': [ '0.11.0' ],
+659 silly audit   'string-width': [ '5.1.2', '4.2.3' ],
+659 silly audit   'wrap-ansi': [ '8.1.0', '7.0.0' ],
+659 silly audit   argparse: [ '2.0.1' ],
+659 silly audit   'json-buffer': [ '3.0.1' ],
+659 silly audit   '@next/env': [ '14.2.35' ],
+659 silly audit   '@next/swc-darwin-arm64': [ '14.2.33' ],
+659 silly audit   '@next/swc-darwin-x64': [ '14.2.33' ],
+659 silly audit   '@next/swc-linux-arm64-gnu': [ '14.2.33' ],
+659 silly audit   '@next/swc-linux-arm64-musl': [ '14.2.33' ],
+659 silly audit   '@next/swc-linux-x64-gnu': [ '14.2.33' ],
+659 silly audit   '@next/swc-linux-x64-musl': [ '14.2.33' ],
+659 silly audit   '@next/swc-win32-arm64-msvc': [ '14.2.33' ],
+659 silly audit   '@next/swc-win32-ia32-msvc': [ '14.2.33' ],
+659 silly audit   '@next/swc-win32-x64-msvc': [ '14.2.33' ],
+659 silly audit   '@swc/helpers': [ '0.5.5' ],
+659 silly audit   busboy: [ '1.6.0' ],
+659 silly audit   'styled-jsx': [ '5.1.1' ],
+659 silly audit   '@swc/counter': [ '0.1.3' ],
+659 silly audit   streamsearch: [ '1.1.0' ],
+659 silly audit   '@auth/core': [ '0.41.2' ],
+659 silly audit   jose: [ '6.2.3' ],
+659 silly audit   oauth4webapi: [ '3.8.6' ],
+659 silly audit   preact: [ '10.24.3' ],
+659 silly audit   'preact-render-to-string': [ '6.5.11' ],
+659 silly audit   callsites: [ '3.1.0' ],
+659 silly audit   'lru-cache': [ '10.4.3' ],
+659 silly audit   scheduler: [ '0.23.2' ],
+659 silly audit   eastasianwidth: [ '0.2.0' ],
+659 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+659 silly audit   'ansi-regex': [ '5.0.1', '6.2.2' ],
+659 silly audit   'client-only': [ '0.0.1' ],
+659 silly audit   punycode: [ '2.3.1' ],
+659 silly audit   'fs.realpath': [ '1.0.0' ],
+659 silly audit   inflight: [ '1.0.6' ],
+659 silly audit   inherits: [ '2.0.4' ],
+659 silly audit   once: [ '1.4.0' ],
+659 silly audit   'path-is-absolute': [ '1.0.1' ],
+659 silly audit   wrappy: [ '1.0.2' ],
+659 silly audit   '@tailwindcss/oxide-wasm32-wasi': [ '4.3.0' ]
+659 silly audit }
+660 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-win32-ia32-msvc
+661 silly reify mark deleted [
+661 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-win32-ia32-msvc'
+661 silly reify ]
+662 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-win32-arm64-msvc
+663 silly reify mark deleted [
+663 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-win32-arm64-msvc'
+663 silly reify ]
+664 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-linux-x64-musl
+665 silly reify mark deleted [
+665 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-linux-x64-musl'
+665 silly reify ]
+666 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-linux-x64-gnu
+667 silly reify mark deleted [
+667 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-linux-x64-gnu'
+667 silly reify ]
+668 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-linux-arm64-musl
+669 silly reify mark deleted [
+669 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-linux-arm64-musl'
+669 silly reify ]
+670 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-linux-arm64-gnu
+671 silly reify mark deleted [
+671 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-linux-arm64-gnu'
+671 silly reify ]
+672 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-darwin-x64
+673 silly reify mark deleted [
+673 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-darwin-x64'
+673 silly reify ]
+674 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@next\swc-darwin-arm64
+675 silly reify mark deleted [
+675 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@next\\swc-darwin-arm64'
+675 silly reify ]
+676 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-win32-arm64-msvc
+677 silly reify mark deleted [
+677 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-win32-arm64-msvc'
+677 silly reify ]
+678 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-linux-x64-musl
+679 silly reify mark deleted [
+679 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-linux-x64-musl'
+679 silly reify ]
+680 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-linux-x64-gnu
+681 silly reify mark deleted [
+681 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-linux-x64-gnu'
+681 silly reify ]
+682 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-linux-arm64-musl
+683 silly reify mark deleted [
+683 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-linux-arm64-musl'
+683 silly reify ]
+684 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-linux-arm64-gnu
+685 silly reify mark deleted [
+685 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-linux-arm64-gnu'
+685 silly reify ]
+686 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-linux-arm-gnueabihf
+687 silly reify mark deleted [
+687 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-linux-arm-gnueabihf'
+687 silly reify ]
+688 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-freebsd-x64
+689 silly reify mark deleted [
+689 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-freebsd-x64'
+689 silly reify ]
+690 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-darwin-x64
+691 silly reify mark deleted [
+691 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-darwin-x64'
+691 silly reify ]
+692 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-darwin-arm64
+693 silly reify mark deleted [
+693 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-darwin-arm64'
+693 silly reify ]
+694 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\lightningcss-android-arm64
+695 silly reify mark deleted [
+695 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\lightningcss-android-arm64'
+695 silly reify ]
+696 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-win32-ia32-msvc
+697 silly reify mark deleted [
+697 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-win32-ia32-msvc'
+697 silly reify ]
+698 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-win32-arm64-msvc
+699 silly reify mark deleted [
+699 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-win32-arm64-msvc'
+699 silly reify ]
+700 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-wasm32-wasi
+701 silly reify mark deleted [
+701 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-wasm32-wasi'
+701 silly reify ]
+702 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-wasm32-wasi\node_modules\@emnapi\runtime
+703 silly reify mark deleted [
+703 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-wasm32-wasi\\node_modules\\@emnapi\\runtime'
+703 silly reify ]
+704 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-openharmony-arm64
+705 silly reify mark deleted [
+705 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-openharmony-arm64'
+705 silly reify ]
+706 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-x64-musl
+707 silly reify mark deleted [
+707 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-x64-musl'
+707 silly reify ]
+708 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-x64-gnu
+709 silly reify mark deleted [
+709 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-x64-gnu'
+709 silly reify ]
+710 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-s390x-gnu
+711 silly reify mark deleted [
+711 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-s390x-gnu'
+711 silly reify ]
+712 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-riscv64-musl
+713 silly reify mark deleted [
+713 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-riscv64-musl'
+713 silly reify ]
+714 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-riscv64-gnu
+715 silly reify mark deleted [
+715 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-riscv64-gnu'
+715 silly reify ]
+716 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-ppc64-gnu
+717 silly reify mark deleted [
+717 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-ppc64-gnu'
+717 silly reify ]
+718 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-loong64-musl
+719 silly reify mark deleted [
+719 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-loong64-musl'
+719 silly reify ]
+720 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-loong64-gnu
+721 silly reify mark deleted [
+721 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-loong64-gnu'
+721 silly reify ]
+722 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-arm64-musl
+723 silly reify mark deleted [
+723 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-arm64-musl'
+723 silly reify ]
+724 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-arm64-gnu
+725 silly reify mark deleted [
+725 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-arm64-gnu'
+725 silly reify ]
+726 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-arm-musleabihf
+727 silly reify mark deleted [
+727 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-arm-musleabihf'
+727 silly reify ]
+728 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-linux-arm-gnueabihf
+729 silly reify mark deleted [
+729 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-linux-arm-gnueabihf'
+729 silly reify ]
+730 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-freebsd-x64
+731 silly reify mark deleted [
+731 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-freebsd-x64'
+731 silly reify ]
+732 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-darwin-x64
+733 silly reify mark deleted [
+733 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-darwin-x64'
+733 silly reify ]
+734 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-darwin-arm64
+735 silly reify mark deleted [
+735 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-darwin-arm64'
+735 silly reify ]
+736 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-android-arm64
+737 silly reify mark deleted [
+737 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-android-arm64'
+737 silly reify ]
+738 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@unrs\resolver-binding-android-arm-eabi
+739 silly reify mark deleted [
+739 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@unrs\\resolver-binding-android-arm-eabi'
+739 silly reify ]
+740 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-win32-arm64-msvc
+741 silly reify mark deleted [
+741 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-win32-arm64-msvc'
+741 silly reify ]
+742 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-linux-x64-musl
+743 silly reify mark deleted [
+743 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-linux-x64-musl'
+743 silly reify ]
+744 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-linux-x64-gnu
+745 silly reify mark deleted [
+745 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-linux-x64-gnu'
+745 silly reify ]
+746 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-linux-arm64-musl
+747 silly reify mark deleted [
+747 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-linux-arm64-musl'
+747 silly reify ]
+748 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-linux-arm64-gnu
+749 silly reify mark deleted [
+749 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-linux-arm64-gnu'
+749 silly reify ]
+750 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-linux-arm-gnueabihf
+751 silly reify mark deleted [
+751 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-linux-arm-gnueabihf'
+751 silly reify ]
+752 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-freebsd-x64
+753 silly reify mark deleted [
+753 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-freebsd-x64'
+753 silly reify ]
+754 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-darwin-x64
+755 silly reify mark deleted [
+755 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-darwin-x64'
+755 silly reify ]
+756 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-darwin-arm64
+757 silly reify mark deleted [
+757 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-darwin-arm64'
+757 silly reify ]
+758 verbose reify failed optional dependency C:\Projects\LLM -Trace-visualiser\client\node_modules\@tailwindcss\oxide-android-arm64
+759 silly reify mark deleted [
+759 silly reify   'C:\\Projects\\LLM -Trace-visualiser\\client\\node_modules\\@tailwindcss\\oxide-android-arm64'
+759 silly reify ]
+760 timing reifyNode:node_modules/@next/swc-win32-ia32-msvc Completed in 23ms
+761 timing reifyNode:node_modules/@next/swc-win32-arm64-msvc Completed in 22ms
+762 timing reifyNode:node_modules/@next/swc-linux-x64-musl Completed in 23ms
+763 timing reifyNode:node_modules/@next/swc-linux-x64-gnu Completed in 23ms
+764 timing reifyNode:node_modules/@next/swc-linux-arm64-musl Completed in 23ms
+765 timing reifyNode:node_modules/@next/swc-linux-arm64-gnu Completed in 23ms
+766 timing reifyNode:node_modules/@next/swc-darwin-x64 Completed in 23ms
+767 timing reifyNode:node_modules/@next/swc-darwin-arm64 Completed in 23ms
+768 timing reifyNode:node_modules/lightningcss-win32-arm64-msvc Completed in 22ms
+769 timing reifyNode:node_modules/lightningcss-linux-x64-musl Completed in 22ms
+770 timing reifyNode:node_modules/lightningcss-linux-x64-gnu Completed in 22ms
+771 timing reifyNode:node_modules/lightningcss-linux-arm64-musl Completed in 22ms
+772 timing reifyNode:node_modules/lightningcss-linux-arm64-gnu Completed in 22ms
+773 timing reifyNode:node_modules/lightningcss-linux-arm-gnueabihf Completed in 22ms
+774 timing reifyNode:node_modules/lightningcss-freebsd-x64 Completed in 22ms
+775 timing reifyNode:node_modules/lightningcss-darwin-x64 Completed in 22ms
+776 timing reifyNode:node_modules/lightningcss-darwin-arm64 Completed in 22ms
+777 timing reifyNode:node_modules/lightningcss-android-arm64 Completed in 22ms
+778 timing reifyNode:node_modules/@unrs/resolver-binding-win32-ia32-msvc Completed in 22ms
+779 timing reifyNode:node_modules/@unrs/resolver-binding-win32-arm64-msvc Completed in 22ms
+780 timing reifyNode:node_modules/@unrs/resolver-binding-wasm32-wasi Completed in 22ms
+781 timing reifyNode:node_modules/@unrs/resolver-binding-openharmony-arm64 Completed in 22ms
+782 timing reifyNode:node_modules/@unrs/resolver-binding-linux-x64-musl Completed in 23ms
+783 timing reifyNode:node_modules/@unrs/resolver-binding-linux-x64-gnu Completed in 23ms
+784 timing reifyNode:node_modules/@unrs/resolver-binding-linux-s390x-gnu Completed in 23ms
+785 timing reifyNode:node_modules/@unrs/resolver-binding-linux-riscv64-musl Completed in 23ms
+786 timing reifyNode:node_modules/@unrs/resolver-binding-linux-riscv64-gnu Completed in 23ms
+787 timing reifyNode:node_modules/@unrs/resolver-binding-linux-ppc64-gnu Completed in 23ms
+788 timing reifyNode:node_modules/@unrs/resolver-binding-linux-loong64-musl Completed in 23ms
+789 timing reifyNode:node_modules/@unrs/resolver-binding-linux-loong64-gnu Completed in 23ms
+790 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm64-musl Completed in 23ms
+791 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm64-gnu Completed in 23ms
+792 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm-musleabihf Completed in 23ms
+793 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm-gnueabihf Completed in 23ms
+794 timing reifyNode:node_modules/@unrs/resolver-binding-freebsd-x64 Completed in 23ms
+795 timing reifyNode:node_modules/@unrs/resolver-binding-darwin-x64 Completed in 23ms
+796 timing reifyNode:node_modules/@unrs/resolver-binding-darwin-arm64 Completed in 23ms
+797 timing reifyNode:node_modules/@unrs/resolver-binding-android-arm64 Completed in 23ms
+798 timing reifyNode:node_modules/@unrs/resolver-binding-android-arm-eabi Completed in 23ms
+799 timing reifyNode:node_modules/@tailwindcss/oxide-win32-arm64-msvc Completed in 23ms
+800 timing reifyNode:node_modules/@tailwindcss/oxide-linux-x64-musl Completed in 23ms
+801 timing reifyNode:node_modules/@tailwindcss/oxide-linux-x64-gnu Completed in 23ms
+802 timing reifyNode:node_modules/@tailwindcss/oxide-linux-arm64-musl Completed in 23ms
+803 timing reifyNode:node_modules/@tailwindcss/oxide-linux-arm64-gnu Completed in 23ms
+804 timing reifyNode:node_modules/@tailwindcss/oxide-linux-arm-gnueabihf Completed in 23ms
+805 timing reifyNode:node_modules/@tailwindcss/oxide-freebsd-x64 Completed in 24ms
+806 timing reifyNode:node_modules/@tailwindcss/oxide-darwin-x64 Completed in 24ms
+807 timing reifyNode:node_modules/@tailwindcss/oxide-darwin-arm64 Completed in 23ms
+808 timing reifyNode:node_modules/@tailwindcss/oxide-android-arm64 Completed in 23ms
+809 silly tarball no local data for eslint-config-next@https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-14.2.35.tgz. Extracting by manifest.
+810 silly tarball no local data for inherits@https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz. Extracting by manifest.
+811 silly tarball no local data for once@https://registry.npmjs.org/once/-/once-1.4.0.tgz. Extracting by manifest.
+812 silly tarball no local data for path-is-absolute@https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz. Extracting by manifest.
+813 silly tarball no local data for inflight@https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz. Extracting by manifest.
+814 silly tarball no local data for wrappy@https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz. Extracting by manifest.
+815 silly tarball no local data for ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz. Extracting by manifest.
+816 silly tarball no local data for fs.realpath@https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz. Extracting by manifest.
+817 silly tarball no local data for eastasianwidth@https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz. Extracting by manifest.
+818 silly tarball no local data for @swc/counter@https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz. Extracting by manifest.
+819 silly tarball no local data for @pkgjs/parseargs@https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz. Extracting by manifest.
+820 silly tarball no local data for busboy@https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz. Extracting by manifest.
+821 silly tarball no local data for is-fullwidth-code-point@https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz. Extracting by manifest.
+822 silly tarball no local data for streamsearch@https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz. Extracting by manifest.
+823 silly tarball no local data for wrap-ansi@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz. Extracting by manifest.
+824 silly tarball no local data for wrap-ansi-cjs@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz. Extracting by manifest.
+825 silly tarball no local data for @isaacs/cliui@https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz. Extracting by manifest.
+826 silly tarball no local data for string-width-cjs@https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz. Extracting by manifest.
+827 silly tarball no local data for strip-ansi-cjs@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz. Extracting by manifest.
+828 silly tarball no local data for string-width@https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz. Extracting by manifest.
+829 silly tarball no local data for type-fest@https://registry.npmjs.org/type-fest/-/type-fest-0.20.2.tgz. Extracting by manifest.
+830 silly tarball no local data for signal-exit@https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz. Extracting by manifest.
+831 silly tarball no local data for path-scurry@https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz. Extracting by manifest.
+832 silly tarball no local data for foreground-child@https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.1.tgz. Extracting by manifest.
+833 silly tarball no local data for glob@https://registry.npmjs.org/glob/-/glob-10.3.10.tgz. Extracting by manifest.
+834 silly tarball no local data for @humanwhocodes/object-schema@https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz. Extracting by manifest.
+835 silly tarball no local data for jackspeak@https://registry.npmjs.org/jackspeak/-/jackspeak-2.3.6.tgz. Extracting by manifest.
+836 silly tarball no local data for @rushstack/eslint-patch@https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.16.1.tgz. Extracting by manifest.
+837 silly tarball no local data for minipass@https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz. Extracting by manifest.
+838 silly tarball no local data for rimraf@https://registry.npmjs.org/rimraf/-/rimraf-3.0.2.tgz. Extracting by manifest.
+839 silly tarball no local data for text-table@https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz. Extracting by manifest.
+840 silly tarball no local data for is-path-inside@https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.3.tgz. Extracting by manifest.
+841 silly tarball no local data for @humanwhocodes/config-array@https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.13.0.tgz. Extracting by manifest.
+842 silly tarball no local data for @ungap/structured-clone@https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.3.1.tgz. Extracting by manifest.
+843 silly tarball no local data for graphemer@https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz. Extracting by manifest.
+844 silly tarball no local data for strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz. Extracting by manifest.
+845 silly tarball no local data for @types/prop-types@https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.15.tgz. Extracting by manifest.
+846 silly tarball no local data for styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.1.tgz. Extracting by manifest.
+847 silly tarball no local data for scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.23.2.tgz. Extracting by manifest.
+848 silly tarball no local data for lru-cache@https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz. Extracting by manifest.
+849 silly tarball no local data for react@https://registry.npmjs.org/react/-/react-18.3.1.tgz. Extracting by manifest.
+850 silly tarball no local data for flat-cache@https://registry.npmjs.org/flat-cache/-/flat-cache-3.2.0.tgz. Extracting by manifest.
+851 silly tarball no local data for react-dom@https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz. Extracting by manifest.
+852 silly tarball no local data for espree@https://registry.npmjs.org/espree/-/espree-9.6.1.tgz. Extracting by manifest.
+853 silly tarball no local data for next@https://registry.npmjs.org/next/-/next-14.2.35.tgz. Extracting by manifest.
+854 silly tarball no local data for eslint-visitor-keys@https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz. Extracting by manifest.
+855 silly tarball no local data for globals@https://registry.npmjs.org/globals/-/globals-13.24.0.tgz. Extracting by manifest.
+856 silly tarball no local data for file-entry-cache@https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz. Extracting by manifest.
+857 silly tarball no local data for @types/react@https://registry.npmjs.org/@types/react/-/react-18.3.31.tgz. Extracting by manifest.
+858 silly tarball no local data for @types/react-dom@https://registry.npmjs.org/@types/react-dom/-/react-dom-18.3.7.tgz. Extracting by manifest.
+859 silly tarball no local data for @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.5.tgz. Extracting by manifest.
+860 silly tarball no local data for eslint-scope@https://registry.npmjs.org/eslint-scope/-/eslint-scope-7.2.2.tgz. Extracting by manifest.
+861 silly tarball no local data for eslint-plugin-react-hooks@https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-5.0.0-canary-7118f5dd7-20230705.tgz. Extracting by manifest.
+862 silly tarball no local data for @next/env@https://registry.npmjs.org/@next/env/-/env-14.2.35.tgz. Extracting by manifest.
+863 silly tarball no local data for @next/swc-win32-x64-msvc@https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.2.33.tgz. Extracting by manifest.
+864 silly tarball no local data for eslint@https://registry.npmjs.org/eslint/-/eslint-8.57.1.tgz. Extracting by manifest.
+865 silly tarball no local data for @eslint/js@https://registry.npmjs.org/@eslint/js/-/js-8.57.1.tgz. Extracting by manifest.
+866 silly tarball no local data for ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz. Extracting by manifest.
+867 silly tarball no local data for emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz. Extracting by manifest.
+868 silly tarball no local data for @eslint/eslintrc@https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-2.1.4.tgz. Extracting by manifest.
+869 silly tarball no local data for string-width@https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz. Extracting by manifest.
+870 silly tarball no local data for ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz. Extracting by manifest.
+871 silly tarball no local data for ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz. Extracting by manifest.
+872 silly tarball no local data for strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz. Extracting by manifest.
+873 silly tarball no local data for strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz. Extracting by manifest.
+874 silly tarball no local data for ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz. Extracting by manifest.
+875 silly tarball no local data for strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz. Extracting by manifest.
+876 silly tarball no local data for emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz. Extracting by manifest.
+877 silly tarball no local data for glob@https://registry.npmjs.org/glob/-/glob-7.2.3.tgz. Extracting by manifest.
+878 silly tarball no local data for brace-expansion@https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.1.1.tgz. Extracting by manifest.
+879 silly tarball no local data for @next/eslint-plugin-next@https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-14.2.35.tgz. Extracting by manifest.
+880 silly tarball no local data for @emnapi/runtime@https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.10.0.tgz. Extracting by manifest.
+881 silly tarball no local data for doctrine@https://registry.npmjs.org/doctrine/-/doctrine-3.0.0.tgz. Extracting by manifest.
+882 silly tarball no local data for minimatch@https://registry.npmjs.org/minimatch/-/minimatch-9.0.9.tgz. Extracting by manifest.
+883 http fetch GET 200 https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz 224ms (cache miss)
+884 http fetch GET 200 https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz 238ms (cache miss)
+885 timing reifyNode:node_modules/eastasianwidth Completed in 303ms
+886 http fetch GET 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 241ms (cache miss)
+887 timing reifyNode:node_modules/wrappy Completed in 304ms
+888 http fetch GET 200 https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-14.2.35.tgz 260ms (cache miss)
+889 http fetch GET 200 https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz 264ms (cache miss)
+890 http fetch GET 200 https://registry.npmjs.org/once/-/once-1.4.0.tgz 262ms (cache miss)
+891 timing reifyNode:node_modules/once Completed in 321ms
+892 http fetch GET 200 https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz 259ms (cache miss)
+893 http fetch GET 200 https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz 267ms (cache miss)
+894 timing reifyNode:node_modules/path-is-absolute Completed in 327ms
+895 timing reifyNode:node_modules/eslint-config-next Completed in 334ms
+896 timing reifyNode:node_modules/inherits Completed in 337ms
+897 http fetch GET 200 https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz 283ms (cache miss)
+898 warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+899 timing reifyNode:node_modules/inflight Completed in 345ms
+900 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 354ms
+901 timing auditReport:getReport Completed in 359ms
+902 silly audit report {
+902 silly audit report   postcss: [
+902 silly audit report     {
+902 silly audit report       id: 1117015,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-qx2v-qp2m-jg93',
+902 silly audit report       title: 'PostCSS has XSS via Unescaped </style> in its CSS Stringify Output',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '<8.5.10',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     }
+902 silly audit report   ],
+902 silly audit report   next: [
+902 silly audit report     {
+902 silly audit report       id: 1117931,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-8h8q-6873-q5fj',
+902 silly audit report       title: 'Next.js Vulnerable to Denial of Service with Server Components',
+902 silly audit report       severity: 'high',
+902 silly audit report       vulnerable_versions: '>=13.0.0 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118942,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-3g8h-86w9-wvmq',
+902 silly audit report       title: "Next.js's Middleware / Proxy redirects can be cache-poisoned",
+902 silly audit report       severity: 'low',
+902 silly audit report       vulnerable_versions: '>=12.2.0 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118944,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-ffhc-5mcf-pf4q',
+902 silly audit report       title: 'Next.js vulnerable to cross-site scripting in App Router applications using CSP nonces',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '>=13.4.0 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118946,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-vfv6-92ff-j949',
+902 silly audit report       title: 'Next.js vulnerable to cache poisoning via collisions in React Server Component cache-busting',
+902 silly audit report       severity: 'low',
+902 silly audit report       vulnerable_versions: '>=13.4.6 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118948,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-gx5p-jg67-6x7h',
+902 silly audit report       title: 'Next.js has cross-site scripting in beforeInteractive scripts with untrusted input',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '>=13.0.0 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118952,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-h64f-5h5j-jqjh',
+902 silly audit report       title: 'Next.js has a Denial of Service in the Image Optimization API',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '>=10.0.0 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118954,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-c4j6-fc7j-m34r',
+902 silly audit report       title: 'Next.js vulnerable to server-side request forgery in applications using WebSocket upgrades',
+902 silly audit report       severity: 'high',
+902 silly audit report       vulnerable_versions: '>=13.4.13 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118958,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-wfc6-r584-vfw7',
+902 silly audit report       title: 'Next.js vulnerable to cache poisoning in React Server Component responses',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '>=14.2.0 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1118962,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-36qx-fr4f-26g5',
+902 silly audit report       title: 'Next.js has a Middleware / Proxy bypass in Pages Router applications using i18n',
+902 silly audit report       severity: 'high',
+902 silly audit report       vulnerable_versions: '>=12.2.0 <15.5.16',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1112593,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-9g9p-9gw9-jx7f',
+902 silly audit report       title: 'Next.js self-hosted applications vulnerable to DoS via Image Optimizer remotePatterns configuration',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '>=10.0.0 <15.5.10',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1112653,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-h25m-26qc-wcjf',
+902 silly audit report       title: 'Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components',
+902 silly audit report       severity: 'high',
+902 silly audit report       vulnerable_versions: '>=13.0.0 <15.0.8',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1114897,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-ggv3-7p47-pfv8',
+902 silly audit report       title: 'Next.js: HTTP request smuggling in rewrites',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '>=9.5.0 <15.5.13',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1114940,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-3x4c-7xq6-9pq8',
+902 silly audit report       title: 'Next.js: Unbounded next/image disk cache growth can exhaust storage',
+902 silly audit report       severity: 'moderate',
+902 silly audit report       vulnerable_versions: '>=10.0.0 <15.5.14',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     },
+902 silly audit report     {
+902 silly audit report       id: 1116376,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-q4gf-8mx6-v5v3',
+902 silly audit report       title: 'Next.js has a Denial of Service with Server Components',
+902 silly audit report       severity: 'high',
+902 silly audit report       vulnerable_versions: '>=13.0.0 <15.5.15',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     }
+902 silly audit report   ],
+902 silly audit report   glob: [
+902 silly audit report     {
+902 silly audit report       id: 1109842,
+902 silly audit report       url: 'https://github.com/advisories/GHSA-5j98-mcp5-4vw2',
+902 silly audit report       title: 'glob CLI: Command injection via -c/--cmd executes matches with shell:true',
+902 silly audit report       severity: 'high',
+902 silly audit report       vulnerable_versions: '>=10.2.0 <10.5.0',
+902 silly audit report       cwe: [Array],
+902 silly audit report       cvss: [Object]
+902 silly audit report     }
+902 silly audit report   ]
+902 silly audit report }
+903 timing metavuln:packument:next Completed in 2ms
+904 timing metavuln:packument:glob Completed in 1ms
+905 timing reifyNode:node_modules/ansi-regex Completed in 359ms
+906 timing reifyNode:node_modules/fs.realpath Completed in 360ms
+907 timing metavuln:cache:get:security-advisory:postcss:685RVq5xScaqegAXk2BRJrsMaZmsz1d/volUoA67iVw3AvHhUlX03u+VPRrmo8iuObcSDvuZF+fuiOnLC9L1uA== Completed in 6ms
+908 timing metavuln:cache:get:security-advisory:next:vuHRAt/BWP+uFUF464Kr/XSRYkeSqfN5BDmhcIb/NC1N1+svfuQ2l2f3I8OAbkQ/mG7ykLMzXkmvGEUPm2u2Qw== Completed in 5ms
+909 timing metavuln:load:security-advisory:next:1117931 Completed in 139ms
+910 timing metavuln:cache:get:security-advisory:next:DZYkKghCBsNDjTsBZNBEXyRREeg7p+okX/wID7N5vkHCP0YEApmDVowtEZM/R2oPjVif2+FMpky58BcndZaeVw== Completed in 146ms
+911 timing metavuln:load:security-advisory:next:1118942 Completed in 61ms
+912 timing metavuln:cache:get:security-advisory:next:VRq8TIz+ZjPW6hQ8T0wOUvYSO+eDdwertI1rhHbEx2+MnlsYlHSTbstvXQA6lxcqK9z1/S2wl1LkMaE/zyyBqQ== Completed in 209ms
+913 timing metavuln:load:security-advisory:next:1118944 Completed in 96ms
+914 timing metavuln:cache:get:security-advisory:next:yUMYj8Dn5FtiQukesvIM6nN+0pF7xT4MTvfwNyG8V2sLOtPxPIrVStVUT2pdeSKG5qq/RTa9T+LiB9o7WZhZKA== Completed in 307ms
+915 timing metavuln:load:security-advisory:next:1118946 Completed in 101ms
+916 timing metavuln:cache:get:security-advisory:next:xzdJmsYdvRh0EQkDGL0AyVFiSXnitWj2NAhYTh3IKGb+bmS+UTMQEFlAApq2S61UaSRojDWI97pB3MQWhXaqtQ== Completed in 409ms
+917 timing metavuln:load:security-advisory:next:1118948 Completed in 133ms
+918 timing metavuln:cache:get:security-advisory:next:DjRros6yRdbdMY1erdbppMnNz8Rmm2kj4blzhPIWdXeKoCHONkBZ5vVD4sP1pYEEvfI65YV96+RIqLpMSsquWw== Completed in 544ms
+919 timing metavuln:load:security-advisory:next:1118952 Completed in 81ms
+920 timing metavuln:cache:get:security-advisory:next:QS567o8JKcXXuwY6XgUM7iN0h1udbMICZ90PR0BPbALyE4LpXJa2pMgZmzYK7JIgCPBOcRocAGRvrI0FNRN1mw== Completed in 628ms
+921 timing metavuln:load:security-advisory:next:1118954 Completed in 139ms
+922 timing metavuln:cache:get:security-advisory:next:ZLUG2HrRQ82YKcCmqQseWvnIlwyr8cZtjKOAKVosnHoYP8HjWF1EuSjurwrvNDBZyCjJrVDZK3B+SIULeNAVPw== Completed in 767ms
+923 timing metavuln:load:security-advisory:next:1118958 Completed in 86ms
+924 timing metavuln:cache:get:security-advisory:next:BPqX8jSKEW35PnDy8r1SGTHQhLIic/IfjienlQq8LFwmauE7Ce5RjzIw5W/PPwSATJecla0O4h/l+qNjjzPUcQ== Completed in 855ms
+925 timing metavuln:load:security-advisory:next:1118962 Completed in 116ms
+926 timing metavuln:cache:get:security-advisory:next:ItJZ7qy1iUzxbodxayiejQRfV5cCQvX0fnpMwXLDBxbVruEW2O3qtQbmcGQKdCKBR49CjNmJDt46lWVTov1sQA== Completed in 974ms
+927 timing metavuln:load:security-advisory:next:1112593 Completed in 146ms
+928 timing metavuln:cache:get:security-advisory:next:3TA4O3EmeHOziCX4u9l4IBFBAPxWeQGxoijidoX+ldET6YKxjUcLFRhQVFM5X6vREfhCEhSA9T7d5fKHVz2CcA== Completed in 1121ms
+929 timing metavuln:load:security-advisory:next:1114897 Completed in 127ms
+930 timing metavuln:cache:get:security-advisory:next:owasql2RGfaRn6gCrEIYc1sLXkl1GuxqJbyX4pwqCr7f/tVRvnWuaIoanwkbKZ9RBWsvTnyiF9QrYyjzAdBqCg== Completed in 1250ms
+931 timing metavuln:load:security-advisory:next:1112653 Completed in 93ms
+932 timing metavuln:cache:get:security-advisory:next:GCi2VjQ+xIankByzHe4ZXO0Uwx2FJAEb3wwNZc/B4wp4HXVgOhv8Jd02gDZ/z3OGbsWKVMoiRfJ+NReCbZIsqA== Completed in 1344ms
+933 timing metavuln:load:security-advisory:next:1114940 Completed in 128ms
+934 timing metavuln:cache:get:security-advisory:next:usPEHPdWuyjsh+HI2+rwEPUzXWKe09mdbdIIFpG2O1Zd2medsdvkN5wwKHxOzkpfm2FC7E54Nx/sY33UEU3C1Q== Completed in 1473ms
+935 timing metavuln:load:security-advisory:next:1116376 Completed in 68ms
+936 timing metavuln:cache:get:security-advisory:glob:NTB2XjbDOgk4lkd8PZ3tUAm1F3E/ohGF6rl9/3LEO7Z0FDzSR5nWwzd3nUENA3NCNdyeR+35DOC12wPml2IV+g== Completed in 1542ms
+937 timing metavuln:load:security-advisory:glob:1109842 Completed in 1ms
+938 http fetch GET 200 https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz 1905ms (cache miss)
+939 http fetch GET 200 https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz 1914ms (cache miss)
+940 timing reifyNode:node_modules/wrap-ansi-cjs Completed in 1984ms
+941 http fetch GET 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 1931ms (cache miss)
+942 timing reifyNode:node_modules/wrap-ansi Completed in 2003ms
+943 http fetch GET 200 https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz 1930ms (cache miss)
+944 http fetch GET 200 https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz 1990ms (cache miss)
+945 timing reifyNode:node_modules/strip-ansi-cjs Completed in 2074ms
+946 http fetch GET 200 https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz 2005ms (cache miss)
+947 timing reifyNode:node_modules/string-width Completed in 2077ms
+948 http fetch GET 200 https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz 2018ms (cache miss)
+949 timing reifyNode:node_modules/string-width-cjs Completed in 2096ms
+950 timing metavuln:cache:put:security-advisory:next:yUMYj8Dn5FtiQukesvIM6nN+0pF7xT4MTvfwNyG8V2sLOtPxPIrVStVUT2pdeSKG5qq/RTa9T+LiB9o7WZhZKA== Completed in 1360ms
+951 timing metavuln:calculate:security-advisory:next:1118946 Completed in 1768ms
+952 timing metavuln:cache:put:security-advisory:next:VRq8TIz+ZjPW6hQ8T0wOUvYSO+eDdwertI1rhHbEx2+MnlsYlHSTbstvXQA6lxcqK9z1/S2wl1LkMaE/zyyBqQ== Completed in 1463ms
+953 timing metavuln:calculate:security-advisory:next:1118944 Completed in 1768ms
+954 timing metavuln:cache:put:security-advisory:next:ZLUG2HrRQ82YKcCmqQseWvnIlwyr8cZtjKOAKVosnHoYP8HjWF1EuSjurwrvNDBZyCjJrVDZK3B+SIULeNAVPw== Completed in 914ms
+955 timing metavuln:calculate:security-advisory:next:1118958 Completed in 1768ms
+956 timing metavuln:cache:put:security-advisory:next:owasql2RGfaRn6gCrEIYc1sLXkl1GuxqJbyX4pwqCr7f/tVRvnWuaIoanwkbKZ9RBWsvTnyiF9QrYyjzAdBqCg== Completed in 425ms
+957 timing metavuln:calculate:security-advisory:next:1112653 Completed in 1768ms
+958 http fetch GET 200 https://registry.npmjs.org/rimraf/-/rimraf-3.0.2.tgz 2044ms (cache miss)
+959 http fetch GET 200 https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz 2052ms (cache miss)
+960 timing metavuln:cache:put:security-advisory:next:QS567o8JKcXXuwY6XgUM7iN0h1udbMICZ90PR0BPbALyE4LpXJa2pMgZmzYK7JIgCPBOcRocAGRvrI0FNRN1mw== Completed in 1018ms
+961 timing metavuln:calculate:security-advisory:next:1118954 Completed in 1785ms
+962 timing metavuln:cache:put:security-advisory:next:vuHRAt/BWP+uFUF464Kr/XSRYkeSqfN5BDmhcIb/NC1N1+svfuQ2l2f3I8OAbkQ/mG7ykLMzXkmvGEUPm2u2Qw== Completed in 1640ms
+963 timing metavuln:calculate:security-advisory:next:1117931 Completed in 1786ms
+964 timing metavuln:cache:put:security-advisory:next:xzdJmsYdvRh0EQkDGL0AyVFiSXnitWj2NAhYTh3IKGb+bmS+UTMQEFlAApq2S61UaSRojDWI97pB3MQWhXaqtQ== Completed in 1244ms
+965 timing metavuln:calculate:security-advisory:next:1118948 Completed in 1786ms
+966 timing metavuln:cache:put:security-advisory:next:3TA4O3EmeHOziCX4u9l4IBFBAPxWeQGxoijidoX+ldET6YKxjUcLFRhQVFM5X6vREfhCEhSA9T7d5fKHVz2CcA== Completed in 536ms
+967 timing metavuln:calculate:security-advisory:next:1114897 Completed in 1785ms
+968 timing metavuln:cache:put:security-advisory:next:DZYkKghCBsNDjTsBZNBEXyRREeg7p+okX/wID7N5vkHCP0YEApmDVowtEZM/R2oPjVif2+FMpky58BcndZaeVw== Completed in 1578ms
+969 timing metavuln:calculate:security-advisory:next:1118942 Completed in 1786ms
+970 timing metavuln:cache:put:security-advisory:glob:NTB2XjbDOgk4lkd8PZ3tUAm1F3E/ohGF6rl9/3LEO7Z0FDzSR5nWwzd3nUENA3NCNdyeR+35DOC12wPml2IV+g== Completed in 242ms
+971 timing metavuln:calculate:security-advisory:glob:1109842 Completed in 1785ms
+972 timing metavuln:cache:put:security-advisory:next:usPEHPdWuyjsh+HI2+rwEPUzXWKe09mdbdIIFpG2O1Zd2medsdvkN5wwKHxOzkpfm2FC7E54Nx/sY33UEU3C1Q== Completed in 251ms
+973 timing metavuln:calculate:security-advisory:next:1116376 Completed in 1792ms
+974 http fetch GET 200 https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.3.tgz 2063ms (cache miss)
+975 timing metavuln:cache:put:security-advisory:next:ItJZ7qy1iUzxbodxayiejQRfV5cCQvX0fnpMwXLDBxbVruEW2O3qtQbmcGQKdCKBR49CjNmJDt46lWVTov1sQA== Completed in 674ms
+976 timing metavuln:calculate:security-advisory:next:1112593 Completed in 1794ms
+977 http fetch GET 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 2082ms (cache miss)
+978 timing metavuln:cache:put:security-advisory:next:BPqX8jSKEW35PnDy8r1SGTHQhLIic/IfjienlQq8LFwmauE7Ce5RjzIw5W/PPwSATJecla0O4h/l+qNjjzPUcQ== Completed in 842ms
+979 timing metavuln:calculate:security-advisory:next:1118962 Completed in 1815ms
+980 timing metavuln:cache:put:security-advisory:next:DjRros6yRdbdMY1erdbppMnNz8Rmm2kj4blzhPIWdXeKoCHONkBZ5vVD4sP1pYEEvfI65YV96+RIqLpMSsquWw== Completed in 1190ms
+981 timing metavuln:calculate:security-advisory:next:1118952 Completed in 1816ms
+982 timing metavuln:cache:put:security-advisory:next:GCi2VjQ+xIankByzHe4ZXO0Uwx2FJAEb3wwNZc/B4wp4HXVgOhv8Jd02gDZ/z3OGbsWKVMoiRfJ+NReCbZIsqA== Completed in 350ms
+983 timing metavuln:calculate:security-advisory:next:1114940 Completed in 1822ms
+984 http fetch GET 200 https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz 2123ms (cache miss)
+985 http fetch GET 200 https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.13.0.tgz 2106ms (cache miss)
+986 http fetch GET 200 https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz 2127ms (cache miss)
+987 timing reifyNode:node_modules/@swc/counter Completed in 2193ms
+988 timing reifyNode:node_modules/is-path-inside Completed in 2199ms
+989 warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+990 timing reifyNode:node_modules/@humanwhocodes/config-array Completed in 2202ms
+991 http fetch GET 200 https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.15.tgz 2120ms (cache miss)
+992 timing reifyNode:node_modules/is-fullwidth-code-point Completed in 2211ms
+993 timing reifyNode:node_modules/@isaacs/cliui Completed in 2220ms
+994 timing reifyNode:node_modules/@types/prop-types Completed in 2220ms
+995 http fetch GET 200 https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz 2132ms (cache miss)
+996 timing reifyNode:node_modules/strip-ansi Completed in 2226ms
+997 warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+998 timing reifyNode:node_modules/rimraf Completed in 2236ms
+999 http fetch GET 200 https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.3.1.tgz 2150ms (cache miss)
+1000 http fetch GET 200 https://registry.npmjs.org/globals/-/globals-13.24.0.tgz 2147ms (cache miss)
+1001 http fetch GET 200 https://registry.npmjs.org/@types/react-dom/-/react-dom-18.3.7.tgz 2154ms (cache miss)
+1002 http fetch GET 200 https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz 2160ms (cache miss)
+1003 timing reifyNode:node_modules/file-entry-cache Completed in 2267ms
+1004 http fetch GET 200 https://registry.npmjs.org/@next/env/-/env-14.2.35.tgz 2169ms (cache miss)
+1005 timing reifyNode:node_modules/@next/env Completed in 2286ms
+1006 http fetch GET 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz 2181ms (cache miss)
+1007 warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+1008 timing reifyNode:node_modules/@humanwhocodes/object-schema Completed in 2294ms
+1009 timing reifyNode:node_modules/globals Completed in 2295ms
+1010 timing reifyNode:node_modules/wrap-ansi/node_modules/ansi-regex Completed in 2311ms
+1011 http fetch GET 200 https://registry.npmjs.org/flat-cache/-/flat-cache-3.2.0.tgz 2223ms (cache miss)
+1012 timing reifyNode:node_modules/flat-cache Completed in 2322ms
+1013 http fetch GET 200 https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz 2228ms (cache miss)
+1014 http fetch GET 200 https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz 2276ms (cache miss)
+1015 timing reifyNode:node_modules/streamsearch Completed in 2345ms
+1016 timing reifyNode:node_modules/eslint-visitor-keys Completed in 2351ms
+1017 http fetch GET 200 https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz 2244ms (cache miss)
+1018 http fetch GET 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz 2249ms (cache miss)
+1019 timing reifyNode:node_modules/@types/react-dom Completed in 2385ms
+1020 timing reifyNode:node_modules/wrap-ansi/node_modules/ansi-styles Completed in 2414ms
+1021 http fetch GET 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz 2302ms (cache miss)
+1022 timing reifyNode:node_modules/string-width/node_modules/ansi-regex Completed in 2423ms
+1023 http fetch GET 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz 2312ms (cache miss)
+1024 timing reifyNode:node_modules/wrap-ansi/node_modules/strip-ansi Completed in 2460ms
+1025 timing reifyNode:node_modules/@isaacs/cliui/node_modules/ansi-regex Completed in 2466ms
+1026 http fetch GET 200 https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz 2403ms (cache miss)
+1027 timing reifyNode:node_modules/wrap-ansi-cjs/node_modules/emoji-regex Completed in 2489ms
+1028 http fetch GET 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz 2378ms (cache miss)
+1029 http fetch GET 200 https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz 2380ms (cache miss)
+1030 timing reifyNode:node_modules/text-table Completed in 2503ms
+1031 http fetch GET 200 https://registry.npmjs.org/@eslint/js/-/js-8.57.1.tgz 2410ms (cache miss)
+1032 http fetch GET 200 https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-5.0.0-canary-7118f5dd7-20230705.tgz 2432ms (cache miss)
+1033 timing reifyNode:node_modules/eslint-plugin-react-hooks Completed in 2531ms
+1034 timing reifyNode:node_modules/@isaacs/cliui/node_modules/strip-ansi Completed in 2533ms
+1035 http fetch GET 200 https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.1.1.tgz 2412ms (cache miss)
+1036 timing reifyNode:node_modules/@ungap/structured-clone Completed in 2557ms
+1037 timing reifyNode:node_modules/glob/node_modules/brace-expansion Completed in 2565ms
+1038 http fetch GET 200 https://registry.npmjs.org/espree/-/espree-9.6.1.tgz 2478ms (cache miss)
+1039 timing reifyNode:node_modules/espree Completed in 2569ms
+1040 http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.23.2.tgz 2484ms (cache miss)
+1041 http fetch GET 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz 2458ms (cache miss)
+1042 http fetch GET 200 https://registry.npmjs.org/glob/-/glob-7.2.3.tgz 2454ms (cache miss)
+1043 http fetch GET 200 https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz 2496ms (cache miss)
+1044 warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+1045 timing reifyNode:node_modules/rimraf/node_modules/glob Completed in 2587ms
+1046 timing reifyNode:node_modules/minipass Completed in 2588ms
+1047 timing reifyNode:node_modules/scheduler Completed in 2590ms
+1048 timing reifyNode:node_modules/@eslint/js Completed in 2598ms
+1049 timing reifyNode:node_modules/string-width/node_modules/strip-ansi Completed in 2606ms
+1050 http fetch GET 200 https://registry.npmjs.org/eslint-scope/-/eslint-scope-7.2.2.tgz 2510ms (cache miss)
+1051 timing reifyNode:node_modules/eslint-scope Completed in 2609ms
+1052 timing reifyNode:node_modules/string-width-cjs/node_modules/emoji-regex Completed in 2615ms
+1053 http fetch GET 200 https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz 2514ms (cache miss)
+1054 http fetch GET 200 https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz 2568ms (cache miss)
+1055 timing reifyNode:node_modules/@pkgjs/parseargs Completed in 2634ms
+1056 http fetch GET 200 https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz 2569ms (cache miss)
+1057 timing reifyNode:node_modules/path-scurry Completed in 2644ms
+1058 timing reifyNode:node_modules/wrap-ansi-cjs/node_modules/string-width Completed in 2653ms
+1059 http fetch GET 200 https://registry.npmjs.org/react/-/react-18.3.1.tgz 2598ms (cache miss)
+1060 http fetch GET 200 https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz 2623ms (cache miss)
+1061 timing reifyNode:node_modules/busboy Completed in 2691ms
+1062 timing reifyNode:node_modules/react Completed in 2696ms
+1063 http fetch GET 200 https://registry.npmjs.org/jackspeak/-/jackspeak-2.3.6.tgz 2618ms (cache miss)
+1064 timing reifyNode:node_modules/jackspeak Completed in 2713ms
+1065 timing reifyNode:node_modules/signal-exit Completed in 2719ms
+1066 http fetch GET 200 https://registry.npmjs.org/doctrine/-/doctrine-3.0.0.tgz 2595ms (cache miss)
+1067 timing reifyNode:node_modules/eslint/node_modules/doctrine Completed in 2722ms
+1068 http fetch GET 200 https://registry.npmjs.org/@types/react/-/react-18.3.31.tgz 2640ms (cache miss)
+1069 timing reifyNode:node_modules/@types/react Completed in 2735ms
+1070 http fetch GET 200 https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz 2652ms (cache miss)
+1071 timing reifyNode:node_modules/graphemer Completed in 2743ms
+1072 http fetch GET 200 https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz 2663ms (cache miss)
+1073 timing reifyNode:node_modules/lru-cache Completed in 2751ms
+1074 http fetch GET 200 https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.1.tgz 2691ms (cache miss)
+1075 timing reifyNode:node_modules/foreground-child Completed in 2772ms
+1076 http fetch GET 200 https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.1.tgz 2689ms (cache miss)
+1077 timing reifyNode:node_modules/styled-jsx Completed in 2779ms
+1078 http fetch GET 200 https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.10.0.tgz 2658ms (cache miss)
+1079 timing reifyNode:node_modules/@unrs/resolver-binding-wasm32-wasi/node_modules/@emnapi/runtime Completed in 2787ms
+1080 http fetch GET 200 https://registry.npmjs.org/type-fest/-/type-fest-0.20.2.tgz 2719ms (cache miss)
+1081 timing reifyNode:node_modules/type-fest Completed in 2796ms
+1082 http fetch GET 200 https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-2.1.4.tgz 2746ms (cache miss)
+1083 timing reifyNode:node_modules/@eslint/eslintrc Completed in 2859ms
+1084 http fetch GET 200 https://registry.npmjs.org/postcss 2513ms (cache miss)
+1085 timing metavuln:packument:postcss Completed in 2517ms
+1086 timing metavuln:load:security-advisory:postcss:1117015 Completed in 2ms
+1087 timing metavuln:cache:put:security-advisory:postcss:685RVq5xScaqegAXk2BRJrsMaZmsz1d/volUoA67iVw3AvHhUlX03u+VPRrmo8iuObcSDvuZF+fuiOnLC9L1uA== Completed in 19ms
+1088 timing metavuln:calculate:security-advisory:postcss:1117015 Completed in 2539ms
+1089 timing metavuln:cache:get:security-advisory:next:++TMQRwRMuAg5JaA57A8kadT8SbeBIqrzl+otPGsE46Z5PGnGvwSbtrHMqHSzpH6UEwsYqk9mYjoPnnsNBcW7Q== Completed in 1ms
+1090 timing metavuln:load:security-advisory:next:685RVq5xScaqegAXk2BRJrsMaZmsz1d/volUoA67iVw3AvHhUlX03u+VPRrmo8iuObcSDvuZF+fuiOnLC9L1uA== Completed in 206ms
+1091 timing metavuln:cache:put:security-advisory:next:++TMQRwRMuAg5JaA57A8kadT8SbeBIqrzl+otPGsE46Z5PGnGvwSbtrHMqHSzpH6UEwsYqk9mYjoPnnsNBcW7Q== Completed in 27ms
+1092 timing metavuln:calculate:security-advisory:next:685RVq5xScaqegAXk2BRJrsMaZmsz1d/volUoA67iVw3AvHhUlX03u+VPRrmo8iuObcSDvuZF+fuiOnLC9L1uA== Completed in 236ms
+1093 timing metavuln:cache:get:security-advisory:next-auth:aVCoibJq+1RzbL1voSUnSUV3/RiUN8VpoMgvgMJx1ctstS5RKHv70sr1z4O2BEhz9/TO0pvDxMqfmxdjO1gO6A== Completed in 2ms
+1094 http fetch GET 200 https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-14.2.35.tgz 3050ms (cache miss)
+1095 http fetch GET 200 https://registry.npmjs.org/glob/-/glob-10.3.10.tgz 3143ms (cache miss)
+1096 warn deprecated glob@10.3.10: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+1097 timing reifyNode:node_modules/glob Completed in 3224ms
+1098 http fetch GET 200 https://registry.npmjs.org/minimatch/-/minimatch-9.0.9.tgz 3111ms (cache miss)
+1099 timing reifyNode:node_modules/glob/node_modules/minimatch Completed in 3248ms
+1100 timing reifyNode:node_modules/@next/eslint-plugin-next Completed in 3276ms
+1101 http fetch GET 200 https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz 3228ms (cache miss)
+1102 timing reifyNode:node_modules/react-dom Completed in 3322ms
+1103 http fetch GET 200 https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.16.1.tgz 3324ms (cache miss)
+1104 timing reifyNode:node_modules/@rushstack/eslint-patch Completed in 3409ms
+1105 http fetch GET 200 https://registry.npmjs.org/next-auth 548ms (cache miss)
+1106 timing metavuln:packument:next-auth Completed in 563ms
+1107 timing metavuln:load:security-advisory:next-auth:vuHRAt/BWP+uFUF464Kr/XSRYkeSqfN5BDmhcIb/NC1N1+svfuQ2l2f3I8OAbkQ/mG7ykLMzXkmvGEUPm2u2Qw== Completed in 192ms
+1108 timing metavuln:cache:put:security-advisory:next-auth:aVCoibJq+1RzbL1voSUnSUV3/RiUN8VpoMgvgMJx1ctstS5RKHv70sr1z4O2BEhz9/TO0pvDxMqfmxdjO1gO6A== Completed in 20ms
+1109 timing metavuln:calculate:security-advisory:next-auth:vuHRAt/BWP+uFUF464Kr/XSRYkeSqfN5BDmhcIb/NC1N1+svfuQ2l2f3I8OAbkQ/mG7ykLMzXkmvGEUPm2u2Qw== Completed in 776ms
+1110 timing metavuln:packument:@next/eslint-plugin-next Completed in 1ms
+1111 timing metavuln:cache:get:security-advisory:@next/eslint-plugin-next:PvOLmaLvBa62/MSwOoeVcFtG41ceA4r3c/+CRslQCFHIqz2IKPEVFqVWr5T0jcFHrN6kR5E5FbNMo23kCF9gdg== Completed in 1ms
+1112 timing metavuln:load:security-advisory:@next/eslint-plugin-next:NTB2XjbDOgk4lkd8PZ3tUAm1F3E/ohGF6rl9/3LEO7Z0FDzSR5nWwzd3nUENA3NCNdyeR+35DOC12wPml2IV+g== Completed in 91ms
+1113 timing metavuln:cache:put:security-advisory:@next/eslint-plugin-next:PvOLmaLvBa62/MSwOoeVcFtG41ceA4r3c/+CRslQCFHIqz2IKPEVFqVWr5T0jcFHrN6kR5E5FbNMo23kCF9gdg== Completed in 15ms
+1114 timing metavuln:calculate:security-advisory:@next/eslint-plugin-next:NTB2XjbDOgk4lkd8PZ3tUAm1F3E/ohGF6rl9/3LEO7Z0FDzSR5nWwzd3nUENA3NCNdyeR+35DOC12wPml2IV+g== Completed in 107ms
+1115 timing metavuln:packument:eslint-config-next Completed in 0ms
+1116 timing metavuln:cache:get:security-advisory:eslint-config-next:volOrje9bMc3dFnnsdrvpxPiUdLeCov80INEmkNw6JaX2GvepJi9bsm+RGK6makQSL3N/126SYrBcGcbXdAW0g== Completed in 2ms
+1117 timing metavuln:load:security-advisory:eslint-config-next:PvOLmaLvBa62/MSwOoeVcFtG41ceA4r3c/+CRslQCFHIqz2IKPEVFqVWr5T0jcFHrN6kR5E5FbNMo23kCF9gdg== Completed in 4664ms
+1118 timing metavuln:cache:put:security-advisory:eslint-config-next:volOrje9bMc3dFnnsdrvpxPiUdLeCov80INEmkNw6JaX2GvepJi9bsm+RGK6makQSL3N/126SYrBcGcbXdAW0g== Completed in 28ms
+1119 timing metavuln:calculate:security-advisory:eslint-config-next:PvOLmaLvBa62/MSwOoeVcFtG41ceA4r3c/+CRslQCFHIqz2IKPEVFqVWr5T0jcFHrN6kR5E5FbNMo23kCF9gdg== Completed in 4694ms
+1120 timing auditReport:init Completed in 8396ms
+1121 timing reify:audit Completed in 8759ms
+1122 http fetch GET 200 https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.5.tgz 9020ms (cache miss)
+1123 timing reifyNode:node_modules/@swc/helpers Completed in 9119ms
+1124 http fetch GET 200 https://registry.npmjs.org/eslint/-/eslint-8.57.1.tgz 9121ms (cache miss)
+1125 warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+1126 timing reifyNode:node_modules/eslint Completed in 9230ms
+1127 http fetch GET 200 https://registry.npmjs.org/next/-/next-14.2.35.tgz 22590ms (cache miss)
+1128 timing reifyNode:node_modules/next Completed in 22682ms
+1129 http fetch GET 200 https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.2.33.tgz 24173ms (cache miss)
+1130 timing reifyNode:node_modules/@next/swc-win32-x64-msvc Completed in 24279ms
+1131 timing reify:unpack Completed in 24283ms
+1132 timing reify:unretire Completed in 18ms
+1133 timing build:queue Completed in 3ms
+1134 timing build:link:node_modules/next Completed in 10ms
+1135 timing build:link:node_modules/eslint Completed in 11ms
+1136 timing build:link:node_modules/glob Completed in 11ms
+1137 timing build:link:node_modules/rimraf Completed in 11ms
+1138 timing build:link Completed in 12ms
+1139 timing build:deps Completed in 16ms
+1140 timing build Completed in 16ms
+1141 timing reify:build Completed in 17ms
+1142 timing reify:trash Completed in 2759ms
+1143 timing reify:save Completed in 268ms
+1144 timing reify Completed in 54875ms
+1145 silly ADD node_modules/wrappy
+1146 silly ADD node_modules/path-is-absolute
+1147 silly ADD node_modules/once
+1148 silly ADD node_modules/inherits
+1149 silly ADD node_modules/inflight
+1150 silly ADD node_modules/fs.realpath
+1151 silly ADD node_modules/ansi-regex
+1152 silly ADD node_modules/is-fullwidth-code-point
+1153 silly ADD node_modules/eastasianwidth
+1154 silly ADD node_modules/streamsearch
+1155 silly ADD node_modules/@swc/counter
+1156 silly ADD node_modules/busboy
+1157 silly ADD
+1158 silly ADD
+1159 silly ADD
+1160 silly ADD
+1161 silly ADD
+1162 silly ADD
+1163 silly ADD
+1164 silly ADD
+1165 silly ADD node_modules/wrap-ansi-cjs
+1166 silly ADD node_modules/wrap-ansi-cjs/node_modules/emoji-regex
+1167 silly ADD node_modules/wrap-ansi-cjs/node_modules/string-width
+1168 silly ADD node_modules/wrap-ansi
+1169 silly ADD node_modules/wrap-ansi/node_modules/ansi-regex
+1170 silly ADD node_modules/wrap-ansi/node_modules/strip-ansi
+1171 silly ADD node_modules/wrap-ansi/node_modules/ansi-styles
+1172 silly ADD node_modules/strip-ansi-cjs
+1173 silly ADD node_modules/string-width-cjs
+1174 silly ADD node_modules/string-width-cjs/node_modules/emoji-regex
+1175 silly ADD node_modules/string-width
+1176 silly ADD node_modules/string-width/node_modules/ansi-regex
+1177 silly ADD node_modules/string-width/node_modules/strip-ansi
+1178 silly ADD node_modules/@pkgjs/parseargs
+1179 silly ADD node_modules/@isaacs/cliui
+1180 silly ADD node_modules/@isaacs/cliui/node_modules/ansi-regex
+1181 silly ADD node_modules/@isaacs/cliui/node_modules/strip-ansi
+1182 silly ADD node_modules/type-fest
+1183 silly ADD node_modules/signal-exit
+1184 silly ADD node_modules/path-scurry
+1185 silly ADD node_modules/minipass
+1186 silly ADD node_modules/jackspeak
+1187 silly ADD node_modules/foreground-child
+1188 silly ADD node_modules/rimraf
+1189 silly ADD node_modules/rimraf/node_modules/glob
+1190 silly ADD node_modules/glob
+1191 silly ADD node_modules/glob/node_modules/brace-expansion
+1192 silly ADD node_modules/glob/node_modules/minimatch
+1193 silly ADD node_modules/@rushstack/eslint-patch
+1194 silly ADD node_modules/@humanwhocodes/object-schema
+1195 silly ADD node_modules/text-table
+1196 silly ADD node_modules/strip-ansi
+1197 silly ADD node_modules/is-path-inside
+1198 silly ADD node_modules/graphemer
+1199 silly ADD node_modules/@ungap/structured-clone
+1200 silly ADD node_modules/@humanwhocodes/config-array
+1201 silly ADD node_modules/@types/prop-types
+1202 silly ADD
+1203 silly ADD
+1204 silly ADD
+1205 silly ADD
+1206 silly ADD
+1207 silly ADD
+1208 silly ADD
+1209 silly ADD
+1210 silly ADD
+1211 silly ADD
+1212 silly ADD
+1213 silly ADD
+1214 silly ADD
+1215 silly ADD node_modules/@emnapi/runtime
+1216 silly ADD
+1217 silly ADD
+1218 silly ADD
+1219 silly ADD
+1220 silly ADD
+1221 silly ADD
+1222 silly ADD
+1223 silly ADD
+1224 silly ADD
+1225 silly ADD
+1226 silly ADD
+1227 silly ADD
+1228 silly ADD
+1229 silly ADD
+1230 silly ADD
+1231 silly ADD
+1232 silly ADD
+1233 silly ADD
+1234 silly ADD
+1235 silly ADD
+1236 silly ADD
+1237 silly ADD
+1238 silly ADD
+1239 silly ADD
+1240 silly ADD
+1241 silly ADD
+1242 silly ADD
+1243 silly ADD
+1244 silly ADD
+1245 silly REMOVE node_modules/zod-validation-error
+1246 silly REMOVE node_modules/zod
+1247 silly REMOVE node_modules/yallist
+1248 silly REMOVE node_modules/update-browserslist-db
+1249 silly REMOVE node_modules/typescript-eslint
+1250 silly REMOVE node_modules/to-regex-range
+1251 silly CHANGE node_modules/styled-jsx
+1252 silly REMOVE node_modules/sharp
+1253 silly REMOVE node_modules/sharp/node_modules/semver
+1254 silly CHANGE node_modules/scheduler
+1255 silly CHANGE node_modules/react-dom
+1256 silly CHANGE node_modules/react
+1257 silly REMOVE node_modules/picomatch
+1258 silly REMOVE node_modules/node-releases
+1259 silly CHANGE node_modules/next
+1260 silly REMOVE node_modules/micromatch
+1261 silly REMOVE node_modules/merge2
+1262 silly CHANGE node_modules/lru-cache
+1263 silly REMOVE node_modules/json5
+1264 silly REMOVE node_modules/jsesc
+1265 silly REMOVE node_modules/is-number
+1266 silly REMOVE node_modules/hermes-parser
+1267 silly REMOVE node_modules/hermes-estree
+1268 silly CHANGE node_modules/globals
+1269 silly REMOVE node_modules/gensync
+1270 silly CHANGE node_modules/flat-cache
+1271 silly REMOVE node_modules/fill-range
+1272 silly CHANGE node_modules/file-entry-cache
+1273 silly REMOVE node_modules/fast-glob
+1274 silly REMOVE node_modules/fast-glob/node_modules/glob-parent
+1275 silly CHANGE node_modules/espree
+1276 silly CHANGE node_modules/eslint-visitor-keys
+1277 silly CHANGE node_modules/eslint-scope
+1278 silly CHANGE node_modules/eslint-plugin-react-hooks
+1279 silly CHANGE node_modules/eslint-config-next
+1280 silly REMOVE node_modules/eslint-config-next/node_modules/globals
+1281 silly CHANGE node_modules/eslint
+1282 silly ADD node_modules/eslint/node_modules/doctrine
+1283 silly REMOVE node_modules/escalade
+1284 silly REMOVE node_modules/electron-to-chromium
+1285 silly REMOVE node_modules/convert-source-map
+1286 silly REMOVE node_modules/browserslist
+1287 silly REMOVE node_modules/braces
+1288 silly REMOVE node_modules/baseline-browser-mapping
+1289 silly CHANGE node_modules/@types/react-dom
+1290 silly CHANGE node_modules/@types/react
+1291 silly REMOVE node_modules/@types/json-schema
+1292 silly REMOVE node_modules/@types/estree
+1293 silly CHANGE node_modules/@swc/helpers
+1294 silly CHANGE node_modules/@next/swc-win32-x64-msvc
+1295 silly CHANGE node_modules/@next/eslint-plugin-next
+1296 silly CHANGE node_modules/@next/env
+1297 silly REMOVE node_modules/@img/sharp-win32-x64
+1298 silly REMOVE node_modules/@img/colour
+1299 silly REMOVE node_modules/@humanwhocodes/retry
+1300 silly REMOVE node_modules/@humanfs/types
+1301 silly REMOVE node_modules/@humanfs/node
+1302 silly REMOVE node_modules/@humanfs/core
+1303 silly REMOVE node_modules/@eslint/plugin-kit
+1304 silly REMOVE node_modules/@eslint/object-schema
+1305 silly CHANGE node_modules/@eslint/js
+1306 silly CHANGE node_modules/@eslint/eslintrc
+1307 silly REMOVE node_modules/@eslint/core
+1308 silly REMOVE node_modules/@eslint/config-helpers
+1309 silly REMOVE node_modules/@eslint/config-array
+1310 silly REMOVE node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys
+1311 silly REMOVE node_modules/@babel/types
+1312 silly REMOVE node_modules/@babel/traverse
+1313 silly REMOVE node_modules/@babel/template
+1314 silly REMOVE node_modules/@babel/parser
+1315 silly REMOVE node_modules/@babel/helpers
+1316 silly REMOVE node_modules/@babel/helper-validator-option
+1317 silly REMOVE node_modules/@babel/helper-validator-identifier
+1318 silly REMOVE node_modules/@babel/helper-string-parser
+1319 silly REMOVE node_modules/@babel/helper-module-transforms
+1320 silly REMOVE node_modules/@babel/helper-module-imports
+1321 silly REMOVE node_modules/@babel/helper-globals
+1322 silly REMOVE node_modules/@babel/helper-compilation-targets
+1323 silly REMOVE node_modules/@babel/generator
+1324 silly REMOVE node_modules/@babel/core
+1325 silly REMOVE node_modules/@babel/compat-data
+1326 silly REMOVE node_modules/@babel/code-frame
+1327 timing command:install Completed in 55044ms
+1328 verbose exit 0
+1329 timing npm Completed in 56118ms
+1330 info ok

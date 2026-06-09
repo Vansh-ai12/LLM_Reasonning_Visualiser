@@ -1,0 +1,107 @@
+0 verbose cli C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node.exe C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.5.2
+2 info using node@v20.13.1
+3 timing npm:load:whichnode Completed in 3ms
+4 timing config:load:defaults Completed in 3ms
+5 timing config:load:file:C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 4ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:C:\Projects\LLM -Trace-visualiser\client\.npmrc Completed in 0ms
+10 timing config:load:project Completed in 2ms
+11 timing config:load:file:C:\Users\HP\.npmrc Completed in 1ms
+12 timing config:load:user Completed in 2ms
+13 timing config:load:file:C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\etc\npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 1ms
+16 timing config:load Completed in 15ms
+17 timing npm:load:configload Completed in 15ms
+18 timing config:load:flatten Completed in 3ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm install next@14 react@18 react-dom@18 eslint-config-next@14 @auth/core
+22 verbose argv "install" "next@14" "react@18" "react-dom@18" "eslint-config-next@14" "@auth/core" "--save-exact" "--cache" ".npm-cache"
+23 timing npm:load:setTitle Completed in 1ms
+24 timing npm:load:display Completed in 1ms
+25 verbose logfile logs-max:10 dir:C:\Projects\LLM -Trace-visualiser\client\.npm-cache\_logs\2026-06-08T12_43_37_034Z-
+26 verbose logfile C:\Projects\LLM -Trace-visualiser\client\.npm-cache\_logs\2026-06-08T12_43_37_034Z-debug-0.log
+27 timing npm:load:logFile Completed in 4ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 76ms
+31 timing arborist:ctor Completed in 1ms
+32 silly logfile done cleaning log files
+33 timing idealTree:init Completed in 222ms
+34 timing idealTree:userRequests Completed in 1ms
+35 silly idealTree buildDeps
+36 silly fetch manifest next@14
+37 timing arborist:ctor Completed in 1ms
+38 http fetch GET 200 https://registry.npmjs.org/next 1241ms (cache miss)
+39 silly fetch manifest @opentelemetry/api@^1.1.0
+40 http fetch GET 200 https://registry.npmjs.org/@opentelemetry%2fapi 152ms (cache miss)
+41 silly fetch manifest @playwright/test@^1.41.2
+42 http fetch GET 200 https://registry.npmjs.org/@playwright%2ftest 1537ms (cache miss)
+43 silly fetch manifest react@18
+44 http fetch GET 200 https://registry.npmjs.org/react 376ms (cache miss)
+45 silly fetch manifest react-dom@18
+46 http fetch GET 200 https://registry.npmjs.org/react-dom 384ms (cache miss)
+47 silly fetch manifest sass@^1.3.0
+48 http fetch GET 200 https://registry.npmjs.org/sass 117ms (cache miss)
+49 silly fetch manifest @auth/core@*
+50 http fetch GET 200 https://registry.npmjs.org/@auth%2fcore 1081ms (cache miss)
+51 silly fetch manifest @simplewebauthn/browser@^9.0.1
+52 http fetch GET 200 https://registry.npmjs.org/@simplewebauthn%2fbrowser 2268ms (cache miss)
+53 silly fetch manifest @simplewebauthn/server@^9.0.2
+54 http fetch GET 200 https://registry.npmjs.org/@simplewebauthn%2fserver 2321ms (cache miss)
+55 silly fetch manifest nodemailer@^7
+56 http fetch GET 200 https://registry.npmjs.org/nodemailer 1205ms (cache miss)
+57 silly fetch manifest eslint-config-next@14
+58 http fetch GET 200 https://registry.npmjs.org/eslint-config-next 881ms (cache miss)
+59 silly fetch manifest eslint@^9
+60 http fetch GET 200 https://registry.npmjs.org/eslint 163ms (cache miss)
+61 silly fetch manifest eslint@^7.23.0 || ^8.0.0
+62 silly fetch manifest jiti@*
+63 http fetch GET 200 https://registry.npmjs.org/jiti 88ms (cache miss)
+64 timing idealTree Completed in 12672ms
+65 timing command:install Completed in 12684ms
+66 verbose stack Error: unable to resolve dependency tree
+66 verbose stack     at #failPeerConflict (C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1387:25)
+66 verbose stack     at #loadPeerSet (C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1353:33)
+66 verbose stack     at async #buildDepStep (C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:924:11)
+66 verbose stack     at async Arborist.buildIdealTree (C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:203:7)
+66 verbose stack     at async Promise.all (index 1)
+66 verbose stack     at async Arborist.reify (C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:154:5)
+66 verbose stack     at async Install.exec (C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\lib\commands\install.js:153:5)
+66 verbose stack     at async module.exports (C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VisualStudio\NodeJs\node_modules\npm\lib\cli-entry.js:61:5)
+67 verbose cwd C:\Projects\LLM -Trace-visualiser\client
+68 verbose Windows_NT 10.0.26200
+69 verbose node v20.13.1
+70 verbose npm  v10.5.2
+71 error code ERESOLVE
+72 error ERESOLVE unable to resolve dependency tree
+73 error
+74 error While resolving: client@0.1.0
+74 error Found: eslint@9.39.4
+74 error node_modules/eslint
+74 error   dev eslint@"^9" from the root project
+74 error
+74 error Could not resolve dependency:
+74 error peer eslint@"^7.23.0 || ^8.0.0" from eslint-config-next@14.2.35
+74 error node_modules/eslint-config-next
+74 error   dev eslint-config-next@"14" from the root project
+74 error
+74 error Fix the upstream dependency conflict, or retry
+74 error this command with --force or --legacy-peer-deps
+74 error to accept an incorrect (and potentially broken) dependency resolution.
+75 error
+75 error
+75 error For a full report see:
+75 error C:\Projects\LLM -Trace-visualiser\client\.npm-cache\_logs\2026-06-08T12_43_37_034Z-eresolve-report.txt
+76 verbose exit 1
+77 timing npm Completed in 14227ms
+78 verbose unfinished npm timer reify 1780922618584
+79 verbose unfinished npm timer reify:loadTrees 1780922618589
+80 verbose unfinished npm timer idealTree:buildDeps 1780922618816
+81 verbose unfinished npm timer idealTree:#root 1780922618816
+82 verbose code 1
+83 error A complete log of this run can be found in: C:\Projects\LLM -Trace-visualiser\client\.npm-cache\_logs\2026-06-08T12_43_37_034Z-debug-0.log
