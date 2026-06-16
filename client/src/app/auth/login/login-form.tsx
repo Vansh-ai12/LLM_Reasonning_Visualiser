@@ -2,22 +2,34 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { InputField } from '@/components/input-field';
+import { loginUser } from '@/lib/api';
+import { useAuth } from '@/components/auth-provider';
 
 export function LoginForm() {
+  const router = useRouter();
+  const { refresh } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    setTimeout(() => {
+    const result = await loginUser(email, password);
+
+    if (!result.ok) {
+      setError(result.error);
       setLoading(false);
-    }, 1500);
+      return;
+    }
+
+    await refresh();
+    router.push('/dashboard');
   };
 
   return (
@@ -42,11 +54,7 @@ export function LoginForm() {
 
       {error && <p className="auth-error">{error}</p>}
 
-      <button
-        type="submit"
-        className="primary-btn"
-        disabled={loading}
-      >
+      <button type="submit" className="primary-btn" disabled={loading}>
         {loading ? 'Signing in...' : 'Sign in'}
       </button>
 

@@ -11,7 +11,7 @@ from routes.cluster import router as cluster_router
 
 from celery.result import AsyncResult
 
-from tasks import add
+from tasks import run_llm_test
 from tasks import app as celery_app
 
 from models import *
@@ -23,9 +23,13 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],    
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
+    allow_methods=["*"],
     allow_headers=["*"],
+    allow_credentials=True,
 )
 
 app.include_router(user_router)
@@ -33,8 +37,7 @@ app.include_router(cluster_router)
 
 @app.get("/" ,)
 def read_root():
-    task=add.delay(4, 6)
-    return {"Message": "Server is running!!!" ,  "task_id": task.id}
+    return {"Message": "Server is running!!!"}
 
 
 @app.get("/health")
@@ -51,9 +54,29 @@ def health_check(
 @app.get("/task/{task_id}")
 def get_task(task_id: str):
 
-    result = AsyncResult(task_id, app=celery_app)
+    result = AsyncResult(
+        task_id,
+        app=celery_app
+    )
 
-    return {
-        "state": result.state,
-        "result": result.result
+    response = {
+        "task_id": task_id,
+        "state": result.state
     }
+
+    if result.ready():
+        response["result"] = result.result
+
+    return response
+
+
+
+@app.post("/research/ask")
+def ask_llm(question:str):
+    task = run_llm_test(question)
+    return {
+        "task_id":task.id
+    }
+
+
+

@@ -67,7 +67,7 @@ class ReasoningRun(SQLModel, table=True):
             nullable=False
         )
     )
-    
+    decoding_strategy: str = Field(default="greedy") 
     input_data: str
     output_data: str
     summary: Optional[str] = None
@@ -75,3 +75,34 @@ class ReasoningRun(SQLModel, table=True):
 
     cluster: Optional["Cluster"] = Relationship(back_populates="runs")
     steps: List["ReasoningStep"] = Relationship(back_populates="run")
+
+
+
+
+# class ReasoningStep(SQLModel, table=True):
+#     id:               Optional[int] = Field(default=None, primary_key=True)
+#     run_id:           uuid.UUID = Field(foreign_key="reasoningrun.id")
+#     type:             str = Field(sa_column=Column(String, CheckConstraint(...)))
+#     confidence:       str = Field(sa_column=Column(String, CheckConstraint(...)))
+#     label:            str
+#     content:          str
+#     depends_on:       str
+
+#     # entropy
+#     entropy:          Optional[float] = None   # mean entropy across step tokens
+#     entropy_min:      Optional[float] = None   # lowest entropy token in step
+#     entropy_max:      Optional[float] = None   # highest entropy token in step
+#     entropy_var:      Optional[float] = None   # variance — how spiky the uncertainty was
+
+#     # token analysis
+#     token_count:      Optional[int]   = None   # how many tokens this step took
+#     avg_chosen_prob:  Optional[float] = None   # avg probability of chosen tokens
+
+#     # flags
+#     is_correction:    bool = Field(default=False)  # did this step revise a prior step
+
+#     # alternatives
+#     top_alternatives: Optional[str]  = None   # JSON string of top-5 tokens at step start
+
+#     created_at:       datetime = Field(default_factory=datetime.utcnow)
+#     run:              Optional["ReasoningRun"] = Relationship(back_populates="steps")
