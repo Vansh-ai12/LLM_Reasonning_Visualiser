@@ -4,13 +4,19 @@ import { useState } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { DashboardNav } from '@/components/dashboard-nav';
+import { getUserStatus } from '@/lib/api';
 import {
   DagGraph,
-  MOCK_DAG_LINKS,
-  MOCK_DAG_NODES,
   type DagLink,
   type DagNode,
 } from '@/components/dag-graph';
+import {
+  askResearch,
+  getResearchTask,
+  type ResearchStep,
+} from '@/lib/api';
+
+import { useEffect } from 'react';
 
 interface HistoryItem {
   id: string;
@@ -18,67 +24,138 @@ interface HistoryItem {
   updatedAt: string;
 }
 
-const MOCK_HISTORY: HistoryItem[] = [
-  {
-    id: '1',
-    title: 'Greedy decode — math word problem',
-    updatedAt: '2h ago',
-  },
-  {
-    id: '2',
-    title: 'Multi-hop retrieval trace',
-    updatedAt: 'Yesterday',
-  },
-  {
-    id: '3',
-    title: 'Cross-model reasoning comparison',
-    updatedAt: 'Jun 10',
-  },
-  {
-    id: '4',
-    title: 'Chain correction on factual QA',
-    updatedAt: 'Jun 8',
-  },
-  {
-    id: '5',
-    title: 'Beam search attribution run',
-    updatedAt: 'Jun 5',
-  },
-];
-
 interface ChatMessage {
   id: string;
   role: 'user' | 'assistant';
   content: string;
 }
 
-const STARTER_MESSAGES: ChatMessage[] = [
+const APP_VERSION = 'v1.0.0';
+
+const MOCK_HISTORY: HistoryItem[] = [
   {
-    id: 'starter',
-    role: 'assistant',
-    content:
-      'Submit a prompt to inspect how a model structures its reasoning. Each response will map steps into a trace you can explore as a DAG.',
+    id: '1',
+    title: 'Math word problem trace',
+    updatedAt: '2h ago',
+  },
+  {
+    id: '2',
+    title: 'Retrieval reasoning path',
+    updatedAt: 'Yesterday',
+  },
+  {
+    id: '3',
+    title: 'Model comparison run',
+    updatedAt: 'Jun 10',
+  },
+  {
+    id: '4',
+    title: 'Factual QA correction',
+    updatedAt: 'Jun 8',
+  },
+  {
+    id: '5',
+    title: 'Beam search attribution',
+    updatedAt: 'Jun 5',
   },
 ];
 
-type WorkspaceView = 'chat' | 'split' | 'graph';
+const STARTER_MESSAGES: ChatMessage[] = [];
+
+const PROMPT_SUGGESTIONS = [
+  'Trace a multi-step math solution',
+  'Compare two model reasoning paths',
+  'Find weak links in a factual answer',
+  'Visualize retrieval and synthesis steps',
+];
+
+function parseDependsOn(dependsOn: ResearchStep['depends_on']): Array<number | string> {
+  if (Array.isArray(dependsOn)) {
+    return dependsOn;
+  }
+
+  try {
+    const parsed = JSON.parse(dependsOn) as unknown;
+    return Array.isArray(parsed)
+      ? parsed.filter(
+          (value): value is number | string =>
+            typeof value === 'number' || typeof value === 'string',
+        )
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function stepsToGraph(steps: ResearchStep[]): {
+  nodes: DagNode[];
+  links: DagLink[];
+} {
+  const nodes = steps.map((step) => ({
+    id: String(step.id),
+    label: step.label || step.content.slice(0, 40),
+    type: step.type,
+  }));
+
+  const links = steps.flatMap((step) =>
+    parseDependsOn(step.depends_on).map((sourceId) => ({
+      source: String(sourceId),
+      target: String(step.id),
+    })),
+  );
+
+  return { nodes, links };
+}
+
+async function waitForResearchResult(taskId: string) {
+  for (let attempt = 0; attempt < 30; attempt += 1) {
+    const task = await getResearchTask(taskId);
+    if (!task.ok) {
+      throw new Error(task.error);
+    }
+
+    if (task.data.state === 'FAILURE') {
+      throw new Error('The research task failed');
+    }
+
+    if (task.data.result) {
+      return task.data.result;
+    }
+
+    await new Promise((resolve) => window.setTimeout(resolve, 2000));
+  }
+
+  throw new Error('The research task is still running. Try again in a moment.');
+}
 
 export function DashboardShell() {
-  const [activeId, setActiveId] = useState(MOCK_HISTORY[0].id);
+  const [activeId, setActiveId] = useState('new');
   const [messages, setMessages] = useState<ChatMessage[]>(STARTER_MESSAGES);
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
-  const [view, setView] = useState<WorkspaceView>('chat');
   const [dagNodes, setDagNodes] = useState<DagNode[]>([]);
   const [dagLinks, setDagLinks] = useState<DagLink[]>([]);
-  const [hasGraph, setHasGraph] = useState(false);
+  const [graphOpen, setGraphOpen] = useState(false);
 
-  const showGraphPanel = view === 'split' || view === 'graph';
-  const showChatPanel = view === 'chat' || view === 'split';
+  const [userId, setUserId] = useState<string | null>(null);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const trimmed = input.trim();
+  useEffect(() => {
+    async function loadUser() {
+      const result = await getUserStatus();
+
+      if (result.ok) {
+        setUserId(result.user.id);
+      }
+    }
+
+    void loadUser();
+  }, []);
+
+  const hasMessages = messages.length > 0;
+  const hasGraph = dagNodes.length > 0;
+
+  const sendPrompt = async (value: string) => {
+    const trimmed = value.trim();
     if (!trimmed || sending) {
       return;
     }
@@ -93,22 +170,53 @@ export function DashboardShell() {
     setInput('');
     setSending(true);
 
-    window.setTimeout(() => {
+    try {
+      if (!userId) {
+        throw new Error("User not authenticated");
+      }
+
+      const askResponse = await askResearch(
+        trimmed,
+        userId
+      );
+      if (!askResponse.ok) {
+        throw new Error(askResponse.error);
+      }
+
+      const result = await waitForResearchResult(askResponse.data.task_id);
+      const graph = stepsToGraph(result.steps);
+
       setMessages((prev) => [
         ...prev,
         {
           id: `assistant-${Date.now()}`,
           role: 'assistant',
-          content:
-            'Trace preview is UI-only for now. When connected, this response will expand into labeled reasoning steps with dependency edges and confidence scores.',
+          content: result.final_answer || 'Trace completed without a final answer.',
         },
       ]);
-      setDagNodes(MOCK_DAG_NODES);
-      setDagLinks(MOCK_DAG_LINKS);
-      setHasGraph(true);
-      setView('split');
+      setDagNodes(graph.nodes);
+      setDagLinks(graph.links);
+      setGraphOpen(true);
+    } catch (error) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `assistant-error-${Date.now()}`,
+          role: 'assistant',
+          content:
+            error instanceof Error
+              ? error.message
+              : 'Could not complete the research trace.',
+        },
+      ]);
+    } finally {
       setSending(false);
-    }, 600);
+    }
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    void sendPrompt(input);
   };
 
   const handleNewTrace = () => {
@@ -117,35 +225,30 @@ export function DashboardShell() {
     setInput('');
     setDagNodes([]);
     setDagLinks([]);
-    setHasGraph(false);
-    setView('chat');
-  };
-
-  const openGraph = () => {
-    if (!hasGraph) {
-      return;
-    }
-    setView((current) => (current === 'graph' ? 'split' : 'graph'));
+    setGraphOpen(false);
   };
 
   return (
-    <div className="dash-layout">
-      <aside className="dash-sidebar">
+    <div className="dash-layout dash-layout--gpt">
+      <aside className="dash-sidebar dash-sidebar--gpt">
         <div className="dash-sidebar-top">
-          <Link href="/" className="dash-brand">
-            ThoughtDag
-          </Link>
+          <div className="dash-brand-row">
+            <Link href="/" className="dash-brand">
+              ThoughtDag
+            </Link>
+            <span className="dash-version">{APP_VERSION}</span>
+          </div>
           <button
             type="button"
             className="dash-new-btn"
             onClick={handleNewTrace}
           >
-            New trace
+            New chat
           </button>
         </div>
 
         <div className="dash-history">
-          <p className="dash-history-label">History</p>
+          <p className="dash-history-label">Today</p>
           <ul className="dash-history-list">
             {MOCK_HISTORY.map((item) => (
               <li key={item.id}>
@@ -169,69 +272,54 @@ export function DashboardShell() {
         </div>
       </aside>
 
-      <section className="dash-main">
-        <header className="dash-toolbar">
-          <div className="dash-view-tabs" role="tablist" aria-label="Workspace view">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={view === 'chat'}
-              className={clsx('dash-view-tab', {
-                'dash-view-tab--active': view === 'chat',
-              })}
-              onClick={() => setView('chat')}
-            >
-              Chat
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={view === 'split'}
-              className={clsx('dash-view-tab', {
-                'dash-view-tab--active': view === 'split',
-              })}
-              onClick={() => setView('split')}
-              disabled={!hasGraph}
-            >
-              Split
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={view === 'graph'}
-              className={clsx('dash-view-tab', {
-                'dash-view-tab--active': view === 'graph',
-              })}
-              onClick={() => setView('graph')}
-              disabled={!hasGraph}
-            >
-              Graph
-            </button>
+      <section className="dash-main dash-main--gpt">
+        <header className="dash-topbar">
+          <button
+            type="button"
+            className="dash-mobile-new"
+            onClick={handleNewTrace}
+          >
+            New
+          </button>
+          <div className="dash-topbar-title">
+            <span>ThoughtDag</span>
+            <span>{APP_VERSION}</span>
           </div>
-
-          <div className="dash-toolbar-actions">
-            <button
-              type="button"
-              className="dash-graph-btn"
-              onClick={openGraph}
-              disabled={!hasGraph}
-            >
-              View reasoning graph
-            </button>
-            <div className="dash-main-header-nav">
-              <DashboardNav />
-            </div>
-          </div>
+          <button
+            type="button"
+            className="dash-graph-toggle"
+            onClick={() => setGraphOpen((open) => !open)}
+            disabled={!hasGraph}
+          >
+            Graph
+          </button>
         </header>
 
-        <div
-          className={clsx('dash-workspace', {
-            'dash-workspace--split': view === 'split',
-            'dash-workspace--graph': view === 'graph',
-          })}
-        >
-          {showChatPanel && (
-            <div className="dash-chat-column">
+        <div className="dash-chat-stage">
+          <main className="dash-chat">
+            {!hasMessages && (
+              <div className="dash-empty-state">
+                <h1>What are we tracing today?</h1>
+                <p>
+                  Ask ThoughtDag to inspect a prompt, compare reasoning paths,
+                  or turn model steps into a DAG.
+                </p>
+                <div className="dash-suggestion-grid">
+                  {PROMPT_SUGGESTIONS.map((suggestion) => (
+                    <button
+                      key={suggestion}
+                      type="button"
+                      className="dash-suggestion"
+                      onClick={() => void sendPrompt(suggestion)}
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {hasMessages && (
               <div className="dash-messages">
                 <div className="dash-messages-inner">
                   {messages.map((message) => (
@@ -242,82 +330,92 @@ export function DashboardShell() {
                         'dash-message--assistant': message.role === 'assistant',
                       })}
                     >
+                      <div className="dash-message-avatar">
+                        {message.role === 'assistant' ? 'TD' : 'You'}
+                      </div>
                       <p className="dash-message-content">{message.content}</p>
-                      {message.role === 'assistant' && hasGraph && (
-                        <button
-                          type="button"
-                          className="dash-message-graph-btn"
-                          onClick={() => setView('graph')}
-                        >
-                          Open graph nodes
-                        </button>
-                      )}
                     </article>
                   ))}
                   {sending && (
                     <article className="dash-message dash-message--assistant">
+                      <div className="dash-message-avatar">TD</div>
                       <p className="dash-message-content dash-message-content--pending">
-                        Generating step map...
+                        Retrieving memory and tracing the answer...
                       </p>
                     </article>
                   )}
                 </div>
               </div>
+            )}
 
-              <form className="dash-composer" onSubmit={handleSubmit}>
-                <div className="dash-composer-wrap">
-                  <div className="dash-composer-inner">
-                    <textarea
-                      className="dash-composer-input"
-                      rows={1}
-                      placeholder="Describe a task or paste a prompt to trace..."
-                      value={input}
-                      onChange={(event) => setInput(event.target.value)}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter' && !event.shiftKey) {
-                          event.preventDefault();
-                          event.currentTarget.form?.requestSubmit();
-                        }
-                      }}
-                    />
-                    <button
-                      type="submit"
-                      className="dash-composer-submit"
-                      disabled={!input.trim() || sending}
-                    >
-                      Run trace
-                    </button>
-                  </div>
-                  <p className="dash-composer-hint">
-                    UI preview only — server integration comes next.
-                  </p>
-                </div>
-              </form>
-            </div>
-          )}
-
-          {showGraphPanel && (
-            <aside className="dash-graph-column">
-              <div className="dash-graph-header">
-                <div>
-                  <p className="dash-graph-kicker">Reasoning DAG</p>
-                  <h2 className="dash-graph-title">
-                    {hasGraph ? `${dagNodes.length} nodes` : 'Empty graph'}
-                  </h2>
-                </div>
-                {view === 'split' && (
+            <form className="dash-composer" onSubmit={handleSubmit}>
+              <div className="dash-composer-wrap">
+                <div className="dash-composer-inner">
+                  <textarea
+                    className="dash-composer-input"
+                    rows={1}
+                    placeholder="Message ThoughtDag"
+                    value={input}
+                    onChange={(event) => setInput(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' && !event.shiftKey) {
+                        event.preventDefault();
+                        event.currentTarget.form?.requestSubmit();
+                      }
+                    }}
+                  />
                   <button
-                    type="button"
-                    className="dash-graph-expand"
-                    onClick={() => setView('graph')}
+                    type="submit"
+                    className="dash-composer-submit"
+                    disabled={!input.trim() || sending}
+                    aria-label="Send message"
                   >
-                    Expand
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 19V5M5 12l7-7 7 7"
+                        stroke="currentColor"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </button>
-                )}
+                </div>
+                <p className="dash-composer-hint">
+                  ThoughtDag can make mistakes. Verify important traces.
+                </p>
               </div>
-              <DagGraph nodes={dagNodes} links={dagLinks} />
-            </aside>
-          )}
+            </form>
+          </main>
+
+          <aside
+            className={clsx('dash-graph-drawer', {
+              'dash-graph-drawer--open': graphOpen,
+            })}
+          >
+            <div className="dash-graph-header">
+              <div>
+                <p className="dash-graph-kicker">Reasoning DAG</p>
+                <h2 className="dash-graph-title">
+                  {hasGraph ? `${dagNodes.length} nodes` : 'No graph yet'}
+                </h2>
+              </div>
+              <button
+                type="button"
+                className="dash-graph-close"
+                onClick={() => setGraphOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+            <DagGraph nodes={dagNodes} links={dagLinks} />
+          </aside>
         </div>
       </section>
     </div>

@@ -18,6 +18,12 @@ from models import *
 
 SQLModel.metadata.create_all(engine)
 
+from pydantic import BaseModel
+
+class AskRequest(BaseModel):
+    question: str
+    user_id: str
+
 app = FastAPI()
 
 
@@ -70,13 +76,14 @@ def get_task(task_id: str):
     return response
 
 
-
 @app.post("/research/ask")
-def ask_llm(question:str):
-    task = run_llm_test(question)
+def ask_llm(payload: AskRequest):
+
+    task = run_llm_test.delay(
+        payload.question,
+        payload.user_id
+    )
+
     return {
-        "task_id":task.id
+        "task_id": task.id
     }
-
-
-

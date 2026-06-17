@@ -28,7 +28,7 @@ QDRANT_URL =  os.getenv("QDRANT_URL")
 
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 
-from system_prompts import MEMORY_MODEL_PROMPT
+from llm.system_prompts import MEMORY_MODEL_PROMPT
 
 client = QdrantClient(
     url=QDRANT_URL,

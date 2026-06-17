@@ -177,16 +177,21 @@ def generate_one_step(model, tokenizer, message_history: list) -> tuple:
 
 # ── main loop ──────────────────────────────────────────────────────────────────
 
-def run_inference_and_build_steps(model, tokenizer, question: str) -> tuple:
+def run_inference_and_build_steps(
+    model,
+    tokenizer,
+    question: str,
+    system_prompt: str
+) -> tuple:
     """
     Step-by-step inference loop.
     Returns (final_answer: str, steps: list[dict])
     """
 
     message_history = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user",   "content": question},
-    ]
+    {"role": "system", "content": system_prompt},
+    {"role": "user", "content": question},
+]
 
     steps        = []
     step_index   = 1

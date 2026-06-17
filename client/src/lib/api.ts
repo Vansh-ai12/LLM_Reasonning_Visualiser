@@ -10,6 +10,48 @@ export interface User {
   email: string;
 }
 
+export interface MemoryMatch {
+  text: string;
+  memory_type: string;
+  created_at: string;
+  score: number;
+}
+
+export interface ResearchAskResponse {
+  task_id: string;
+}
+
+export interface ResearchStep {
+  id: number;
+  type: 'hypothesis' | 'lookup' | 'calculation' | 'correction' | 'conclusion';
+  label: string;
+  content: string;
+  depends_on: string | number[];
+  confidence: 'high' | 'medium' | 'low';
+}
+
+export interface ResearchResult {
+  final_answer: string;
+  steps: ResearchStep[];
+  retrieved_memories?: MemoryMatch[];
+}
+
+export interface TaskStatus {
+  task_id: string;
+  state: string;
+  result?: ResearchResult;
+}
+
+function isResearchAskResponse(
+  data: unknown
+): data is ResearchAskResponse {
+  return (
+    typeof data === 'object' &&
+    data !== null &&
+    'task_id' in data &&
+    typeof data.task_id === 'string'
+  );
+}
 interface AuthSuccess {
   message: string;
   id?: string;
@@ -102,4 +144,50 @@ export async function logoutUser(): Promise<void> {
 
 export function getGitHubAuthUrl(): string {
   return `${getApiUrl()}/users/oauth/github`;
+}
+
+export async function askResearch(
+  question: string, user_id:string
+): Promise<{ ok: true; data: ResearchAskResponse } | { ok: false; error: string }> {
+  const res = await fetch(`${getApiUrl()}/research/ask`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify({ question, user_id:user_id }),
+  });
+
+  const data = (await res.json().catch(() => null)) as unknown;
+
+  if (!res.ok || !isResearchAskResponse(data)) {
+    const detail =
+      typeof data === 'object' &&
+      data !== null &&
+      'detail' in data &&
+      typeof data.detail === 'string'
+        ? data.detail
+        : null;
+
+    return {
+      ok: false,
+      error: detail ?? 'Research request failed',
+    };
+  }
+
+  return { ok: true, data };
+}
+
+export async function getResearchTask(
+  taskId: string,
+): Promise<{ ok: true; data: TaskStatus } | { ok: false; error: string }> {
+  const res = await fetch(`${getApiUrl()}/task/${taskId}`, {
+    credentials: 'include',
+  });
+
+  const data = (await res.json().catch(() => null)) as TaskStatus | null;
+
+  if (!res.ok || !data) {
+    return { ok: false, error: 'Could not load task status' };
+  }
+
+  return { ok: true, data };
 }

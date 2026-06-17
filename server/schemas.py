@@ -40,6 +40,9 @@ class ReasoningRequest(BaseModel):
     input_data: str
     reasoning_type: Literal['research','testing']
 
+class ResearchAskRequest(BaseModel):
+    question: str = Field(description="The original user question to send through memory retrieval and LLM tracing")
+
 
 class ReasoningStep(BaseModel):
     id: int

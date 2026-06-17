@@ -9,6 +9,8 @@ from llm.services import run_inference_and_build_steps
 
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
 
+from llm.memory import createMemory , retrieveMemory
+
 import torch
 
 load_dotenv()
@@ -48,11 +50,57 @@ def add(x, y):
         return x + y
 
 @app.task
-def run_llm_test(question:str):
-        
-        final_answer, steps = run_inference_and_build_steps(model, tokenizer, question)
+def run_llm_test(
+    question: str,
+    user_id: str
+):
 
-        return {
-                "final_answer":final_answer,
-                "steps":steps
-        }
+    memories = retrieveMemory(
+        question,
+        user_id
+    )
+
+    memory_context = ""
+
+    for memory in memories:
+        memory_context += (
+            f"[{memory['memory_type']}] "
+            f"{memory['text']}\n"
+        )
+
+    enhanced_prompt = f"""
+    {SYSTEM_PROMPT}
+
+    Relevant User Memories:
+
+    {memory_context}
+    """
+
+    final_answer, steps = run_inference_and_build_steps(
+        model,
+        tokenizer,
+        question,
+        enhanced_prompt
+    )
+
+    createMemory(
+        f"Question: {question}\nAnswer: {final_answer}",
+        user_id
+     )
+
+    return {
+        "final_answer": final_answer,
+        "steps": steps,
+        "retrieved_memories": memories
+    }
+
+
+@app.task(name="tasks.createMem")
+def createMem(question: str, user_id: str):
+        return createMemory(question,user_id)
+
+@app.task(name="tasks.retrieveMem")
+def retrieveMem(question: str, user_id: str):
+        return retrieveMemory(question,user_id)
+
+
