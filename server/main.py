@@ -2,12 +2,13 @@ from fastapi import Depends, FastAPI
 
 from fastapi.middleware.cors import CORSMiddleware
 
+from qdrant_client import QdrantClient
 from sqlmodel import Session, text , SQLModel
 
 from db_connect import get_session , engine
 
 from routes.user import router as user_router
-from routes.cluster import router as cluster_router 
+from routes.run import router as run_router
 
 from celery.result import AsyncResult
 
@@ -16,13 +17,23 @@ from tasks import app as celery_app
 
 from models import *
 
+import os
+
+from dotenv import load_dotenv
+
+QDRANT_URL =  os.getenv("QDRANT_URL")
+
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+
+client = QdrantClient(
+    url=QDRANT_URL,
+    api_key=QDRANT_API_KEY
+)
+
+
 SQLModel.metadata.create_all(engine)
 
-from pydantic import BaseModel
 
-class AskRequest(BaseModel):
-    question: str
-    user_id: str
 
 app = FastAPI()
 
@@ -39,7 +50,7 @@ app.add_middleware(
 )
 
 app.include_router(user_router)
-app.include_router(cluster_router)
+app.include_router(run_router)
 
 @app.get("/" ,)
 def read_root():
@@ -76,14 +87,7 @@ def get_task(task_id: str):
     return response
 
 
-@app.post("/research/ask")
-def ask_llm(payload: AskRequest):
 
-    task = run_llm_test.delay(
-        payload.question,
-        payload.user_id
-    )
-
-    return {
-        "task_id": task.id
-    }
+@app.get("/debug-memory")
+def debug_memory():
+    return client.get_collection("Memory")

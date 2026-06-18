@@ -11,8 +11,10 @@
   "dependencies": {
     "@fontsource/ibm-plex-mono": "5.2.7",
     "@types/d3": "^7.4.3",
+    "@xyflow/react": "^12.11.0",
     "clsx": "^2.1.1",
     "d3": "^7.9.0",
+    "dagre": "^0.8.5",
     "framer-motion": "^12.40.0",
     "geist": "1.7.2",
     "next": "14.2.35",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/dagre": "^0.7.54",
     "@types/node": "^20",
     "@types/react": "18.3.31",
     "@types/react-dom": "18.3.7",

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { InputField } from '@/components/input-field';
 import { registerUser } from '@/lib/api';
-import { useAuth } from '@/components/auth-provider';
+import { useAuth } from '@/context/auth-context';
 
 export function SignupForm() {
   const router = useRouter();

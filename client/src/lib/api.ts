@@ -1,59 +1,11 @@
-const DEFAULT_API_URL = '/backend';
+const DEFAULT_API_URL = 'http://localhost:8000';
 
 export function getApiUrl(): string {
   return process.env.NEXT_PUBLIC_API_URL ?? DEFAULT_API_URL;
 }
 
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-}
-
-export interface MemoryMatch {
-  text: string;
-  memory_type: string;
-  created_at: string;
-  score: number;
-}
-
-export interface ResearchAskResponse {
-  task_id: string;
-}
-
-export interface ResearchStep {
-  id: number;
-  type: 'hypothesis' | 'lookup' | 'calculation' | 'correction' | 'conclusion';
-  label: string;
-  content: string;
-  depends_on: string | number[];
-  confidence: 'high' | 'medium' | 'low';
-}
-
-export interface ResearchResult {
-  final_answer: string;
-  steps: ResearchStep[];
-  retrieved_memories?: MemoryMatch[];
-}
-
-export interface TaskStatus {
-  task_id: string;
-  state: string;
-  result?: ResearchResult;
-}
-
-function isResearchAskResponse(
-  data: unknown
-): data is ResearchAskResponse {
-  return (
-    typeof data === 'object' &&
-    data !== null &&
-    'task_id' in data &&
-    typeof data.task_id === 'string'
-  );
-}
 interface AuthSuccess {
-  message: string;
+  message?: string;
   id?: string;
 }
 
@@ -62,32 +14,13 @@ interface AuthError {
   Error?: string;
 }
 
-type AuthResponse = Partial<AuthSuccess & AuthError>;
+type AuthResponse = AuthSuccess & AuthError;
 
 async function parseAuthResponse(res: Response): Promise<AuthResponse> {
   try {
     return (await res.json()) as AuthResponse;
   } catch {
     return { error: 'Unexpected server response' };
-  }
-}
-
-export async function getUserStatus(): Promise<
-  { ok: true; user: User } | { ok: false }
-> {
-  try {
-    const res = await fetch(`${getApiUrl()}/users/status`, {
-      credentials: 'include',
-    });
-
-    if (!res.ok) {
-      return { ok: false };
-    }
-
-    const user = (await res.json()) as User;
-    return { ok: true, user };
-  } catch {
-    return { ok: false };
   }
 }
 
@@ -135,59 +68,106 @@ export async function registerUser(payload: {
   return { ok: true };
 }
 
+export interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+}
+
+export async function fetchUserStatus(): Promise<UserProfile | null> {
+  try {
+    const res = await fetch(`${getApiUrl()}/users/status`, {
+      credentials: 'include',
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
 export async function logoutUser(): Promise<void> {
-  await fetch(`${getApiUrl()}/users/logout`, {
-    method: 'POST',
-    credentials: 'include',
-  });
+  try {
+    await fetch(`${getApiUrl()}/users/logout`, {
+      method: 'POST',
+      credentials: 'include',
+    });
+  } catch {
+    // ignore
+  }
 }
 
 export function getGitHubAuthUrl(): string {
   return `${getApiUrl()}/users/oauth/github`;
 }
 
-export async function askResearch(
-  question: string, user_id:string
-): Promise<{ ok: true; data: ResearchAskResponse } | { ok: false; error: string }> {
-  const res = await fetch(`${getApiUrl()}/research/ask`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify({ question, user_id:user_id }),
-  });
-
-  const data = (await res.json().catch(() => null)) as unknown;
-
-  if (!res.ok || !isResearchAskResponse(data)) {
-    const detail =
-      typeof data === 'object' &&
-      data !== null &&
-      'detail' in data &&
-      typeof data.detail === 'string'
-        ? data.detail
-        : null;
-
-    return {
-      ok: false,
-      error: detail ?? 'Research request failed',
-    };
-  }
-
-  return { ok: true, data };
+export interface ReasoningRun {
+  id: string;
+  user_id: string;
+  reasoning_type: string;
+  input_data: string;
+  output_data: string;
+  summary: string | null;
+  created_at: string;
 }
 
-export async function getResearchTask(
-  taskId: string,
-): Promise<{ ok: true; data: TaskStatus } | { ok: false; error: string }> {
-  const res = await fetch(`${getApiUrl()}/task/${taskId}`, {
-    credentials: 'include',
-  });
+export interface ReasoningStep {
+  id: number;
+  run_id: string;
+  type: 'hypothesis' | 'lookup' | 'calculation' | 'correction' | 'conclusion';
+  confidence: 'high' | 'medium' | 'low';
+  label: string;
+  content: string;
+  depends_on: string; // JSON string "[1,2]"
+  entropy: number | null;
+}
 
-  const data = (await res.json().catch(() => null)) as TaskStatus | null;
-
-  if (!res.ok || !data) {
-    return { ok: false, error: 'Could not load task status' };
+export async function fetchRuns(): Promise<ReasoningRun[]> {
+  try {
+    const res = await fetch(`${getApiUrl()}/run/history`, {
+      credentials: 'include',
+    });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
   }
+}
 
-  return { ok: true, data };
+export async function fetchSteps(runId: string): Promise<ReasoningStep[]> {
+  try {
+    const res = await fetch(`${getApiUrl()}/run/${runId}/steps`, {
+      credentials: 'include',
+    });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}
+
+export async function askQuestion(question: string): Promise<{ taskId: string, runId: string } | null> {
+  try {
+    const res = await fetch(`${getApiUrl()}/run/ask`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ question }),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return { taskId: data.task_id, runId: data.run_id };
+  } catch {
+    return null;
+  }
+}
+
+export async function pollTask(taskId: string): Promise<{ state: string, result?: unknown }> {
+  try {
+    const res = await fetch(`${getApiUrl()}/task/${taskId}`);
+    if (!res.ok) return { state: 'FAILURE' };
+    return await res.json();
+  } catch {
+    return { state: 'FAILURE' };
+  }
 }

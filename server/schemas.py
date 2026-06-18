@@ -18,25 +18,14 @@ class UserLogin(BaseModel):
     password:str = Field( description="The password of the user" , min_length=8)
 
 
+
 class UserResponse(BaseModel):
     id: uuid.UUID
     name: str
     email: str
 
-class ClusterCreate(BaseModel):
-    name:str = Field( description="The name of the cluster")
-    description: Optional[str] = Field( description="The description of the cluster")
-
-class ClusterResponse(BaseModel):
-    id: uuid.UUID
-    name: str
-    description: str | None = None
-    status: str
-
-    model_config = ConfigDict(from_attributes=True)
-
 class ReasoningRequest(BaseModel):
-    cluster_id: uuid.UUID
+    user_id: uuid.UUID
     input_data: str
     reasoning_type: Literal['research','testing']
 
@@ -52,17 +41,27 @@ class ReasoningStep(BaseModel):
     depends_on: List[int] = Field(default_factory=list)
     confidence: Literal['high', 'medium', 'low']
 
-class ReasoningResponse(BaseModel):
-    cluster_id: uuid.UUID
+
+
+class RunResponse(BaseModel):
+    id: uuid.UUID
+    user_id: uuid.UUID
+    reasoning_type: str
+    input_data: str
     output_data: str
-    reasoning_steps: List[ReasoningStep]   
-    reasoning_type: Literal['research', 'testing']
     summary: Optional[str] = None
     created_at: datetime
+    
+    model_config = ConfigDict(from_attributes=True)
 
-
-
-
-
-
-
+class StepResponse(BaseModel):
+    id: Optional[int]
+    run_id: uuid.UUID
+    type: str
+    confidence: str
+    label: str
+    content: str
+    depends_on: str
+    entropy: Optional[float] = None
+    
+    model_config = ConfigDict(from_attributes=True)

@@ -89,9 +89,9 @@ def build_step_metrics(
     else:
         ent_mean = ent_min = ent_max = ent_var = avg_prob = 0.0
 
-    if ent_mean < 1.0:
+    if ent_mean < 0.2:
         confidence = "high"
-    elif ent_mean < 2.0:
+    elif ent_mean < 0.5:
         confidence = "medium"
     else:
         confidence = "low"
@@ -181,7 +181,8 @@ def run_inference_and_build_steps(
     model,
     tokenizer,
     question: str,
-    system_prompt: str
+    system_prompt: str,
+    step_callback=None
 ) -> tuple:
     """
     Step-by-step inference loop.
@@ -241,6 +242,8 @@ def run_inference_and_build_steps(
                 step_index         = step_index,
             )
             steps.append(step_data)
+            if step_callback:
+                step_callback(step_data)
             step_index += 1
 
             # ask model for next step
@@ -252,6 +255,19 @@ def run_inference_and_build_steps(
         elif step_kind == "OUTPUT":
             final_answer = content
             logger.info(f"Final answer: {final_answer}")
+            
+            step_data = build_step_metrics(
+                step_type          = "conclusion",
+                step_content       = content,
+                token_entropies    = token_entropies,
+                chosen_token_probs = chosen_token_probs,
+                top_alternatives   = top_alternatives,
+                step_index         = step_index,
+            )
+            steps.append(step_data)
+            if step_callback:
+                step_callback(step_data)
+                
             break
 
         else:

@@ -108,6 +108,8 @@ def createMemory(query: str, user_id: str):
 
     vector = sentence_embeddings[0].tolist()
 
+    print(len(vector))
+
     # -----------------------------
     # Upsert to Qdrant
     # -----------------------------
@@ -163,21 +165,29 @@ def retrieveMemory(query: str, user_id):
 
     # Convert tensor -> list
     query_vector = sentence_embeddings[0].tolist()
+    print(len(query_vector))
 
     # Similarity Search + User Filter
-    results = client.query_points(
+    try:
+        results = client.query_points(
         collection_name="Memory",
         query=query_vector,
         query_filter=Filter(
-            must=[
-                FieldCondition(
-                    key="user_id",
-                    match=MatchValue(value=user_id)
-                )
-            ]
-        ),
-        limit=5
-    )
+                must=[
+                    FieldCondition(
+                        key="user_id",
+                        match=MatchValue(value=user_id)
+                    )
+                ]
+            ),
+            limit=5
+        )
+    except Exception as e:
+        print("QDRANT ERROR:", e)
+        print("USER ID:", user_id)
+        print("VECTOR LENGTH:", len(query_vector))
+        return []
+        
     memories=[]
     for point in results.points:
         memories.append({
