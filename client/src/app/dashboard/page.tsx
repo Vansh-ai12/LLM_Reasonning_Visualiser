@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { ChatPanel } from '@/components/dashboard/chat-panel';
 import { GraphPanel } from '@/components/dashboard/graph-panel';
@@ -16,39 +17,46 @@ export default function DashboardPage() {
       initial={{ opacity: 0, y: 4 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}
     >
-      {/* View mode tabs */}
-      <div className="dashboard-tabs" style={{ display: 'flex', gap: '8px', padding: '16px', borderBottom: '1px solid var(--bg-border)', flexShrink: 0, justifyContent: 'center' }}>
-        <button 
-          onClick={() => setViewMode('split')}
-          style={{ padding: '6px 12px', fontSize: '12px', borderRadius: '4px', border: 'none', cursor: 'pointer', backgroundColor: viewMode === 'split' ? 'var(--bg-elevated)' : 'transparent', color: viewMode === 'split' ? 'var(--text-primary)' : 'var(--text-secondary)' }}
-        >
-          Split view
-        </button>
-        <button 
-          onClick={() => setViewMode('chat')}
-          style={{ padding: '6px 12px', fontSize: '12px', borderRadius: '4px', border: 'none', cursor: 'pointer', backgroundColor: viewMode === 'chat' ? 'var(--bg-elevated)' : 'transparent', color: viewMode === 'chat' ? 'var(--text-primary)' : 'var(--text-secondary)' }}
-        >
-          Chat only
-        </button>
-        <button 
-          onClick={() => setViewMode('graph')}
-          style={{ padding: '6px 12px', fontSize: '12px', borderRadius: '4px', border: 'none', cursor: 'pointer', backgroundColor: viewMode === 'graph' ? 'var(--bg-elevated)' : 'transparent', color: viewMode === 'graph' ? 'var(--text-primary)' : 'var(--text-secondary)' }}
-        >
-          Graph only
-        </button>
+      <div className="dashboard-tabs">
+        {(
+          [
+            ['split', 'Split view'],
+            ['chat', 'Chat only'],
+            ['graph', 'Graph only'],
+          ] as const
+        ).map(([mode, label]) => (
+          <button
+            key={mode}
+            type="button"
+            className={clsx('dashboard-tab', {
+              'dashboard-tab--active': viewMode === mode,
+            })}
+            onClick={() => setViewMode(mode)}
+          >
+            {label}
+          </button>
+        ))}
       </div>
 
-      {/* Panels */}
-      <div className="dashboard-panels" style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+      <div className="dashboard-panels">
         {(viewMode === 'split' || viewMode === 'chat') && (
-          <div style={{ flex: viewMode === 'split' ? 0.5 : 1, display: 'flex', borderRight: viewMode === 'split' ? '1px solid var(--bg-border)' : 'none', minWidth: '400px' }}>
+          <div
+            className={clsx('dashboard-panel dashboard-panel--chat', {
+              'dashboard-panel--full': viewMode === 'chat',
+            })}
+            style={{ flex: viewMode === 'split' ? 0.52 : 1 }}
+          >
             <ChatPanel />
           </div>
         )}
         {(viewMode === 'split' || viewMode === 'graph') && (
-          <div style={{ flex: viewMode === 'split' ? 0.5 : 1, display: 'flex', flexDirection: 'column', minWidth: '400px', backgroundColor: 'var(--bg-base)' }}>
+          <div
+            className={clsx('dashboard-panel dashboard-panel--graph', {
+              'dashboard-panel--full': viewMode === 'graph',
+            })}
+            style={{ flex: viewMode === 'split' ? 0.48 : 1 }}
+          >
             <GraphPanel />
           </div>
         )}

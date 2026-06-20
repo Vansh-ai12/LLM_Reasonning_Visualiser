@@ -74,16 +74,14 @@ def createMemory(query: str, user_id: str):
 
     memory_json = json.loads(response_text)
 
-    # Don't store useless messages
+
     if not memory_json.get("store"):
         return None
 
     memory_text = memory_json["memory"]
     memory_type = memory_json["memory_type"]
 
-    # -----------------------------
-    # Generate embedding
-    # -----------------------------
+
 
     encoded_input = tokenizer(
         memory_text,
@@ -110,9 +108,7 @@ def createMemory(query: str, user_id: str):
 
     print(len(vector))
 
-    # -----------------------------
-    # Upsert to Qdrant
-    # -----------------------------
+
 
     point = PointStruct(
         id=str(uuid.uuid4()),

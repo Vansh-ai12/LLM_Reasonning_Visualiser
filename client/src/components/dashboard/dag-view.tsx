@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import React, { useEffect, useState, useCallback } from 'react';
-import { ReactFlow, useNodesState, useEdgesState, Background, Controls, Handle, Position } from '@xyflow/react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
+import { ReactFlow, useNodesState, useEdgesState, Background, Controls, Handle, Position, ReactFlowProvider, useReactFlow } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import dagre from 'dagre';
 import { ReasoningStep } from '@/lib/api';
@@ -41,7 +41,6 @@ const getLayoutedElements = (nodes: any[], edges: any[], direction = 'LR') => {
       ...node,
       targetPosition: isHorizontal ? Position.Left : Position.Top,
       sourcePosition: isHorizontal ? Position.Right : Position.Bottom,
-      // Shift to center the node
       position: {
         x: nodeWithPosition.x - nodeWidth / 2,
         y: nodeWithPosition.y - nodeHeight / 2,
@@ -52,7 +51,7 @@ const getLayoutedElements = (nodes: any[], edges: any[], direction = 'LR') => {
   return { nodes: newNodes, edges };
 };
 
-// Custom Node component
+// Custom Node component (Neo4j Style)
 function CustomNode({ data }: any) {
   const color = colorMap[data.type] || '#3b82f6';
 
@@ -91,10 +90,13 @@ interface DAGViewProps {
   steps: ReasoningStep[];
 }
 
-export function DAGView({ steps }: DAGViewProps) {
+function DAGViewInner({ steps }: DAGViewProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState<any>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<any>([]);
   const [selectedNode, setSelectedNode] = useState<any>(null);
+  
+  const { fitView } = useReactFlow();
+  const initialized = useRef(false);
 
   const onNodeClick = useCallback((_: React.MouseEvent, node: any) => {
     setSelectedNode(node.data.step);
@@ -146,7 +148,13 @@ export function DAGView({ steps }: DAGViewProps) {
 
     setNodes(layoutedNodes);
     setEdges(layoutedEdges);
-  }, [steps, setNodes, setEdges]);
+
+    // Force fitView after setting nodes so they are always centered
+    setTimeout(() => {
+      fitView({ padding: 0.2, duration: 800 });
+      initialized.current = true;
+    }, 50);
+  }, [steps, setNodes, setEdges, fitView]);
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative', backgroundColor: '#1a1a1a' }}>
@@ -160,7 +168,7 @@ export function DAGView({ steps }: DAGViewProps) {
         nodeTypes={nodeTypes}
         fitView
         colorMode="dark"
-        minZoom={0.2}
+        minZoom={0.1}
       >
         <Background gap={16} color="#333" />
         <Controls />
@@ -212,5 +220,13 @@ export function DAGView({ steps }: DAGViewProps) {
         </div>
       )}
     </div>
+  );
+}
+
+export function DAGView({ steps }: DAGViewProps) {
+  return (
+    <ReactFlowProvider>
+      <DAGViewInner steps={steps} />
+    </ReactFlowProvider>
   );
 }

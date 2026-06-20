@@ -9,8 +9,6 @@ from llm.services import run_inference_and_build_steps
 
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
 
-from llm.memory import createMemory , retrieveMemory
-
 import torch
 
 load_dotenv()
@@ -28,19 +26,44 @@ SYSTEM_PROMPT = SYSTEM_PROMPT_1
 
 REDIS_URL = os.getenv("REDIS_URL")
 
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-        
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.float16,
-)
-        
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME,
-    quantization_config=bnb_config,
-    device_map="auto",
-)
+model = None
+tokenizer = None
+
+
+def get_model_and_tokenizer():
+    global model, tokenizer
+
+    if model is not None and tokenizer is not None:
+        return model, tokenizer
+
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+
+    if torch.cuda.is_available():
+        try:
+            bnb_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.float16,
+            )
+
+            model = AutoModelForCausalLM.from_pretrained(
+                MODEL_NAME,
+                quantization_config=bnb_config,
+                device_map="auto",
+            )
+            return model, tokenizer
+        except ValueError as exc:
+            print(f"4-bit model load failed, falling back to fp16 auto device map: {exc}")
+
+        model = AutoModelForCausalLM.from_pretrained(
+            MODEL_NAME,
+            torch_dtype=torch.float16,
+            device_map="auto",
+        )
+        return model, tokenizer
+
+    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
+    return model, tokenizer
 
 
 
@@ -57,31 +80,9 @@ def add(x, y):
 @app.task
 def run_llm_test(
     question: str,
-    user_id: str,
     run_id: str = None
 ):
-
-    memories = retrieveMemory(
-        question,
-        user_id
-    )
-
-    memory_context = ""
-
-    for memory in memories:
-        memory_context += (
-            f"[{memory['memory_type']}] "
-            f"[{memory['created_at']}] "
-            f"{memory['text']}\n"
-        )
-
-    enhanced_prompt = f"""
-    {SYSTEM_PROMPT}
-
-    Relevant User Memories:
-
-    {memory_context}
-    """
+    loaded_model, loaded_tokenizer = get_model_and_tokenizer()
 
     def save_step_callback(step_dict):
         if run_id:
@@ -89,10 +90,18 @@ def run_llm_test(
                 with Session(engine) as session:
                     run = session.get(ReasoningRun, run_id)
                     if run:
+                        valid_types = {'hypothesis','lookup','calculation','correction','conclusion'}
+                        raw_type = str(step_dict.get("type", "hypothesis")).lower()
+                        type_val = raw_type if raw_type in valid_types else "hypothesis"
+                        
+                        valid_conf = {'high','medium','low'}
+                        raw_conf = str(step_dict.get("confidence", "medium")).lower()
+                        conf_val = raw_conf if raw_conf in valid_conf else "medium"
+
                         step = ReasoningStep(
                             run_id=run.id,
-                            type=step_dict.get("type", "hypothesis"),
-                            confidence=step_dict.get("confidence", "medium"),
+                            type=type_val,
+                            confidence=conf_val,
                             label=step_dict.get("label", "Step"),
                             content=step_dict.get("content", ""),
                             depends_on=json.dumps(step_dict.get("depends_on", [])),
@@ -104,17 +113,12 @@ def run_llm_test(
                 print(f"Error saving to DB: {e}")
 
     final_answer, steps = run_inference_and_build_steps(
-        model,
-        tokenizer,
+        loaded_model,
+        loaded_tokenizer,
         question,
-        enhanced_prompt,
+        SYSTEM_PROMPT,
         step_callback=save_step_callback
     )
-
-    createMemory(
-        f"Question: {question}\nAnswer: {final_answer}",
-        user_id
-     )
 
     if run_id:
         try:
@@ -129,17 +133,5 @@ def run_llm_test(
 
     return {
         "final_answer": final_answer,
-        "steps": steps,
-        "retrieved_memories": memories
+        "steps": steps
     }
-
-
-@app.task(name="tasks.createMem")
-def createMem(question: str, user_id: str):
-        return createMemory(question,user_id)
-
-@app.task(name="tasks.retrieveMem")
-def retrieveMem(question: str, user_id: str):
-        return retrieveMemory(question,user_id)
-
-

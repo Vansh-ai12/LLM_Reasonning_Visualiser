@@ -10,7 +10,6 @@ from llm.system_prompts import SYSTEM_PROMPT_1
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ── constants ──────────────────────────────────────────────────────────────────
 
 MAX_STEPS          = 10      # hard cap on steps per question
 MAX_CONTEXT_TOKENS = 28000   # leave      4k buffer below 32k window
@@ -118,7 +117,7 @@ def build_step_metrics(
     }
 
 
-# ── core generation ────────────────────────────────────────────────────────────
+
 
 def generate_one_step(model, tokenizer, message_history: list) -> tuple:
     """Generate exactly one JSON step. Returns metrics + parsed result."""
@@ -175,7 +174,7 @@ def generate_one_step(model, tokenizer, message_history: list) -> tuple:
     return parsed, token_entropies, chosen_token_probs, top_alternatives, raw_text
 
 
-# ── main loop ──────────────────────────────────────────────────────────────────
+
 
 def run_inference_and_build_steps(
     model,
@@ -271,7 +270,7 @@ def run_inference_and_build_steps(
             break
 
         else:
-            # unexpected step kind — try to recover
+       
             logger.warning(f"Unexpected step kind: {step_kind}. Asking model to continue.")
             message_history.append({
                 "role":    "user",
